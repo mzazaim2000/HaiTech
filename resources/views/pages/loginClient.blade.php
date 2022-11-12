@@ -6,7 +6,10 @@
         <!--<title> Responsive Login and Signup Form </title>-->
 
         <!-- CSS -->
-        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
                 
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -52,47 +55,38 @@
 
             </div>
 
-            <!-- Signup Form -->
-
-            <div class="form signup">
-                <div class="form-content">
-                    <header>Signup</header>
-                    <form action="#">
-                        <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input">
-                        </div>
-
-                        <div class="field input-field">
-                            <input type="password" placeholder="Create password" class="password">
-                        </div>
-
-                        <div class="field input-field">
-                            <input type="password" placeholder="Confirm password" class="password">
-                            <i class='bx bx-hide eye-icon'></i>
-                        </div>
-
-                        <div class="field button-field">
-                            <button>Sign Up</button>
-                        </div>
-                    </form>
-
-                    <div class="form-link">
-                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
-                    </div>
-                </div>
-
-                <div class="line"></div>
-
-                <div class="media-options">
-                    <a href="#" class="field google">
-                        <img src="#" alt="" class="google-img">
-                        <span>Login with Google</span>
-                    </a>
-                </div>
-
-            </div>
         </section>
 
         <!-- JavaScript -->
-        <!--<script src="js/script.js"></script>-->
+
+        <script src="js/script.js">
+         const forms = document.querySelector(".forms"),
+      pwShowHide = document.querySelectorAll(".eye-icon"),
+      links = document.querySelectorAll(".link");
+
+      pwShowHide.forEach(eyeIcon => {
+      eyeIcon.addEventListener("click", () => {
+        let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+        
+        pwFields.forEach(password => {
+            if(password.type === "password"){
+                password.type = "text";
+                eyeIcon.classList.replace("bx-hide", "bx-show");
+                return;
+            }
+            password.type = "password";
+            eyeIcon.classList.replace("bx-show", "bx-hide");
+                  })
+                  
+              })
+          })      
+
+            links.forEach(link => {
+          link.addEventListener("click", e => {
+            e.preventDefault(); //preventing form submit
+            forms.classList.toggle("show-signup");
+          })
+        })
+
+        </script>
     </body>
