@@ -44,13 +44,6 @@
                 <div class="line"></div>
 
                 <div class="media-options">
-                    <a href="#" class="field facebook">
-                        <i class='bx bxl-facebook facebook-icon'></i>
-                        <span>Login with Facebook</span>
-                    </a>
-                </div>
-
-                <div class="media-options">
                     <a href="#" class="field google">
                         <img src="#" alt="" class="google-img">
                         <span>Login with Google</span>
@@ -89,13 +82,6 @@
                 </div>
 
                 <div class="line"></div>
-
-                <div class="media-options">
-                    <a href="#" class="field facebook">
-                        <i class='bx bxl-facebook facebook-icon'></i>
-                        <span>Login with Facebook</span>
-                    </a>
-                </div>
 
                 <div class="media-options">
                     <a href="#" class="field google">
