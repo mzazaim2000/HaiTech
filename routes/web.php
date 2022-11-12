@@ -24,3 +24,7 @@ Route::get('/haitech', function () {
 Route::get('/signup', function () {
     return view('pages/signUpClient');
 });
+
+Route::get('/loginAdmin', function () {
+    return view('pages/loginAdmin');
+});
