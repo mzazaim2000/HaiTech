@@ -3,23 +3,35 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--<title> Responsive Login and Signup Form </title>-->
+        <title> HaiTech </title>
 
         <!-- CSS -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/loginclient.css') }}">
                 
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
                         
     </head>
     <body>
+
+      <body class="hold-transition layout-top-nav">
+        <div class="wrapper">
+            <!-- Messages Dropdown Menu -->
+            <li class="nav-item dropdown">
+              <a class="nav-link" data-toggle="dropdown" href="#"> Admin Login</a>
+              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                <div class="card-body login-card-body">
+              <p class="login-box-msg"></p>
+                </li>
+
         <section class="container forms">
             <div class="form login">
                 <div class="form-content">
                     <header>Login</header>
+
                     <form action="#">
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">
