@@ -1,52 +1,112 @@
 
- 
- <body class="login">
-   <div>
-     <a class="hiddenanchor" id="signup"></a>
-     <a class="hiddenanchor" id="signin"></a>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--<title> Responsive Login and Signup Form </title>-->
 
-     <div class="login_wrapper">
-       <div class="animate form login_form">
-         <section class="login_content">
-           <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" action="" method="post" name="myForm" autocomplete="off">
-             <h1>Admin Login</h1>
-             <div>
-               <input type="email" name="email" id="email" class="form-control" placeholder="Email" required="" />
-             </div>
-             <div>
-               <input type="password" name="password" id="password" class="form-control" placeholder="Password" required="" />
-             </div>
-             <div>
-                <button type="submit" class="btn btn-primary">Cancel</button>
-                         <button id="send" type="submit" class="btn btn-success">Submit</button>
-             </div>
+        <!-- CSS -->
+        <link rel="stylesheet" href="css/style.css">
+                
+        <!-- Boxicons CSS -->
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                        
+    </head>
+    <body>
+        <section class="container forms">
+            <div class="form login">
+                <div class="form-content">
+                    <header>Login</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="email" placeholder="Email" class="input">
+                        </div>
 
-             <div class="clearfix"></div>
+                        <div class="field input-field">
+                            <input type="password" placeholder="Password" class="password">
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
 
-             <div class="separator">
-             
-             <div class="x_content bs-example-popovers">
+                        <div class="form-link">
+                            <a href="#" class="forgot-pass">Forgot password?</a>
+                        </div>
 
-         
-               </div>
+                        <div class="field button-field">
+                            <button>Login</button>
+                        </div>
+                    </form>
 
-               <div class="clearfix"></div>
-               <br />
+                    <div class="form-link">
+                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                    </div>
+                </div>
 
-               <div>
-                 
-                 <p>&nbsp;</p>
-               </div>
-             </div>
-           </form>
-         </section>
-       </div>
+                <div class="line"></div>
 
-       <div id="register" class="animate form registration_form">
-         <section class="login_content">
-           
-         </section>
-       </div>
-     </div>
-   </div>
- </body>
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>Login with Facebook</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="#" alt="" class="google-img">
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Signup Form -->
+
+            <div class="form signup">
+                <div class="form-content">
+                    <header>Signup</header>
+                    <form action="#">
+                        <div class="field input-field">
+                            <input type="email" placeholder="Email" class="input">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Create password" class="password">
+                        </div>
+
+                        <div class="field input-field">
+                            <input type="password" placeholder="Confirm password" class="password">
+                            <i class='bx bx-hide eye-icon'></i>
+                        </div>
+
+                        <div class="field button-field">
+                            <button>Signup</button>
+                        </div>
+                    </form>
+
+                    <div class="form-link">
+                        <span>Already have an account? <a href="#" class="link login-link">Login</a></span>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="media-options">
+                    <a href="#" class="field facebook">
+                        <i class='bx bxl-facebook facebook-icon'></i>
+                        <span>Login with Facebook</span>
+                    </a>
+                </div>
+
+                <div class="media-options">
+                    <a href="#" class="field google">
+                        <img src="#" alt="" class="google-img">
+                        <span>Login with Google</span>
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- JavaScript -->
+        <!--<script src="js/script.js"></script>-->
+    </body>
