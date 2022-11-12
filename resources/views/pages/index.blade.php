@@ -1,17 +1,8 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.frontend')
 
-        <title>HaiTech Bla Bla</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-
-    </head>
-    <body>
-      
-    </body>
-</html>
+@section('content')
+<h1>Welcome to my app</h1>
+<p>
+    This is the homepage
+</p>
+@endsection()
