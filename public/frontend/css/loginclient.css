@@ -18,36 +18,37 @@
     column-gap: 30px;
 }
 
-.user button{
-    position: absolute;
+top-container{
     float: right;
-    line-height: 12px;
-    width: 18px;
-    top:0;
-    right:0;
-    border: none;
-    font-size: 16px;
-    font-weight: 400;
-    border-radius: 6px;
+    position: right;
+    top: 50px;
+    right: 1px;
+    font-size: 14px;
+}
+
+.top-container button{
+ background-color: #2D2D2D;   
+ color: #FFFFFF;
+ float: right;
+ border-color: #fff;
+ border-radius: 5px;
+ border-width: 0.2px;
+ padding: 10px;
 }
 
 a.user{
-    position: right;
-    float: right;
     background-color: #2D2D2D;
-    border-color: #ffffff;
-    color: #ffffff;
+    position: right;
+    float: right;    
 }
 
 button:hover{
     background-color: #bcb6b6;
 }
 
-img.user-img{
-    float: left;
-    position: left;
+.top-container user-img{
+    float: absolute;
     transform: translateY(-10%);
-
 }
 
 .form{

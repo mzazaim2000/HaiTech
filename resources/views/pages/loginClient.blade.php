@@ -16,24 +16,18 @@
                         
     </head>
     <body>
-        
-        <div class="topnav">
-            <div class="login-container">
-            </div>
+    
+        <div class="top-container">
+        <br><a href="loginAdmin" class="admin-login">
+        <button><img src="images/user.png" alt="" class="user-img"> Login as Admin</button>
+        </a>
         </div>
-        
 
         <section class="container forms">
             <div class="form login">
                 <div class="form-content">
-
-                    <a href="#" class="field user">
-                        <img src="images/user.png" alt="" class="user-img">
-                        <button>Login as Admin</button>
-                    </a>
                     
                     <img src="images/logo.png" alt="" class="logo-img">
-                
                     <form action="#">
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">
@@ -56,17 +50,15 @@
                     </form>
 
                     <div class="form-link">
-                        <span>Don't have an account? <a href="#" class="link signup-link"><b>Sign up!</b></a></span>
+                        <span>Don't have an account? <a href="signup" class="link signup-link"><b>Sign up!</b></a></span>
                     </div>
                 </div>
 
                 <div class="line"></div>
-
                 <div class="media-options">
                     <a href="#" class="field google">
                         <img src="images/google.png" alt="" class="google-img">
                         <span>Continue with Google</span>
-                        
                     </a>
                 </div>
             </div>
