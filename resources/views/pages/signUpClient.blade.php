@@ -1,58 +1,94 @@
+      <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title> HaiTech </title>
+  
+          <!-- CSS -->
+          <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+          <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
+          <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+          <link rel="stylesheet" href="{{ asset('frontend/css/loginclient.css') }}">
+                  
+          <!-- Boxicons CSS -->
+          <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                          
+      </head>
+      <body>
+  
+          <section class="container forms">
+              <div class="form login">
+                  <div class="form-content">
+                      
+                      <img src="images/logo.png" alt="" class="logo-img">
+                      <h1>Sign Up</h1>
+                      <h5>Create your account now!</h5>
+                  
+                      <form action="#">
+                          <div class="field input-field">
+                              <input type="text" placeholder="Firstname" class="input">
+                          </div>
 
-<html lang="en" dir="ltr">
+                          <div class="field input-field">
+                            <input type="text" placeholder="Surname" class="input">
+                          </div>
 
-  <head>
-    <meta charset="UTF-8">
-    
-    <title> HaiTech </title>
+                          <div class="field input-field">
+                            <input type="email" placeholder="Email" class="input">
+                          </div>
 
-    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/loginclient.css') }}">
+                          <div class="field input-field">
+                            <input type="tel" placeholder="Mobile number" class="input">
+                          </div>
+  
+                          <div class="field input-field">
+                              <input type="password" placeholder="New password" class="password">
+                              <i class='bx bx-hide eye-icon'></i>
+                          </div>
 
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-
-<body>
-  <div class="container forms">
-    <div class="title">Sign up.</div>
-    <div class="form-content">
-
-      <form action="#">
-        <div class="user-details">
-          <div class="input-box">
-            <input type="text" placeholder="First name" required>
-          </div>
-
-          <div class="input-box">
-            <input type="text" placeholder="Surname" required>
-          </div>
-
-          <div class="input-box">
-            <input type="text" placeholder="Email address" required>
-          </div>
-
-          <div class="input-box">
-            <input type="text" placeholder="Mobile number" required>
-          </div>
-
-          <div class="input-box">
-            <input type="text" placeholder="New password" required>
-          </div>
-
-          <div class="input-box">
-            <input type="text" placeholder="Confirm password" required>
-          </div>
-        </div>
-        
-        <div class="button">
-          <input type="submit" value="Sign Up">
-        </div>
-      </form>
-    </div>
-  </div>
-
-</body>
-</html>
+                          <div class="field input-field">
+                            <input type="password" placeholder="Confirm password" class="password">
+                            <i class='bx bx-hide eye-icon'></i>
+                          </div>
+  
+                          <div class="field button-field">
+                              <button>Sign Up</button>
+                          </div>
+                        </form>
+                  </div>
+              </div>
+          </section>
+  
+          <!-- JavaScript -->
+  
+          <script src="js/script.js">
+           const forms = document.querySelector(".forms"),
+        pwShowHide = document.querySelectorAll(".eye-icon"),
+        links = document.querySelectorAll(".link");
+  
+        pwShowHide.forEach(eyeIcon => {
+        eyeIcon.addEventListener("click", () => {
+          let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+          
+          pwFields.forEach(password => {
+              if(password.type === "password"){
+                  password.type = "text";
+                  eyeIcon.classList.replace("bx-hide", "bx-show");
+                  return;
+              }
+              password.type = "password";
+              eyeIcon.classList.replace("bx-show", "bx-hide");
+                    })
+                    
+                })
+            })      
+  
+              links.forEach(link => {
+            link.addEventListener("click", e => {
+              e.preventDefault(); //preventing form submit
+              forms.classList.toggle("show-signup");
+            })
+          })
+  
+          </script>
+      </body>
