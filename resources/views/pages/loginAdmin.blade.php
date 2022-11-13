@@ -36,7 +36,7 @@
                       </div>
 
                 <!-- Checkbox -->
-                <div class="form-check" classclass="form-link">
+                <div class="form-check" class="form-link">
                   <input class="form-check-input" type="checkbox" value="" id="formCheck"/>
                   <label class="form-check-label" for="formCheck"> Remember me?</label>
                   <a href="#" class="forgot-pass">Forgot password?</a>
