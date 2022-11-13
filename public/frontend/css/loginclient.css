@@ -6,16 +6,46 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    
 }
 .container{
     height: 110vh;
-    width: 300%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #2D2D2D;
     column-gap: 30px;
 }
+
+.user button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 6px;
+}
+
+a.user{
+    position: right;
+    float: right;
+    background-color: #2D2D2D;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+button:hover{
+    background-color: #bcb6b6;
+}
+
+img.user-img{
+    float: left;
+    position: left;
+    transform: translateY(-10%);
+
+}
+
 .form{
     position: absolute;
     max-width: 430px;
@@ -143,7 +173,7 @@ form{
 img.google-img{
     position: absolute;
     top: 50%;
-    left: 15px;
+    left: 50px;
     transform: translateY(-50%);
 }
 a.google-img{
