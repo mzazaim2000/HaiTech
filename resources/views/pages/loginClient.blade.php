@@ -19,17 +19,18 @@
         
         <div class="topnav">
             <div class="login-container">
-                <a href="#" class="field user">
-                <img src="images/user.png" alt="" class="user-img">
-                <button>Login as Admin</button>
-            </a>
             </div>
-          </div>
+        </div>
         
 
         <section class="container forms">
             <div class="form login">
                 <div class="form-content">
+
+                    <a href="#" class="field user">
+                        <img src="images/user.png" alt="" class="user-img">
+                        <button>Login as Admin</button>
+                    </a>
                     
                     <img src="images/logo.png" alt="" class="logo-img">
                 

@@ -19,8 +19,12 @@
 }
 
 .user button{
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    float: right;
+    line-height: 12px;
+    width: 18px;
+    top:0;
+    right:0;
     border: none;
     font-size: 16px;
     font-weight: 400;
