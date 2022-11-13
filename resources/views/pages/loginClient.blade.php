@@ -8,7 +8,7 @@
         <!-- CSS -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/background.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/css/loginclient.css') }}">
                 
         <!-- Boxicons CSS -->
@@ -16,6 +16,16 @@
                         
     </head>
     <body>
+        
+        <div class="topnav">
+            <div class="login-container">
+                <a href="#" class="field user">
+                <img src="images/user.png" alt="" class="user-img">
+                <button>Login as Admin</button>
+            </a>
+            </div>
+          </div>
+        
 
         <section class="container forms">
             <div class="form login">
