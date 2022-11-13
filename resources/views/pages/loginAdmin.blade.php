@@ -9,20 +9,18 @@
       <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
       <link rel="stylesheet" href="{{ asset('frontend/css/loginadmin.css') }}">
-              
+      <link rel="stylesheet" href="{{ asset('frontend/css/background.css') }}">            
+      
       <!-- Boxicons CSS -->
       <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
                       
   </head>
   <body>
 
-    <body class="hold-transition layout-top-nav">
-      <div class="wrapper">
-
-
-      <section class="container forms">
+  
+      <section class="black">
+          <section class="container">
           <div class="form login">
-              <div class="form-content">
 
                 <img src="images/logo.png" alt="" class="logo-img">
                 <header>Admin Login</header>
@@ -38,23 +36,20 @@
                       </div>
 
                 <!-- Checkbox -->
-                <div class="form-check" class="form-link">
-                  <input class="form-check-input" type="checkbox" value="" id="formCheck"/>
-                  <label class="form-check-label" for="formCheck"> Remember me?</label>
+                <div class="form-group">
+                  <input type="checkbox" name="remember">
+                  <label for="remember-me" class="remember-me">Remember me</label>
                   <a href="#" class="forgot-pass">Forgot password?</a>
-                </div>
               </div>
 
-                      <div class="field button-field">
+                      <div class="field button">
                           <button>Login</button>
                       </div>
                   </form>
 
               </div>
-
-          </div>
-
-      </section>
+            </section>
+    </section>
 
       <!-- JavaScript -->
 
@@ -88,4 +83,4 @@
       })
 
       </script>
-  </body>
+
