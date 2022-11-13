@@ -22,7 +22,7 @@
                 <div class="form">
   
                   <img src="images/logo.png" alt="" class="logo-img">
-                  <p class="border-box">Please enter your email address. <br>
+                  <p>Please enter your email address. <br>
                     You will receive an email with instructions on how to reset your password.</p>
 
                     <form action="#">
