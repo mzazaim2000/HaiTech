@@ -17,21 +17,12 @@
     </head>
     <body>
 
-      <body class="hold-transition layout-top-nav">
-        <div class="wrapper">
-            <!-- Messages Dropdown Menu -->
-            <li class="nav-item dropdown">
-              <a class="nav-link" data-toggle="dropdown" href="#"> Admin Login</a>
-              <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-                <div class="card-body login-card-body">
-              <p class="login-box-msg"></p>
-                </li>
-
         <section class="container forms">
             <div class="form login">
                 <div class="form-content">
-                    <header>Login</header>
-
+                    
+                    <img src="images/logo.png" alt="" class="logo-img">
+                
                     <form action="#">
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">
@@ -42,7 +33,9 @@
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
 
-                        <div class="form-link">
+                        <div class="form-group">
+                            <input type="checkbox" name="remember">
+                            <label for="remember-me" class="remember-me">Remember me</label>
                             <a href="#" class="forgot-pass">Forgot password?</a>
                         </div>
 
@@ -52,7 +45,7 @@
                     </form>
 
                     <div class="form-link">
-                        <span>Don't have an account? <a href="#" class="link signup-link">Signup</a></span>
+                        <span>Don't have an account? <a href="#" class="link signup-link"><b>Sign up!</b></a></span>
                     </div>
                 </div>
 
@@ -60,13 +53,12 @@
 
                 <div class="media-options">
                     <a href="#" class="field google">
-                        <img src="#" alt="" class="google-img">
-                        <span>Login with Google</span>
+                        <img src="images/google.png" alt="" class="google-img">
+                        <span>Continue with Google</span>
+                        
                     </a>
                 </div>
-
             </div>
-
         </section>
 
         <!-- JavaScript -->
