@@ -5,11 +5,9 @@
     align-items: center;
     justify-content: center;
 }
-.border-box {
-    border-width:2px;
-    border-style:double;
-    border-color:#ffffff;
-  }
+p{
+    text-align: center;
+}
 img.logo-img{
     position: relative;
     height: 100px;
