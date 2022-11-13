@@ -1,40 +1,89 @@
-<section class="vh-100" style="background-color: #508bfc;">
-  <div class="container py-5 h-100">
-    <div class="row d-flex justify-content-center align-items-center h-100">
-      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
-        <div class="card shadow-2-strong" style="border-radius: 1rem;">
-          <div class="card-body p-5 text-center">
 
-            <h3 class="mb-5">Sign in</h3>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> HaiTech Admin Login </title>
 
-            <div class="form-outline mb-4">
-              <input type="email" id="typeEmailX-2" class="form-control form-control-lg" />
-              <label class="form-label" for="typeEmailX-2">Email</label>
-            </div>
+      <!-- CSS -->
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
+      <link rel="stylesheet" href="{{ asset('frontend/css/loginadmin.css') }}">
+              
+      <!-- Boxicons CSS -->
+      <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+                      
+  </head>
+  <body>
 
-            <div class="form-outline mb-4">
-              <input type="password" id="typePasswordX-2" class="form-control form-control-lg" />
-              <label class="form-label" for="typePasswordX-2">Password</label>
-            </div>
+    <body class="hold-transition layout-top-nav">
+      <div class="wrapper">
 
-            <!-- Checkbox -->
-            <div class="form-check d-flex justify-content-start mb-4">
-              <input class="form-check-input" type="checkbox" value="" id="form1Example3" />
-              <label class="form-check-label" for="form1Example3"> Remember password </label>
-            </div>
 
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Login</button>
+      <section class="container forms">
+          <div class="form login">
+              <div class="form-content">
+                  <header>Login</header>
 
-            <hr class="my-4">
+                  <form action="#">
+                      <div class="field input-field">
+                          <input type="email" placeholder="Email" class="input">
+                      </div>
 
-            <button class="btn btn-lg btn-block btn-primary" style="background-color: #dd4b39;"
-              type="submit"><i class="fab fa-google me-2"></i> Sign in with google</button>
-            <button class="btn btn-lg btn-block btn-primary mb-2" style="background-color: #3b5998;"
-              type="submit"><i class="fab fa-facebook-f me-2"></i>Sign in with facebook</button>
+                      <div class="field input-field">
+                          <input type="password" placeholder="Password" class="password">
+                          <i class='bx bx-hide eye-icon'></i>
+                      </div>
+
+                <!-- Checkbox -->
+                <div class="form-check" classclass="form-link">
+                  <input class="form-check-input" type="checkbox" value="" id="formCheck"/>
+                  <label class="form-check-label" for="formCheck"> Remember me?</label>
+                  <a href="#" class="forgot-pass">Forgot password?</a>
+                </div>
+              </div>
+
+                      <div class="field button-field">
+                          <button>Login</button>
+                      </div>
+                  </form>
+
+              </div>
 
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+      </section>
+
+      <!-- JavaScript -->
+
+      <script src="js/script.js">
+       const forms = document.querySelector(".forms"),
+    pwShowHide = document.querySelectorAll(".eye-icon"),
+    links = document.querySelectorAll(".link");
+
+    pwShowHide.forEach(eyeIcon => {
+    eyeIcon.addEventListener("click", () => {
+      let pwFields = eyeIcon.parentElement.parentElement.querySelectorAll(".password");
+      
+      pwFields.forEach(password => {
+          if(password.type === "password"){
+              password.type = "text";
+              eyeIcon.classList.replace("bx-hide", "bx-show");
+              return;
+          }
+          password.type = "password";
+          eyeIcon.classList.replace("bx-show", "bx-hide");
+                })
+                
+            })
+        })      
+
+          links.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault(); //preventing form submit
+          forms.classList.toggle("show-signup");
+        })
+      })
+
+      </script>
+  </body>
