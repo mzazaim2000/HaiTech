@@ -28,3 +28,6 @@ Route::get('/signup', function () {
 Route::get('/loginAdmin', function () {
     return view('pages/loginAdmin');
 });
+Route::get('/forgotpass', function () {
+return view('pages/forgotPassword');
+});
