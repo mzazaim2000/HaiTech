@@ -1,45 +1,54 @@
-<!DOCTYPE html>
 
 <html lang="en" dir="ltr">
+
   <head>
     <meta charset="UTF-8">
-    <!---<title> Responsive Registration Form | CodingLab </title>--->
-    <link rel="stylesheet" href="style.css">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+    
+    <title> HaiTech </title>
+
+    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/loginclient.css') }}">
+
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+
 <body>
-  <div class="container">
-    <div class="title">Registration</div>
-    <div class="content">
+  <div class="container forms">
+    <div class="title">Sign up.</div>
+    <div class="form-content">
+
       <form action="#">
         <div class="user-details">
           <div class="input-box">
-            <span class="details">Full Name</span>
-            <input type="text" placeholder="Enter your name" required>
+            <input type="text" placeholder="First name" required>
           </div>
+
           <div class="input-box">
-            <span class="details">Username</span>
-            <input type="text" placeholder="Enter your username" required>
+            <input type="text" placeholder="Surname" required>
           </div>
+
           <div class="input-box">
-            <span class="details">Email</span>
-            <input type="text" placeholder="Enter your email" required>
+            <input type="text" placeholder="Email address" required>
           </div>
+
           <div class="input-box">
-            <span class="details">Phone Number</span>
-            <input type="text" placeholder="Enter your number" required>
+            <input type="text" placeholder="Mobile number" required>
           </div>
+
           <div class="input-box">
-            <span class="details">Password</span>
-            <input type="text" placeholder="Enter your password" required>
+            <input type="text" placeholder="New password" required>
           </div>
+
           <div class="input-box">
-            <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirm your password" required>
+            <input type="text" placeholder="Confirm password" required>
           </div>
         </div>
+        
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" value="Sign Up">
         </div>
       </form>
     </div>
