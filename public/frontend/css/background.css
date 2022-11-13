@@ -16,7 +16,7 @@ section {
     min-height: 400px;
     padding: 100px 20vw;
 }
-.black{
+/*.black{
     background: #2D2D2D;
 }
 .curve {
@@ -48,4 +48,11 @@ section {
     background-color: #2D2D2D;
     transform: translate(-4%, 40%);
     z-index: -1;
-}
+} 
+.box {
+    --mask:
+      radial-gradient(54.08px at 50% calc(100% - 75.00px),#000 99%,#0000 101%) calc(50% - 60px) 0/120px 100%,
+      radial-gradient(54.08px at 50% calc(100% + 45.00px),#0000 99%,#000 101%) 50% calc(100% - 30px)/120px 100% repeat-x;
+    -webkit-mask: var(--mask);
+            mask: var(--mask);
+  } */
