@@ -23,7 +23,8 @@
       <section class="container forms">
           <div class="form login">
               <div class="form-content">
-                  <header>Login</header>
+                <img src="images/logo.png" alt="" class="logo-img">
+                  <header>Admin Login</header>
 
                   <form action="#">
                       <div class="field input-field">
