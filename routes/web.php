@@ -28,14 +28,21 @@ Route::get('/signup', function () {
 Route::get('/loginAdmin', function () {
     return view('pages/loginAdmin');
 });
-Route::get('/forgotpass', function () {
+
+Route::get('/forgotAdmin', function () {
 return view('pages/forgotPassword');
 });
-Route::get('/resetpassAdmin', function () {
+
+Route::get('/resetAdmin', function () {
     return view('pages/resetPassword');
 });
-Route::get('/resetpass', function () {
-    return view('pages/forgotclientpassword');
+
+Route::get('/forgotClient', function () {
+    return view('pages/forgotclientPassword');
+});
+
+Route::get('/resetClient', function () {
+    return view('pages/resetclientPassword');
 });
 
  Route::get('/admindashboard', function () {
