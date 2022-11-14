@@ -107,7 +107,7 @@
           </ul>
         </nav>
         <!-- partial -->
-        <div class="main-panel">
+       <div class="main-panel">
           <div class="content-wrapper">
             <div class="row purchace-popup">
               <div class="col-12 stretch-card grid-margin">
@@ -381,7 +381,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> 
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">

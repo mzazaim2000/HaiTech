@@ -36,12 +36,23 @@ Route::get('signup',[CustomAuthController::class, 'register']);
 Route::get('/loginAdmin', function () {
     return view('pages/loginAdmin');
 });
-Route::get('/forgotpass', function () {
+
+Route::get('/forgotAdmin', function () {
 return view('pages/forgotPassword');
 });
-Route::get('/resetpass', function () {
-    return view('pages/forgotclientpassword');
+
+Route::get('/resetAdmin', function () {
+    return view('pages/resetPassword');
 });
+
+Route::get('/forgotClient', function () {
+    return view('pages/forgotclientPassword');
+});
+
+Route::get('/resetClient', function () {
+    return view('pages/resetclientPassword');
+});
+
  Route::get('/admindashboard', function () {
     return view('pages/adminDashboard');
  });
