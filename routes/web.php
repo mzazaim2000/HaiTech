@@ -51,9 +51,15 @@ Route::get('/resetClient', function () {
     return view('pages/resetclientPassword');
 });
 
- Route::get('/admindashboard', function () {
+Route::get('/admindashboard', function () {
     return view('pages/adminDashboard');
- });
+});
+
+Route::get('/clientdashboard', function () {
+    return view('layouts/frontend');
+});
+
+
 
 
 
