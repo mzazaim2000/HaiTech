@@ -25,30 +25,30 @@
                       <h1>Sign Up</h1>
                       <h5>Create your account now!</h5>
                   
-                      <form action="#">
+                      <form action="login" method="get">
                           <div class="field input-field">
-                              <input type="text" placeholder="Firstname" class="input">
+                              <input type="text" placeholder="Firstname" class="input" id=fname>
                           </div>
 
                           <div class="field input-field">
-                            <input type="text" placeholder="Surname" class="input">
+                            <input type="text" placeholder="Surname" class="input" id="lname">
                           </div>
 
                           <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input">
+                            <input type="email" placeholder="Email" class="input" id="email">
                           </div>
 
                           <div class="field input-field">
-                            <input type="tel" placeholder="Mobile number" class="input">
+                            <input type="tel" placeholder="Mobile number" class="input" id="contact">
                           </div>
   
                           <div class="field input-field">
-                              <input type="password" placeholder="New password" class="password">
+                              <input type="password" placeholder="New password" class="password" id="password">
                               <i class='bx bx-hide eye-icon'></i>
                           </div>
 
                           <div class="field input-field">
-                            <input type="password" placeholder="Confirm password" class="password">
+                            <input type="password" placeholder="Confirm password" class="password" id="cpass">
                             <i class='bx bx-hide eye-icon'></i>
                           </div>
   

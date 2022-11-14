@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CustomAuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('/', function () {
+    return view('index');
+});
 
 Route::get('/index', function () {
     return view('index');
@@ -25,6 +30,9 @@ Route::get('/signup', function () {
     return view('pages/signUpClient');
 });
 
+Route::view('signup','register');
+Route::get('signup',[CustomAuthController::class, 'register']);
+
 Route::get('/loginAdmin', function () {
     return view('pages/loginAdmin');
 });
@@ -37,3 +45,7 @@ Route::get('/resetpass', function () {
  Route::get('/admindashboard', function () {
     return view('pages/adminDashboard');
  });
+
+
+
+ 

@@ -31,10 +31,16 @@
                     <form action="index">
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">
+                            @if ($errors->has('email'))
+                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                            @endif
                         </div>
 
                         <div class="field input-field">
                             <input type="password" placeholder="Password" class="password">
+                            @if ($errors->has('password'))
+                            <span class="text-danger">{{ $errors->first('password') }}</span>
+                            @endif
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
 
