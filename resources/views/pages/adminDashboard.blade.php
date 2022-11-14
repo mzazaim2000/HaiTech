@@ -10,7 +10,7 @@
 <meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
 <meta name="author" content="Łukasz Holeczek">
 <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-<title>CoreUI Free Bootstrap Admin Template</title>
+<title>HaiTech</title>
 <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
 <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
@@ -1033,13 +1033,10 @@
 
 </div>
 </div>
-<footer class="footer">
-<div><a href="https://coreui.io">CoreUI </a><a href="https://coreui.io">Bootstrap Admin Template</a> © 2022 creativeLabs.</div>
-<div class="ms-auto">Powered by&nbsp;<a href="https://coreui.io/docs/">CoreUI UI Components</a></div>
-</footer>
+
 </div>
 
-<script src="vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
+<script src="/frontend/js/coreui.bundle.min.js"></script>
 <script src="vendors/simplebar/js/simplebar.min.js"></script>
 
 <script src="vendors/chart.js/js/chart.min.js"></script>
