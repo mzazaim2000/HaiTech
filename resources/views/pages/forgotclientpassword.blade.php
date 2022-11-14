@@ -36,7 +36,7 @@
                         </div>
 
                         <div class="form-group">
-                            <a href="loginAdmin" class="login-lane">← Log in</a>
+                            <a href="haitech" class="login-lane">← Log in</a>
                         </div>
                     </form>
                 </div>
