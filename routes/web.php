@@ -31,3 +31,6 @@ Route::get('/loginAdmin', function () {
 Route::get('/forgotpass', function () {
 return view('pages/forgotPassword');
 });
+Route::get('/resetpass', function () {
+    return view('pages/forgotclientpassword');
+    });
