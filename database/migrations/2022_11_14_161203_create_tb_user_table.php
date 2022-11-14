@@ -14,12 +14,12 @@ class CreateTbUserTable extends Migration
     public function up()
     {
         Schema::create('user', function (Blueprint $table) {
-            $table->id('user_id');
-            $table->timestamps('fname');
-            $table->timestamps('lname');
-            $table->timestamps('email');
-            $table->timestamps('contact');
-            $table->timestamps('password');
+            $table->increments('id');
+            $table->string('fname');
+            $table->string('lname');
+            $table->string('email');
+            $table->string('contact');
+            $table->string('password');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateTbUserTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_user');
+        Schema::dropIfExists('user');
     }
 }

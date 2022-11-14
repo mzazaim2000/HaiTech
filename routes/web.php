@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomAuthController;
+use App\Models\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,6 +31,19 @@ Route::get('/signup', function () {
     return view('pages/signUpClient');
 });
 
+//Route::view('signup','pages/signUpClient');
+Route::post('DataInsert',[CustomAuthController::class,'DataInsert']);
+// Route::get('/signup', function(){
+//     User::create([
+//         'firstname'=>request('fname'),
+//         'surname'=>request('lname'),
+//         'email'=>request('email'),
+//         'contact'=>request('contact'),
+//         'password'=>request('password')
+//     ]);
+
+// });
+//Route::post('signup', 'CustomAuthController@create');
 
 Route::get('/loginAdmin', function () {
     return view('pages/loginAdmin');
