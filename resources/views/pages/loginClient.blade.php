@@ -65,5 +65,5 @@
         </section>
 
         <!--Javascript-->
-    <script src="/resources/js/loginclient.js"></script>
+    <script src="/frontend/js/loginclient.js"></script>
     </body>
