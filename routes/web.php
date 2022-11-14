@@ -30,8 +30,6 @@ Route::get('/signup', function () {
     return view('pages/signUpClient');
 });
 
-Route::view('signup','register');
-Route::get('signup',[CustomAuthController::class, 'register']);
 
 Route::get('/loginAdmin', function () {
     return view('pages/loginAdmin');

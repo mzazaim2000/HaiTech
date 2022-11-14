@@ -56,6 +56,7 @@ class CustomAuthController extends Controller
  
     public function create(array $data)
     {
+        
       return User::create([
         'firstname' => $data['fname'],
         'surname' => $data['lname'],
@@ -68,9 +69,8 @@ class CustomAuthController extends Controller
     public function register(Request $req)
     {
         $user = new User;
-        $user->id=$req->id;
-        $user->firstname=$req->firstname;
-        $user->surname=$req->surname;
+        $user->firstname=$req->fname;
+        $user->surname=$req->lname;
         $user->email=$req->email;
         $user->contact=$req->contact;
         $user->password=$req->password;

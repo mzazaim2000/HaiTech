@@ -15,8 +15,10 @@ class CreateTbUserTable extends Migration
     {
         Schema::create('user', function (Blueprint $table) {
             $table->id('user_id');
-            $table->timestamps('name');
-            $table->timestamps('username');
+            $table->timestamps('fname');
+            $table->timestamps('lname');
+            $table->timestamps('email');
+            $table->timestamps('contact');
             $table->timestamps('password');
             $table->timestamps();
         });
