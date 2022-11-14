@@ -1,649 +1,529 @@
 <!DOCTYPE html>
-
-
 <html lang="en">
-<head>
-<base href="./">
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-<meta name="description" content="CoreUI - Open Source Bootstrap Admin Template">
-<meta name="author" content="Łukasz Holeczek">
-<meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
-<title>HaiTech</title>
-<link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-<link rel="manifest" href="assets/favicon/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
-
-<link rel="stylesheet" href="vendors/simplebar/css/simplebar.css">
-<link rel="stylesheet" href="css/vendors/simplebar.css">
-
-<link href="/frontend/css/dashboardAdmin.css" rel="stylesheet">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism.css">
-<link href="/frontend/css/examples.css" rel="stylesheet">
-<script>
-      (function(w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({
-          'gtm.start': new Date().getTime(),
-          event: 'gtm.js'
-        });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != 'dataLayer' ? '&l=' + l : '';
-        j.async = true;
-        j.src =
-          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, 'script', 'dataLayer', 'GTM-KX4JH47');
-    </script>
-<link href="vendors/@coreui/chartjs/css/coreui-chartjs.css" rel="stylesheet">
-</head>
-<body>
-<div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
-<div class="sidebar-brand d-none d-md-flex">
-<svg class="sidebar-brand-full" width="118" height="46" alt="CoreUI Logo">
-<use xlink:href="assets/brand/coreui.svg#full"></use>
-</svg>
-<svg class="sidebar-brand-narrow" width="46" height="46" alt="CoreUI Logo">
-<use xlink:href="assets/brand/coreui.svg#signet"></use>
-</svg>
-</div>
-<ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
-<li class="nav-item"><a class="nav-link" href="index.html">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-speedometer"></use>
-</svg> Dashboard<span class="badge badge-sm bg-info ms-auto"></span></a></li>
-<!--<li class="nav-title">Theme</li>
-<li class="nav-item"><a class="nav-link" href="colors.html">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-drop"></use>
-</svg> Colors</a></li>
-<li class="nav-item"><a class="nav-link" href="typography.html">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-pencil"></use>
-</svg> Typography</a></li>
-<li class="nav-title">Components</li>
-<li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-puzzle"></use>
-</svg> Base</a>
-<ul class="nav-group-items">
-<li class="nav-item"><a class="nav-link" href="base/accordion.html"><span class="nav-icon"></span> Accordion</a></li>
-<li class="nav-item"><a class="nav-link" href="base/breadcrumb.html"><span class="nav-icon"></span> Breadcrumb</a></li>
-<li class="nav-item"><a class="nav-link" href="base/cards.html"><span class="nav-icon"></span> Cards</a></li>
-<li class="nav-item"><a class="nav-link" href="base/carousel.html"><span class="nav-icon"></span> Carousel</a></li>
-<li class="nav-item"><a class="nav-link" href="base/collapse.html"><span class="nav-icon"></span> Collapse</a></li>
-<li class="nav-item"><a class="nav-link" href="base/list-group.html"><span class="nav-icon"></span> List group</a></li>
-<li class="nav-item"><a class="nav-link" href="base/navs-tabs.html"><span class="nav-icon"></span> Navs &amp; Tabs</a></li>
-<li class="nav-item"><a class="nav-link" href="base/pagination.html"><span class="nav-icon"></span> Pagination</a></li>
-<li class="nav-item"><a class="nav-link" href="base/placeholders.html"><span class="nav-icon"></span> Placeholders</a></li>
-<li class="nav-item"><a class="nav-link" href="base/popovers.html"><span class="nav-icon"></span> Popovers</a></li>
-<li class="nav-item"><a class="nav-link" href="base/progress.html"><span class="nav-icon"></span> Progress</a></li>
-<li class="nav-item"><a class="nav-link" href="base/scrollspy.html"><span class="nav-icon"></span> Scrollspy</a></li>
-<li class="nav-item"><a class="nav-link" href="base/spinners.html"><span class="nav-icon"></span> Spinners</a></li>
-<li class="nav-item"><a class="nav-link" href="base/tables.html"><span class="nav-icon"></span> Tables</a></li>
-<li class="nav-item"><a class="nav-link" href="base/tooltips.html"><span class="nav-icon"></span> Tooltips</a></li>
-</ul>
-</li>
-<li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-cursor"></use>
-</svg> Buttons</a>
-<ul class="nav-group-items">
-<li class="nav-item"><a class="nav-link" href="buttons/buttons.html"><span class="nav-icon"></span> Buttons</a></li>
-<li class="nav-item"><a class="nav-link" href="buttons/button-group.html"><span class="nav-icon"></span> Buttons Group</a></li>
-<li class="nav-item"><a class="nav-link" href="buttons/dropdowns.html"><span class="nav-icon"></span> Dropdowns</a></li>
-</ul>
-</li>
-<li class="nav-item"><a class="nav-link" href="charts.html">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-chart-pie"></use>
-</svg> Charts</a></li>
-<li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-notes"></use>
-</svg> Forms</a>
-<ul class="nav-group-items">
-<li class="nav-item"><a class="nav-link" href="forms/form-control.html"> Form Control</a></li>
-<li class="nav-item"><a class="nav-link" href="forms/select.html"> Select</a></li>
-<li class="nav-item"><a class="nav-link" href="forms/checks-radios.html"> Checks and radios</a></li>
-<li class="nav-item"><a class="nav-link" href="forms/range.html"> Range</a></li>
-<li class="nav-item"><a class="nav-link" href="forms/input-group.html"> Input group</a></li>
-<li class="nav-item"><a class="nav-link" href="forms/floating-labels.html"> Floating labels</a></li>
-<li class="nav-item"><a class="nav-link" href="forms/layout.html"> Layout</a></li>
-<li class="nav-item"><a class="nav-link" href="forms/validation.html"> Validation</a></li>
-</ul>
-</li>
-<li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-star"></use>
-</svg> Icons</a>
-<ul class="nav-group-items">
-<li class="nav-item"><a class="nav-link" href="icons/coreui-icons-free.html"> CoreUI Icons<span class="badge badge-sm bg-success ms-auto">Free</span></a></li>
-<li class="nav-item"><a class="nav-link" href="icons/coreui-icons-brand.html"> CoreUI Icons - Brand</a></li>
-<li class="nav-item"><a class="nav-link" href="icons/coreui-icons-flag.html"> CoreUI Icons - Flag</a></li>
-</ul>
-</li>
-<li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-</svg> Notifications</a>
-<ul class="nav-group-items">
-<li class="nav-item"><a class="nav-link" href="notifications/alerts.html"><span class="nav-icon"></span> Alerts</a></li>
-<li class="nav-item"><a class="nav-link" href="notifications/badge.html"><span class="nav-icon"></span> Badge</a></li>
-<li class="nav-item"><a class="nav-link" href="notifications/modals.html"><span class="nav-icon"></span> Modals</a></li>
-<li class="nav-item"><a class="nav-link" href="notifications/toasts.html"><span class="nav-icon"></span> Toasts</a></li>
-</ul>
-</li>
-<li class="nav-item"><a class="nav-link" href="widgets.html">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-calculator"></use>
-</svg> Widgets<span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
-<li class="nav-divider"></li>
-<li class="nav-title">Extras</li>
-<li class="nav-group"><a class="nav-link nav-group-toggle" href="#">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-star"></use>
-</svg> Pages</a>
-<ul class="nav-group-items">
-<li class="nav-item"><a class="nav-link" href="login.html" target="_top">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-</svg> Login</a></li>
-<li class="nav-item"><a class="nav-link" href="register.html" target="_top">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-</svg> Register</a></li>
-<li class="nav-item"><a class="nav-link" href="404.html" target="_top">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bug"></use>
-</svg> Error 404</a></li>
-<li class="nav-item"><a class="nav-link" href="500.html" target="_top">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bug"></use>
-</svg> Error 500</a></li>
-</ul>
-</li>
-<li class="nav-item mt-auto"><a class="nav-link" href="https://coreui.io/docs/templates/installation/" target="_blank">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-description"></use>
-</svg> Docs</a></li>
-<li class="nav-item"><a class="nav-link nav-link-danger" href="https://coreui.io/pro/" target="_top">
-<svg class="nav-icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-layers"></use>
-</svg> Try CoreUI
-<div class="fw-semibold">PRO</div>*/ -->
-</a></li>
-</ul>
-<button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
-</div>
-<div class="wrapper d-flex flex-column min-vh-100 bg-light">
-<header class="header header-sticky mb-4">
-<div class="container-fluid">
-<button class="header-toggler px-md-0 me-md-3" type="button" onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-<svg class="icon icon-lg">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
-</svg>
-</button><a class="header-brand d-md-none" href="#">
-<svg width="118" height="46" alt="CoreUI Logo">
-<use xlink:href="assets/brand/coreui.svg#full"></use>
-</svg></a>
-<ul class="header-nav d-none d-md-flex">
-<li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Users</a></li>
-<li class="nav-item"><a class="nav-link" href="#">Settings</a></li>
-</ul>
-<ul class="header-nav ms-auto">
-<li class="nav-item"><a class="nav-link" href="#">
-<svg class="icon icon-lg">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-bell"></use>
-</svg></a></li>
-<li class="nav-item"><a class="nav-link" href="#">
-<svg class="icon icon-lg">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-list-rich"></use>
-</svg></a></li>
-<li class="nav-item"><a class="nav-link" href="#">
-<svg class="icon icon-lg">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-envelope-open"></use>
-</svg></a></li>
-</ul>
-<ul class="header-nav ms-3">
-<li class="nav-item dropdown"><a class="nav-link py-0" data-coreui-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-<div class="avatar avatar-md"><img class="avatar-img" src="/images/user.png"></div>
-</a>
-<div class="dropdown-menu dropdown-menu-end pt-0">
-<div class="dropdown-header bg-light py-2">
-<div class="fw-semibold">Settings</div>
- </div><a class="dropdown-item" href="#">
-<svg class="icon me-2">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-user"></use>
-</svg> Profile</a><a class="dropdown-item" href="#">
-
-<svg class="icon me-2">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-account-logout"></use>
-</svg> Logout</a>
-</div>
-</li>
-</ul>
-</div>
-<div class="header-divider"></div>
-<div class="container-fluid">
-<nav aria-label="breadcrumb">
-<ol class="breadcrumb my-0 ms-2">
-<li class="breadcrumb-item">
-<span>Home</span>
-</li>
-<li class="breadcrumb-item active"><span>Dashboard</span></li>
-</ol>
-</nav>
-</div>
-</header>
-<div class="body flex-grow-1 px-3">
-<div class="container-lg">
-<div class="row">
-<div class="col-sm-6 col-lg-3">
-<div class="card mb-4 text-white bg-primary">
-<div class="card-body pb-0 d-flex justify-content-between align-items-start">
-<div>
-<div class="fs-4 fw-semibold">26K <span class="fs-6 fw-normal">(-12.4%
-<svg class="icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-arrow-bottom"></use>
-</svg>)</span></div>
-<div>Users</div>
-</div>
-<div class="dropdown">
-<button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<svg class="icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-options"></use>
-</svg>
-</button>
-<div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
-</div>
-</div>
-<div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
-<canvas class="chart" id="card-chart1" height="70"></canvas>
-</div>
-</div>
-</div>
-
-<div class="col-sm-6 col-lg-3">
-<div class="card mb-4 text-white bg-info">
-<div class="card-body pb-0 d-flex justify-content-between align-items-start">
-<div>
-<div class="fs-4 fw-semibold">$6.200 <span class="fs-6 fw-normal">(40.9%
-<svg class="icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-arrow-top"></use>
-</svg>)</span></div>
-<div>Income</div>
-</div>
- <div class="dropdown">
-<button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<svg class="icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-options"></use>
-</svg>
-</button>
-<div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
-</div>
-</div>
-<div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
-<canvas class="chart" id="card-chart2" height="70"></canvas>
-</div>
-</div>
-</div>
-
-<div class="col-sm-6 col-lg-3">
-<div class="card mb-4 text-white bg-warning">
-<div class="card-body pb-0 d-flex justify-content-between align-items-start">
-<div>
-<div class="fs-4 fw-semibold">2.49% <span class="fs-6 fw-normal">(84.7%
-<svg class="icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-arrow-top"></use>
-</svg>)</span></div>
-<div>Conversion Rate</div>
-</div>
-<div class="dropdown">
-<button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<svg class="icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-options"></use>
-</svg>
-</button>
-<div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
-</div>
-</div>
-<div class="c-chart-wrapper mt-3" style="height:70px;">
-<canvas class="chart" id="card-chart3" height="70"></canvas>
-</div>
-</div>
-</div>
-
-<div class="col-sm-6 col-lg-3">
-<div class="card mb-4 text-white bg-danger">
-<div class="card-body pb-0 d-flex justify-content-between align-items-start">
-<div>
-<div class="fs-4 fw-semibold">44K <span class="fs-6 fw-normal">(-23.6%
-<svg class="icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-arrow-bottom"></use>
-</svg>)</span></div>
-<div>Sessions</div>
-</div>
-<div class="dropdown">
-<button class="btn btn-transparent text-white p-0" type="button" data-coreui-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-<svg class="icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-options"></use>
-</svg>
-</button>
-<div class="dropdown-menu dropdown-menu-end"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a></div>
-</div>
-</div>
-<div class="c-chart-wrapper mt-3 mx-3" style="height:70px;">
-<canvas class="chart" id="card-chart4" height="70"></canvas>
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="card mb-4">
-<div class="card-body">
-<div class="d-flex justify-content-between">
-<div>
-<h4 class="card-title mb-0">Traffic</h4>
-<div class="small text-medium-emphasis">January - July 2022</div>
-</div>
-<div class="btn-toolbar d-none d-md-block" role="toolbar" aria-label="Toolbar with buttons">
-<div class="btn-group btn-group-toggle mx-3" data-coreui-toggle="buttons">
-<input class="btn-check" id="option1" type="radio" name="options" autocomplete="off">
-<label class="btn btn-outline-secondary"> Day</label>
-<input class="btn-check" id="option2" type="radio" name="options" autocomplete="off" checked="">
-<label class="btn btn-outline-secondary active"> Month</label>
-<input class="btn-check" id="option3" type="radio" name="options" autocomplete="off">
-<label class="btn btn-outline-secondary"> Year</label>
-</div>
-<button class="btn btn-primary" type="button">
-<svg class="icon">
-<use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-cloud-download"></use>
-</svg>
-</button>
-</div>
-</div>
-<div class="c-chart-wrapper" style="height:300px;margin-top:40px;">
-<canvas class="chart" id="main-chart" height="300"></canvas>
-</div>
-</div>
-<div class="card-footer">
-<div class="row row-cols-1 row-cols-md-5 text-center">
-<div class="col mb-sm-2 mb-0">
-<div class="text-medium-emphasis">Visits</div>
-<div class="fw-semibold">29.703 Users (40%)</div>
-<div class="progress progress-thin mt-2">
-<div class="progress-bar bg-success" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-<div class="col mb-sm-2 mb-0">
-<div class="text-medium-emphasis">Unique</div>
-<div class="fw-semibold">24.093 Users (20%)</div>
-<div class="progress progress-thin mt-2">
-<div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-<div class="col mb-sm-2 mb-0">
-<div class="text-medium-emphasis">Pageviews</div>
-<div class="fw-semibold">78.706 Views (60%)</div>
-<div class="progress progress-thin mt-2">
-<div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-<div class="col mb-sm-2 mb-0">
-<div class="text-medium-emphasis">New Users</div>
-<div class="fw-semibold">22.123 Users (80%)</div>
-<div class="progress progress-thin mt-2">
-<div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-<div class="col mb-sm-2 mb-0">
-<div class="text-medium-emphasis">Bounce Rate</div>
-<div class="fw-semibold">40.15%</div>
-<div class="progress progress-thin mt-2">
-<div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="row">
-<div class="col-sm-6 col-lg-4">
-<div class="card mb-4" style="--cui-card-cap-bg: #3b5998">
-<div class="card-header position-relative d-flex justify-content-center align-items-center">
- <svg class="icon icon-3xl text-white my-4">
-<use xlink:href="vendors/@coreui/icons/svg/brand.svg#cib-facebook-f"></use>
-</svg>
-<div class="chart-wrapper position-absolute top-0 start-0 w-100 h-100">
-<canvas id="social-box-chart-1" height="90"></canvas>
-</div>
-</div>
-<div class="card-body row text-center">
-<div class="col">
-<div class="fs-5 fw-semibold">89k</div>
-<div class="text-uppercase text-medium-emphasis small">friends</div>
-</div>
-<div class="vr"></div>
-<div class="col">
-<div class="fs-5 fw-semibold">459</div>
-<div class="text-uppercase text-medium-emphasis small">feeds</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-sm-6 col-lg-4">
-<div class="card mb-4" style="--cui-card-cap-bg: #00aced">
-<div class="card-header position-relative d-flex justify-content-center align-items-center">
-<svg class="icon icon-3xl text-white my-4">
-<use xlink:href="vendors/@coreui/icons/svg/brand.svg#cib-twitter"></use>
-</svg>
-<div class="chart-wrapper position-absolute top-0 start-0 w-100 h-100">
-<canvas id="social-box-chart-2" height="90"></canvas>
-</div>
-</div>
-<div class="card-body row text-center">
-<div class="col">
-<div class="fs-5 fw-semibold">973k</div>
-<div class="text-uppercase text-medium-emphasis small">followers</div>
-</div>
-<div class="vr"></div>
-<div class="col">
-<div class="fs-5 fw-semibold">1.792</div>
-<div class="text-uppercase text-medium-emphasis small">tweets</div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-sm-6 col-lg-4">
-<div class="card mb-4" style="--cui-card-cap-bg: #4875b4">
-<div class="card-header position-relative d-flex justify-content-center align-items-center">
-<svg class="icon icon-3xl text-white my-4">
-<use xlink:href="vendors/@coreui/icons/svg/brand.svg#cib-linkedin"></use>
-</svg>
-<div class="chart-wrapper position-absolute top-0 start-0 w-100 h-100">
-<canvas id="social-box-chart-3" height="90"></canvas>
-</div>
-</div>
-<div class="card-body row text-center">
-<div class="col">
-<div class="fs-5 fw-semibold">500+</div>
-<div class="text-uppercase text-medium-emphasis small">contacts</div>
-</div>
-<div class="vr"></div>
-<div class="col">
-<div class="fs-5 fw-semibold">292</div>
-<div class="text-uppercase text-medium-emphasis small">feeds</div>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-<div class="row">
-<div class="col-md-12">
-<div class="card mb-4">
-<div class="card-header">Traffic &amp; Sales</div>
-<div class="card-body">
-<div class="row">
-<div class="col-sm-6">
-<div class="row">
-<div class="col-6">
-<div class="border-start border-start-4 border-start-info px-3 mb-3"><small class="text-medium-emphasis">New Clients</small>
-<div class="fs-5 fw-semibold">9.123</div>
- </div>
-</div>
-
-<div class="col-6">
-<div class="border-start border-start-4 border-start-danger px-3 mb-3"><small class="text-medium-emphasis">Recuring Clients</small>
-<div class="fs-5 fw-semibold">22.643</div>
-</div>
-</div>
-
-</div>
-
-<hr class="mt-0">
-<div class="progress-group mb-4">
-<div class="progress-group-prepend"><span class="text-medium-emphasis small">Monday</span></div>
-<div class="progress-group-bars">
-<div class="progress progress-thin">
-<div class="progress-bar bg-info" role="progressbar" style="width: 34%" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="progress progress-thin">
-<div class="progress-bar bg-danger" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-</div>
-<div class="progress-group mb-4">
-<div class="progress-group-prepend"><span class="text-medium-emphasis small">Tuesday</span></div>
-<div class="progress-group-bars">
-<div class="progress progress-thin">
-<div class="progress-bar bg-info" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="progress progress-thin">
-<div class="progress-bar bg-danger" role="progressbar" style="width: 94%" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-</div>
-<div class="progress-group mb-4">
-<div class="progress-group-prepend"><span class="text-medium-emphasis small">Wednesday</span></div>
-<div class="progress-group-bars">
-<div class="progress progress-thin">
-<div class="progress-bar bg-info" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="progress progress-thin">
-<div class="progress-bar bg-danger" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-</div>
-<div class="progress-group mb-4">
-<div class="progress-group-prepend"><span class="text-medium-emphasis small">Thursday</span></div>
-<div class="progress-group-bars">
-<div class="progress progress-thin">
-<div class="progress-bar bg-info" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="progress progress-thin">
-<div class="progress-bar bg-danger" role="progressbar" style="width: 91%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-</div>
-<div class="progress-group mb-4">
-<div class="progress-group-prepend"><span class="text-medium-emphasis small">Friday</span></div>
-<div class="progress-group-bars">
-<div class="progress progress-thin">
-<div class="progress-bar bg-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="progress progress-thin">
-<div class="progress-bar bg-danger" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-</div>
-<div class="progress-group mb-4">
-<div class="progress-group-prepend"><span class="text-medium-emphasis small">Saturday</span></div>
-<div class="progress-group-bars">
-<div class="progress progress-thin">
-<div class="progress-bar bg-info" role="progressbar" style="width: 53%" aria-valuenow="53" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="progress progress-thin">
-<div class="progress-bar bg-danger" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-</div>
-<div class="progress-group mb-4">
-<div class="progress-group-prepend"><span class="text-medium-emphasis small">Sunday</span></div>
-<div class="progress-group-bars">
-<div class="progress progress-thin">
-<div class="progress-bar bg-info" role="progressbar" style="width: 9%" aria-valuenow="9" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-<div class="progress progress-thin">
-<div class="progress-bar bg-danger" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100"></div>
-</div>
-</div>
-</div>
-</div>
-
-<div class="col-sm-6">
-<div class="row">
-<div class="col-6">
-<div class="border-start border-start-4 border-start-warning px-3 mb-3"><small class="text-medium-emphasis">Pageviews</small>
-<div class="fs-5 fw-semibold">78.623</div>
-</div>
-</div>
-
-<div class="col-6">
-<div class="border-start border-start-4 border-start-success px-3 mb-3"><small class="text-medium-emphasis">Organic</small>
-<div class="fs-5 fw-semibold">49.123</div>
-</div>
-</div>
-
-</div>
-
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-
-<script src="/frontend/js/coreui.bundle.min.js"></script>
-<script src="vendors/simplebar/js/simplebar.min.js"></script>
-
-<script src="vendors/chart.js/js/chart.min.js"></script>
-<script src="vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
-<script src="vendors/@coreui/utils/js/coreui-utils.js"></script>
-<script src="js/main.js"></script>
-<script>
-    </script>
-</body>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Stellar Admin</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="/frontend/css/simple-line-icons.css">
+    <link rel="stylesheet" href="/frontend/css/flag-icon.min.css">
+    <link rel="stylesheet" href="/frontend/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="/frontend/css/daterangepicker.css">
+    <link rel="stylesheet" href="/frontend/css/chartist.min.css">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <!-- endinject -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="/frontend/css/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="/images/logo.png" />
+  </head>
+  <body>
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+        <div class="navbar-brand-wrapper d-flex align-items-center">
+          <a class="navbar-brand brand-logo" href="admindashboard">
+            <img src="/images/logo.png" alt="logo" class="logo-dark" />
+          </a>
+          <a class="navbar-brand brand-logo-mini" href="admindashboard"><img src="images/logo-mini.svg" alt="logo" /></a>
+        </div>
+        <div class="navbar-menu-wrapper d-flex align-items-center flex-grow-1">
+          <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Welcome Admin!</h5>
+          <ul class="navbar-nav navbar-nav-right ml-auto">
+            <form class="search-form d-none d-md-block" action="#">
+              <i class="icon-magnifier"></i>
+              <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+            </form>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="icon-basket-loaded"></i></a></li>
+            <li class="nav-item"><a href="#" class="nav-link"><i class="icon-chart"></i></a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link count-indicator message-dropdown" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <i class="icon-speech"></i>
+                <span class="count">7</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
+                <a class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-left">You have 7 unread mails </p>
+                  <span class="badge badge-pill badge-primary float-right">View all</span>
+                </a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="images/faces/face10.jpg" alt="image" class="img-sm profile-pic">
+                  </div>
+                  <div class="preview-item-content flex-grow py-2">
+                    <p class="preview-subject ellipsis font-weight-medium text-dark">Marian Garner </p>
+                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="images/faces/face12.jpg" alt="image" class="img-sm profile-pic">
+                  </div>
+                  <div class="preview-item-content flex-grow py-2">
+                    <p class="preview-subject ellipsis font-weight-medium text-dark">David Grey </p>
+                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
+                  </div>
+                </a>
+                <a class="dropdown-item preview-item">
+                  <div class="preview-thumbnail">
+                    <img src="images/faces/face1.jpg" alt="image" class="img-sm profile-pic">
+                  </div>
+                  <div class="preview-item-content flex-grow py-2">
+                    <p class="preview-subject ellipsis font-weight-medium text-dark">Travis Jenkins </p>
+                    <p class="font-weight-light small-text"> The meeting is cancelled </p>
+                  </div>
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown language-dropdown d-none d-sm-flex align-items-center">
+              <a class="nav-link d-flex align-items-center dropdown-toggle" id="LanguageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <div class="d-inline-flex mr-3">
+                  <i class="flag-icon flag-icon-us"></i>
+                </div>
+                <span class="profile-text font-weight-normal">English</span>
+              </a>
+              <div class="dropdown-menu dropdown-menu-left navbar-dropdown py-2" aria-labelledby="LanguageDropdown">
+                <a class="dropdown-item">
+                  <i class="flag-icon flag-icon-us"></i> English </a>
+                <a class="dropdown-item">
+                  <i class="flag-icon flag-icon-fr"></i> French </a>
+                <a class="dropdown-item">
+                  <i class="flag-icon flag-icon-ae"></i> Arabic </a>
+                <a class="dropdown-item">
+                  <i class="flag-icon flag-icon-ru"></i> Russian </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
+              <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
+                <img class="img-xs rounded-circle ml-2" src="images/faces/face8.jpg" alt="Profile image"> <span class="font-weight-normal"> Henry Klein </span></a>
+              <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
+                <div class="dropdown-header text-center">
+                  <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
+                  <p class="mb-1 mt-3">Allen Moreno</p>
+                  <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
+                </div>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-user text-primary"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-speech text-primary"></i> Messages</a>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-energy text-primary"></i> Activity</a>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-question text-primary"></i> FAQ</a>
+                <a class="dropdown-item"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
+              </div>
+            </li>
+          </ul>
+          <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button" data-toggle="offcanvas">
+            <span class="icon-menu"></span>
+          </button>
+        </div>
+      </nav>
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <nav class="sidebar sidebar-offcanvas" id="sidebar">
+          <ul class="nav">
+            <li class="nav-item nav-profile">
+              <a href="#" class="nav-link">
+                <div class="profile-image">
+                  <img class="img-xs rounded-circle" src="images/faces/face8.jpg" alt="profile image">
+                  <div class="dot-indicator bg-success"></div>
+                </div>
+                <div class="text-wrapper">
+                  <p class="profile-name">Allen Moreno</p>
+                  <p class="designation">Administrator</p>
+                </div>
+                <div class="icon-container">
+                  <i class="icon-bubbles"></i>
+                  <div class="dot-indicator bg-danger"></div>
+                </div>
+              </a>
+            </li>
+            <li class="nav-item nav-category">
+              <span class="nav-link">Dashboard</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">
+                <span class="menu-title">Dashboard</span>
+                <i class="icon-screen-desktop menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-category"><span class="nav-link">UI Elements</span></li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+                <span class="menu-title">Basic UI Elements</span>
+                <i class="icon-layers menu-icon"></i>
+              </a>
+              <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/icons/simple-line-icons.html">
+                <span class="menu-title">Icons</span>
+                <i class="icon-globe menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/forms/basic_elements.html">
+                <span class="menu-title">Form Elements</span>
+                <i class="icon-book-open menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/charts/chartist.html">
+                <span class="menu-title">Charts</span>
+                <i class="icon-chart menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/tables/basic-table.html">
+                <span class="menu-title">Tables</span>
+                <i class="icon-grid menu-icon"></i>
+              </a>
+            </li>
+            <li class="nav-item nav-category"><span class="nav-link">Sample Pages</span></li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+                <span class="menu-title">General Pages</span>
+                <i class="icon-doc menu-icon"></i>
+              </a>
+              <div class="collapse" id="auth">
+                <ul class="nav flex-column sub-menu">
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html"> Register </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-404.html"> 404 </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/error-500.html"> 500 </a></li>
+                  <li class="nav-item"> <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item pro-upgrade">
+              <span class="nav-link">
+                <a class="btn btn-block px-0 btn-rounded btn-upgrade" href="https://www.bootstrapdash.com/product/stellar-admin-template/" target="_blank"> <i class="icon-badge mx-2"></i> Upgrade to Pro</a>
+              </span>
+            </li>
+          </ul>
+        </nav>
+        <!-- partial -->
+        <div class="main-panel">
+          <div class="content-wrapper">
+            <div class="row purchace-popup">
+              <div class="col-12 stretch-card grid-margin">
+                <div class="card card-secondary">
+                  <span class="card-body d-lg-flex align-items-center">
+                    <p class="mb-lg-0">Get tons of UI components, Plugins, multiple layouts, 20+ sample pages, and more! </p>
+                    <a href="https://www.bootstrapdash.com/product/stellar-admin/?utm_source=organic&utm_medium=banner&utm_campaign=free-preview" target="_blank" class="btn btn-warning purchase-button btn-sm my-1 my-sm-0 ml-auto">Upgrade To Pro</a>
+                    <button class="close popup-dismiss ml-2">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h4 class="card-title">Sessions by channel</h4>
+                    <div class="aligner-wrapper">
+                      <canvas id="sessionsDoughnutChart" height="210"></canvas>
+                      <div class="wrapper d-flex flex-column justify-content-center absolute absolute-center">
+                        <h2 class="text-center mb-0 font-weight-bold">8.234</h2>
+                        <small class="d-block text-center text-muted  font-weight-semibold mb-0">Total Leads</small>
+                      </div>
+                    </div>
+                    <div class="wrapper mt-4 d-flex flex-wrap align-items-cente">
+                      <div class="d-flex">
+                        <span class="square-indicator bg-danger ml-2"></span>
+                        <p class="mb-0 ml-2">Assigned</p>
+                      </div>
+                      <div class="d-flex">
+                        <span class="square-indicator bg-success ml-2"></span>
+                        <p class="mb-0 ml-2">Not Assigned</p>
+                      </div>
+                      <div class="d-flex">
+                        <span class="square-indicator bg-warning ml-2"></span>
+                        <p class="mb-0 ml-2">Reassigned</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-8 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body performane-indicator-card">
+                    <div class="d-sm-flex">
+                      <h4 class="card-title flex-shrink-1">Performance Indicator</h4>
+                      <p class="m-sm-0 ml-sm-auto flex-shrink-0">
+                        <span class="data-time-range ml-0">7d</span>
+                        <span class="data-time-range active">2w</span>
+                        <span class="data-time-range">1m</span>
+                        <span class="data-time-range">3m</span>
+                        <span class="data-time-range">6m</span>
+                      </p>
+                    </div>
+                    <div class="d-sm-flex flex-wrap">
+                      <div class="d-flex align-items-center">
+                        <span class="dot-indicator bg-primary ml-2"></span>
+                        <p class="mb-0 ml-2 text-muted font-weight-semibold">Complaints (2098)</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="dot-indicator bg-info ml-2"></span>
+                        <p class="mb-0 ml-2 text-muted font-weight-semibold"> Task Done (1123)</p>
+                      </div>
+                      <div class="d-flex align-items-center">
+                        <span class="dot-indicator bg-danger ml-2"></span>
+                        <p class="mb-0 ml-2 text-muted font-weight-semibold">Attends (876)</p>
+                      </div>
+                    </div>
+                    <div id="performance-indicator-chart" class="ct-chart mt-4"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Quick Action Toolbar Starts-->
+            <div class="row quick-action-toolbar">
+              <div class="col-md-12 grid-margin">
+                <div class="card">
+                  <div class="card-header d-block d-md-flex">
+                    <h5 class="mb-0">Quick Actions</h5>
+                    <p class="ml-auto mb-0">How are your active users trending overtime?<i class="icon-bulb"></i></p>
+                  </div>
+                  <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
+                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <button type="button" class="btn px-0"> <i class="icon-user mr-2"></i> Add Client</button>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <button type="button" class="btn px-0"><i class="icon-docs mr-2"></i> Create Quote</button>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <button type="button" class="btn px-0"><i class="icon-folder mr-2"></i> Enter Payment</button>
+                    </div>
+                    <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <button type="button" class="btn px-0"><i class="icon-book-open mr-2"></i>Create Invoice</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Quick Action Toolbar Ends-->
+            <div class="row">
+              <div class="col-md-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="d-sm-flex align-items-baseline report-summary-header">
+                          <h5 class="font-weight-semibold">Report Summary</h5> <span class="ml-auto">Updated Report</span> <button class="btn btn-icons border-0 p-2"><i class="icon-refresh"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row report-inner-cards-wrapper">
+                      <div class=" col-md -6 col-xl report-inner-card">
+                        <div class="inner-card-text">
+                          <span class="report-title">EXPENSE</span>
+                          <h4>$32123</h4>
+                          <span class="report-count"> 2 Reports</span>
+                        </div>
+                        <div class="inner-card-icon bg-success">
+                          <i class="icon-rocket"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl report-inner-card">
+                        <div class="inner-card-text">
+                          <span class="report-title">PURCHASE</span>
+                          <h4>95,458</h4>
+                          <span class="report-count"> 3 Reports</span>
+                        </div>
+                        <div class="inner-card-icon bg-danger">
+                          <i class="icon-briefcase"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl report-inner-card">
+                        <div class="inner-card-text">
+                          <span class="report-title">QUANTITY</span>
+                          <h4>2650</h4>
+                          <span class="report-count"> 5 Reports</span>
+                        </div>
+                        <div class="inner-card-icon bg-warning">
+                          <i class="icon-globe-alt"></i>
+                        </div>
+                      </div>
+                      <div class="col-md-6 col-xl report-inner-card">
+                        <div class="inner-card-text">
+                          <span class="report-title">RETURN</span>
+                          <h4>25,542</h4>
+                          <span class="report-count"> 9 Reports</span>
+                        </div>
+                        <div class="inner-card-icon bg-primary">
+                          <i class="icon-diamond"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 grid-margin">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="row income-expense-summary-chart-text">
+                      <div class="col-xl-4">
+                        <h5>Income And Expenses Summary</h5>
+                        <p class="small text-muted">A comparison of people who mark themselves of their ineterest from the date range given above. Learn more.</p>
+                      </div>
+                      <div class=" col-md-3 col-xl-2">
+                        <p class="income-expense-summary-chart-legend"> <span style="border-color: #6469df"></span> Total Income </p>
+                        <h3>$ 1,766.00</h3>
+                      </div>
+                      <div class="col-md-3 col-xl-2">
+                        <p class="income-expense-summary-chart-legend"> <span style="border-color: #37ca32"></span> Total Expense </p>
+                        <h3>$ 5,698.30</h3>
+                      </div>
+                      <div class="col-md-6 col-xl-4 d-flex align-items-center">
+                        <div class="input-group" id="income-expense-summary-chart-daterange">
+                          <div class="inpu-group-prepend input-group-text"><i class="icon-calendar"></i></div>
+                          <input type="text" class="form-control">
+                          <div class="input-group-prepend input-group-text"><i class="icon-arrow-down"></i></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row income-expense-summary-chart mt-3">
+                      <div class="col-md-12">
+                        <div class="ct-chart" id="income-expense-summary-chart"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <div class="d-sm-flex align-items-center mb-4">
+                      <h4 class="card-title mb-sm-0">Products Inventory</h4>
+                      <a href="#" class="text-dark ml-auto mb-3 mb-sm-0"> View all Products</a>
+                    </div>
+                    <div class="table-responsive border rounded p-1">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <th class="font-weight-bold">Store ID</th>
+                            <th class="font-weight-bold">Amount</th>
+                            <th class="font-weight-bold">Gateway</th>
+                            <th class="font-weight-bold">Created at</th>
+                            <th class="font-weight-bold">Paid at</th>
+                            <th class="font-weight-bold">Status</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face1.jpg" alt="profile image"> Katie Holmes
+                            </td>
+                            <td>$3621</td>
+                            <td><img src="images/dashboard/alipay.png" alt="alipay" class="gateway-icon mr-2"> alipay</td>
+                            <td>04 Jun 2019</td>
+                            <td>18 Jul 2019</td>
+                            <td>
+                              <div class="badge badge-success p-2">Paid</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face2.jpg" alt="profile image"> Minnie Copeland
+                            </td>
+                            <td>$6245</td>
+                            <td><img src="images/dashboard/paypal.png" alt="alipay" class="gateway-icon mr-2"> Paypal</td>
+                            <td>25 Sep 2019</td>
+                            <td>07 Oct 2019</td>
+                            <td>
+                              <div class="badge badge-danger p-2">Pending</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face3.jpg" alt="profile image"> Rodney Sims
+                            </td>
+                            <td>$9265</td>
+                            <td><img src="images/dashboard/alipay.png" alt="alipay" class="gateway-icon mr-2"> alipay</td>
+                            <td>12 dec 2019</td>
+                            <td>26 Aug 2019</td>
+                            <td>
+                              <div class="badge badge-warning p-2">Failed</div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <img class="img-sm rounded-circle" src="images/faces/face4.jpg" alt="profile image"> Carolyn Barker
+                            </td>
+                            <td>$2263</td>
+                            <td><img src="images/dashboard/alipay.png" alt="alipay" class="gateway-icon mr-2"> alipay</td>
+                            <td>30 Sep 2019</td>
+                            <td>20 Oct 2019</td>
+                            <td>
+                              <div class="badge badge-success p-2">Paid</div>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <div class="d-flex mt-4 flex-wrap">
+                      <p class="text-muted">Showing 1 to 10 of 57 entries</p>
+                      <nav class="ml-auto">
+                        <ul class="pagination separated pagination-info">
+                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-left"></i></a></li>
+                          <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                          <li class="page-item"><a href="#" class="page-link">2</a></li>
+                          <li class="page-item"><a href="#" class="page-link">3</a></li>
+                          <li class="page-item"><a href="#" class="page-link">4</a></li>
+                          <li class="page-item"><a href="#" class="page-link"><i class="icon-arrow-right"></i></a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © bootstrapdash.com 2020</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> Free <a href="https://www.bootstrapdash.com/bootstrap-admin-template/" target="_blank">Bootstrap admin templates</a> from Bootstrapdash.com</span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="/frontend/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="/frontend/js/Chart.min.js"></script>
+    <script src="/frontend/js/moment.min.js"></script>
+    <script src="/frontend/js/daterangepicker.js"></script>
+    <script src="/frontend/js/chartist.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="/frontend/js/off-canvas.js"></script>
+    <script src="/frontend/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="/frontend/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+  </body>
 </html>
