@@ -39,7 +39,7 @@
                 <div class="form-group">
                   <input type="checkbox" name="remember">
                   <label for="remember-me" class="remember-me">Remember me</label>
-                  <a href="forgotpass" class="forgot-pass">Forgot password?</a>
+                  <a href="forgotAdmin" class="forgot-pass">Forgot password?</a>
               </div>
 
                       <div class="field button">
