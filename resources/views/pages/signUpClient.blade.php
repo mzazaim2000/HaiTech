@@ -27,7 +27,7 @@
                       <h1>Sign Up</h1>
                       <h5>Create your account now!</h5>
                      
-                      <form method="get" action="login">
+                      <form method="" action="login">
                         @csrf
                     
                           <div class="field input-field">

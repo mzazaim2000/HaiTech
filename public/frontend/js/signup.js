@@ -19,9 +19,30 @@
            })
        })      
 
-       links.forEach(link => {
-       link.addEventListener("click", e => {
-       e.preventDefault(); //preventing form submit
-       forms.classList.toggle("show-signup");
+     
+       signUp.addEventListener("click", e => {
+
+        var fname = document.getElementsByName('fname').value;
+        var lname = document.getElementsByName('lname').value;
+        var email = document.getElementsByName('email').value;
+        var contact = document.getElementsByName('contact').value;
+        var password = document.getElementsByName('password').value;
+    
+
+        createUserWithEmailAndPassword(auth, fname, lname, email, contact, password)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+
+          alert('errorMessage');
+         
+          // ..
+        });
        })
-   })
+       
+
