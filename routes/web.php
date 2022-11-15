@@ -54,11 +54,11 @@ Route::get('/resetClient', function () {
     return view('pages/resetclientPassword');
 });
 
-Route::get('/clientdashboard', function () {
-    return view('pages/clientDashboard');
+Route::get('/admindashboard', function () {
+    return view('pages/adminDashboard');
 });
 
-Route::get('/updateprofileAdmin', function () {
+Route::get('/updateprofileClient', function () {
     return view('pages/updateProfile');
 });
 
