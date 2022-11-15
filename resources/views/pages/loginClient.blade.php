@@ -28,7 +28,7 @@
             <div class="form login">
                 <div class="form-content">
                     
-                    <img src="images/logo.png" alt="" class="logo-img">
+                    <img src="images/haibro.png" alt="" class="logo-img">
                     <form action="index">
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">
