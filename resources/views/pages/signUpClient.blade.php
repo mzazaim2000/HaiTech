@@ -27,11 +27,11 @@
                       <h1>Sign Up</h1>
                       <h5>Create your account now!</h5>
                      
-                      <form method="post" action="login">
+                      <form method="get" action="login">
                         @csrf
                         @method('put')
                           <div class="field input-field">
-                              <input type="text" placeholder="Firstname" class="form-control" id=fname>
+                              <input type="text" placeholder="Firstname" class="form-control" name=fname>
                           </div>
 
                           <div class="field input-field">

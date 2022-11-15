@@ -41,10 +41,7 @@
             </div>
             <!--<a class="cta" href="#"><button>User</button></a>-->
          </header>
-     
-      <div>
-        @yield('content')
-      </div>
+    
 
       <script src=" {{ asset('frontend/js/jquery-3.6.1.min.js') }}"></script>
       <script src=" {{ asset('frontend/js/bootstrap5.bundle.js') }}"></script>
