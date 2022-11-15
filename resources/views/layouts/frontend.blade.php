@@ -57,7 +57,7 @@
           User
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="updateprofileAdmin">Profile</a>
+          <a class="dropdown-item" href="updateprofileClient">Profile</a>
           <a class="dropdown-item" href="#">All services</a>
           <a class="dropdown-item" href="login">Logout</a>
         </div>
