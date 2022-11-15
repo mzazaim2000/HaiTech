@@ -25,7 +25,7 @@
                 <img src="images/logo.png" alt="" class="logo-img">
                 <header>Admin Login</header>
                  
-                  <form action="#">
+                  <form action="admindashboard">
                       <div class="field input-field">
                           <input type="email" placeholder="Email" class="input">
                       </div>

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CustomAuthController;
-use App\Models\User;
+use App\Http\Controllers\AuthController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ Route::get('/', function () {
 });
 
 Route::get('/index', function () {
-    return view('index');
+    return view('layouts/frontend');
 });
 
 Route::get('/login', function () {
@@ -31,19 +31,8 @@ Route::get('/signUp', function () {
     return view('pages/signUpClient');
 });
 
-//Route::view('signup','pages/signUpClient');
-Route::post('DataInsert',[CustomAuthController::class,'DataInsert']);
-// Route::get('/signup', function(){
-//     User::create([
-//         'firstname'=>request('fname'),
-//         'surname'=>request('lname'),
-//         'email'=>request('email'),
-//         'contact'=>request('contact'),
-//         'password'=>request('password')
-//     ]);
-
-// });
-//Route::post('signup', 'CustomAuthController@create');
+Route::get('/login',[AuthController::class,'store']);
+Route::view('signup');
 
 Route::get('/loginAdmin', function () {
     return view('pages/loginAdmin');
@@ -67,10 +56,6 @@ Route::get('/resetClient', function () {
 
 Route::get('/admindashboard', function () {
     return view('pages/adminDashboard');
-});
-
-Route::get('/clientdashboard', function () {
-    return view('layouts/frontend');
 });
 
 
