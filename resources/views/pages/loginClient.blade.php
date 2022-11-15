@@ -19,7 +19,7 @@
     <body>
     
         <div class="top-container">
-        <br><a href="loginAdmin" class="admin-login">
+        <a href="loginAdmin" class="admin-login">
         <button><img src="images/user.png" alt="" class="user-img"> Login as Admin</button>
         </a>
         </div>
@@ -61,13 +61,13 @@
                     </div>
                 </div>
 
-                <div class="line"></div>
+                {{-- <div class="line"></div>
                 <div class="media-options">
                     <a href="#" class="field google">
                         <img src="images/google.png" alt="" class="google-img">
                         <span>Continue with Google</span>
                     </a>
-                </div>
+                </div> --}}
             </div>
         </section>
 

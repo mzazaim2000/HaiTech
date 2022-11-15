@@ -47,12 +47,12 @@
                         </div>
 
                         <div class="field input-field">
-                            <input type="password" placeholder="New password" class="form-control" name="password">
+                            <input type="password" placeholder="New password" class="password" name="password">
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
 
                         <div class="field input-field">
-                          <input type="password" placeholder="Confirm password" class="form-control" id="cpass">
+                          <input type="password" placeholder="Confirm password" class="password" id="cpass">
                           <i class='bx bx-hide eye-icon'></i>
                         </div>
 
@@ -69,28 +69,4 @@
 
      <!--Javascript-->
      <script src="/frontend/js/signup.js"></script>
-     <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
-      import { getDatabase } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
-      import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-    
-      // Your web app's Firebase configuration
-      const firebaseConfig = {
-        apiKey: "AIzaSyCBtFJsUjqBMW7wZ5a9Gll9caV8NRiejtk",
-        authDomain: "haitech-abee6.firebaseapp.com",
-        databaseURL: "https://haitech-abee6-default-rtdb.firebaseio.com",
-        projectId: "haitech-abee6",
-        storageBucket: "haitech-abee6.appspot.com",
-        messagingSenderId: "854610689870",
-        appId: "1:854610689870:web:2a81c69979fee7e729e81f"
-      };
-    
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const database = getDatabase(app);
-      const auth = getAuth();
-    </script>
