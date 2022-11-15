@@ -16,7 +16,6 @@
         <!-- End layout styles -->
         <link rel="shortcut icon" href="/images/logo.png" />                          
     </head>
-    <body>
   
         <section class="black">
             <section class="container">
