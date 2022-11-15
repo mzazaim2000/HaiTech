@@ -16,7 +16,7 @@ use App\Http\Controllers\AuthController;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('layouts/frontend');
 });
 
 Route::get('/index', function () {
@@ -27,9 +27,11 @@ Route::get('/login', function () {
     return view('pages/loginClient');
 });
 
-Route::get('/signup', function () {
+Route::view('/signup', function () {
     return view('pages/signUpClient');
 });
+
+Route::get('/signup',[AuthController::class,'store']);
 
 
 Route::get('/loginAdmin', function () {
