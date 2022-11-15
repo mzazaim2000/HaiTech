@@ -13,7 +13,7 @@
 <div class="container-xl px-4 mt-4">
   <!-- Account page navigation-->
   <nav class="nav nav-borders">
-      <a class="nav-link active ms-0" href="https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details" target="__blank">Profile</a>
+      <a class="nav-link active ms-0" href="index">Profile</a>
   </nav>
   <hr class="mt-0 mb-4">
   <div class="row">
@@ -37,7 +37,7 @@
           <div class="card mb-4">
               <div class="card-header">Account Details</div>
               <div class="card-body">
-                  <form>
+                  <form action="/">
                       <!-- Form Group (username)
                       <div class="mb-3">
                           <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
