@@ -69,7 +69,7 @@
 
        <!--Javascript-->
        <script src="/frontend/js/signup.js"></script>
-       <script type="module">
+       {{-- <script type="module">
         // Import the functions you need from the SDKs you need
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
         import { getDatabase } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-database.js";
@@ -92,5 +92,5 @@
         // Initialize Firebase
         const app = initializeApp(firebaseConfig);
         const database = getDatabase(app);
-        const auth = getAuth();
+        const auth = getAuth(); --}}
       </script>
