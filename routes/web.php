@@ -31,7 +31,7 @@ Route::view('/signup', function () {
     return view('pages/signUpClient');
 });
 
-Route::post('/signup',[AuthController::class,'store']);
+//Route::post('/signup',[AuthController::class,'store']);
 
 
 Route::get('/loginAdmin', function () {
