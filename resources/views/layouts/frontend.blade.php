@@ -17,26 +17,55 @@
 
     <body>
          <header>
-            <img class="logo" src="/images/haibro.png" alt="logo">
-            <nav>
-              <ul class="nav__links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Project</a></li>
-                <li><a href="#">Clients</a></li>
-                <li><a href="#">About us</a></li>
-                <li><a href="#">Contact us</a></li>
-              </ul>
-            </nav>
 
-            <div class="dropdown">
-              <button class="dropbtn">User</button>
-              <div class="dropdown-content">
-                <a href="#">Profile</a>
-                <a href="#">All services</a>
-                <a href="#">Logout</a>
-              </div>
-            </div>
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+
+      <img src="images/haibro.png" alt="" class="haibro-img">
+    </a>
+    <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+      data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+      </form>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#"><b>Services</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Clients</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact us</a>
+        </li>
+      </ul>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          User
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="#">All services</a>
+          <a class="dropdown-item" href="#">Logout</a>
+        </div>
+      </li>
+      </ul>
+    </div>
+  </div>
+</nav>
          </header>
      
       <!--<div>
@@ -48,3 +77,4 @@
 
     </body>
 </html>
+
