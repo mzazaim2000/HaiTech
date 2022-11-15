@@ -27,14 +27,9 @@ Route::get('/login', function () {
     return view('pages/loginClient');
 });
 
-// Route::get('/signUp', function () {
-//     return view('pages/signUpClient');
-// });
-
-// Route::view('signup');
-Route::post('/login',[AuthController::class,'store']);
-Route::put('/login',[AuthController::class,'store']);
-
+Route::get('/signUp', function () {
+    return view('pages/signUpClient');
+});
 
 
 Route::get('/loginAdmin', function () {
