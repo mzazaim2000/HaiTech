@@ -8,7 +8,7 @@
           <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
           <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
           <link rel="stylesheet" href="{{ asset('frontend/css/loginadmin.css') }}">
-          <link rel="stylesheet" href="{{ asset('/frontend/css/profile.css') }}">  
+          <link rel="stylesheet" href="{{ asset('/frontend/css/frontend.css') }}">  
           <link rel="stylesheet" href="{{ asset('/frontend/css/frontend2.css') }}">
   </head>  
 
