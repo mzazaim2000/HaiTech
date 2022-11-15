@@ -1,69 +1,18 @@
 <head>     
   <title> HaiTech</title>
   <link rel="shortcut icon" href="/images/logo.png" />    
-  <link rel="shortcut icon" href="/images/logo.png" />    
      <!-- CSS -->
-        <meta name="viewpoint" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/css/loginadmin.css') }}">
         <link rel="stylesheet" href="{{ asset('/frontend/css/profile.css') }}">  
-        <link rel="stylesheet" href="{{ asset('frontend/css/frontend.css') }}">
 </head>   
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-        
-              <img src="images/haibro.png" alt="" class="haibro-img">
-            </a>
-            <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
-              data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-              aria-label="Toggle navigation">
-              <i class="fas fa-bars"></i>
-            </button>
-              </form>
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link" href="#"><b>Home</b></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Services</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Project</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Clients</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">About us</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Contact us</a>
-                </li>
-              </ul>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  User
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="updateprofileClient">Profile</a>
-                  <a class="dropdown-item" href="#">All services</a>
-                  <a class="dropdown-item" href="login">Logout</a>
-                </div>
-              </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-    </header>   
 <div class="container-xl px-4 mt-4">
-  <!-- Account page navigation
+  <!-- Account page navigation-->
   <nav class="nav nav-borders">
       <a class="nav-link active ms-0" href="https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details" target="__blank">Profile</a>
-  </nav> -->
+  </nav>
   <hr class="mt-0 mb-4">
   <div class="row">
       <div class="col-xl-4">
@@ -129,12 +78,12 @@
                               <label class="small mb-1" for="inputPhone">Mobile number</label>
                               <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="011-2321109">
                           </div>
-                          <!-- Form Group (birthday)-->\
+                          <!-- Form Group (birthday)
                           <div class="col-md-6" class="field input-field">
                               <label class="small mb-1"  for="inputPassword">Password</label>
                               <input type="password" class="form-control" id="inputPassword" placeholder="Enter new password" value="1234">
                               <i class="bx bx-hide eye-icon"></i>
-                          </div>
+                          </div>-->
                       </div>
                       <!-- Save changes button-->
                       <button class="btn btn-primary" type="button">Save changes</button>
@@ -146,6 +95,4 @@
 </div>
         <!--Javascript-->
         <script src="/frontend/js/loginclient.js"></script>
-        <script src=" {{ asset('frontend/js/jquery-3.6.1.min.js') }}"></script>
-        <script src=" {{ asset('frontend/js/bootstrap5.bundle.js') }}"></script>
 </body>
