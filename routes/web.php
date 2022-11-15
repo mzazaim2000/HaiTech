@@ -27,7 +27,7 @@ Route::get('/login', function () {
     return view('pages/loginClient');
 });
 
-Route::get('/signUp', function () {
+Route::get('/signupClient', function () {
     return view('pages/signUpClient');
 });
 
