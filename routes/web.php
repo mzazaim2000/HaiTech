@@ -27,12 +27,15 @@ Route::get('/login', function () {
     return view('pages/loginClient');
 });
 
-Route::get('/signUp', function () {
-    return view('pages/signUpClient');
-});
+// Route::get('/signUp', function () {
+//     return view('pages/signUpClient');
+// });
 
-Route::get('/login',[AuthController::class,'store']);
-Route::view('signup');
+// Route::view('signup');
+Route::post('/login',[AuthController::class,'store']);
+Route::put('/login',[AuthController::class,'store']);
+
+
 
 Route::get('/loginAdmin', function () {
     return view('pages/loginAdmin');

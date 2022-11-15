@@ -23,11 +23,13 @@
                   <div class="form-content">
                     <br><br>
                       <img src="images/logo.png" alt="" class="logo-img">
+                     
                       <h1>Sign Up</h1>
                       <h5>Create your account now!</h5>
-                      @csrf
-                      <form method="get" action="login">
-                       
+                     
+                      <form method="post" action="login">
+                        @csrf
+                        @method('put')
                           <div class="field input-field">
                               <input type="text" placeholder="Firstname" class="form-control" id=fname>
                           </div>
