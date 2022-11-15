@@ -3,7 +3,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> HaiTech </title>
+        <title> HaiBro </title>
 
         <!-- CSS -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -28,7 +28,7 @@
             <div class="form login">
                 <div class="form-content">
                     
-                    <img src="images/logo.png" alt="" class="logo-img">
+                    <img src="images/haibro.png" alt="" class="logo-img">
                     <form action="index">
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">

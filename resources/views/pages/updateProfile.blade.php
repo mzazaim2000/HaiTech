@@ -1,6 +1,6 @@
 <head> 
     
-  <title> HaiTech</title>
+  <title> HaiBro</title>
   <link rel="shortcut icon" href="/images/logo.png" />    
      <!-- CSS -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,7 +13,7 @@
 <div class="container-xl px-4 mt-4">
   <!-- Account page navigation-->
   <nav class="nav nav-borders">
-      <a class="nav-link active ms-0" href="index">Profile</a>
+      <a class="nav-link active ms-0" href="https://www.bootdey.com/snippets/view/bs5-edit-profile-account-details" target="__blank">Profile</a>
   </nav>
   <hr class="mt-0 mb-4">
   <div class="row">
@@ -37,7 +37,7 @@
           <div class="card mb-4">
               <div class="card-header">Account Details</div>
               <div class="card-body">
-                  <form action="/">
+                  <form>
                       <!-- Form Group (username)
                       <div class="mb-3">
                           <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
@@ -48,12 +48,12 @@
                           <!-- Form Group (first name)-->
                           <div class="col-md-6">
                               <label class="small mb-1" for="inputFirstName">First name</label>
-                              <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Zuhair">
+                              <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="John">
                           </div>
                           <!-- Form Group (last name)-->
                           <div class="col-md-6">
                               <label class="small mb-1" for="inpuSurname">Surname</label>
-                              <input class="form-control" id="inputSurname" type="text" placeholder="Enter your last name" value="Aza'im">
+                              <input class="form-control" id="inputSurname" type="text" placeholder="Enter your last name" value="Doe">
                           </div>
                       </div>
                       <!-- Form Row        -->
@@ -72,7 +72,7 @@
                       <!-- Form Group (email address)-->
                       <div class="mb-3">
                           <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                          <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                          <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="john@gmail.com">
                       </div>
                       <!-- Form Row-->
                       <div class="row gx-3 mb-3">
