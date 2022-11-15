@@ -67,6 +67,10 @@ Route::get('/updateprofileClient', function () {
     return view('pages/updateProfile');
 });
 
+Route::get('/navbar', function () {
+    return view('pages/frontend2');
+});
+
 
 
 

@@ -9,7 +9,8 @@
       <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
       <link rel="stylesheet" href="{{ asset('frontend/css/loginadmin.css') }}">
-      <link rel="stylesheet" href="{{ asset('frontend/css/background.css') }}">            
+      <link rel="stylesheet" href="{{ asset('frontend/css/background.css') }}">   
+      <link rel="stylesheet" href="{{ asset('frontend/css/resetpassword.css') }}">         
       
       <!-- Boxicons CSS -->
       <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
@@ -45,6 +46,10 @@
                       <div class="field button">
                           <button>Login</button>
                       </div>
+
+                      <div class="form-group">
+                        <a href="login" class="login-lane">← User Log in</a>
+                    </div>
                   </form>
 
               </div>

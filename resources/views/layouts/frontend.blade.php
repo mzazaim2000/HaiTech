@@ -20,7 +20,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-
       <img src="images/haibro.png" alt="" class="haibro-img">
     </a>
     <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
