@@ -1,5 +1,4 @@
 
-
 <!DOCTYPE html>
 <html lang="{{ strreplace('', '-', app()->getLocale()) }}">
     <head>
@@ -32,7 +31,16 @@
                 <li><a href="#">Contact us</a></li>
               </ul>
             </nav>
-            <a class="cta" href="#"><button>User</button></a>
+
+            <div class="dropdown">
+              <button class="dropbtn">User    </button>
+              <div class="dropdown-content">
+                <a href="#">Profile</a>
+                <a href="#">All services</a>
+                <a href="#">Logout</a>
+              </div>
+            </div>
+            <!--<a class="cta" href="#"><button>User</button></a>-->
          </header>
      
       <div>
