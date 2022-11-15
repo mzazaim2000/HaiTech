@@ -1,25 +1,23 @@
 
 <!DOCTYPE html>
     <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>HaiTech</title>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title> HaiTech</title>
 
         <!-- Fonts -->
-        <meta name="description" content="">
         <meta name="viewpoint" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{ asset('frontend/css/loginclient.css') }}">
         <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+        <link rel="stylesheet" href="{{ asset('frontend/css/frontend.css') }}">
+
 
     </head>
 
     <body>
          <header>
-            <img class="logo" src="images/logo.svg" alt="logo">
+            <img class="logo" src="/images/haibro.png" alt="logo">
             <nav>
               <ul class="nav__links">
                 <li><a href="#">Home</a></li>
@@ -32,16 +30,18 @@
             </nav>
 
             <div class="dropdown">
-              <button class="dropbtn">User    </button>
+              <button class="dropbtn">User</button>
               <div class="dropdown-content">
                 <a href="#">Profile</a>
                 <a href="#">All services</a>
                 <a href="#">Logout</a>
               </div>
             </div>
-            <!--<a class="cta" href="#"><button>User</button></a>-->
          </header>
-    
+     
+      <div>
+        @yield('content')
+      </div>
 
       <script src=" {{ asset('frontend/js/jquery-3.6.1.min.js') }}"></script>
       <script src=" {{ asset('frontend/js/bootstrap5.bundle.js') }}"></script>
