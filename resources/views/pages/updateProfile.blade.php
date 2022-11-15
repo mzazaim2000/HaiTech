@@ -78,12 +78,12 @@
                               <label class="small mb-1" for="inputPhone">Mobile number</label>
                               <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="011-2321109">
                           </div>
-                          <!-- Form Group (birthday)
+                          <!-- Form Group (birthday)-->
                           <div class="col-md-6" class="field input-field">
                               <label class="small mb-1"  for="inputPassword">Password</label>
                               <input type="password" class="form-control" id="inputPassword" placeholder="Enter new password" value="1234">
                               <i class="bx bx-hide eye-icon"></i>
-                          </div>-->
+                          </div>
                       </div>
                       <!-- Save changes button-->
                       <button class="btn btn-primary" type="button">Save changes</button>
