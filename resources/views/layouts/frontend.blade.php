@@ -17,7 +17,7 @@
 
     <body>
          <header>
-            <img class="logo" src="/images/logo.png" alt="logo">
+            <img class="logo" src="/images/haibro.png" alt="logo">
             <nav>
               <ul class="nav__links">
                 <li><a href="#">Home</a></li>
