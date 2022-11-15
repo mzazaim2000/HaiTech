@@ -56,6 +56,10 @@ Route::get('/admindashboard', function () {
     return view('pages/adminDashboard');
 });
 
+Route::get('/updateprofileAdmin', function () {
+    return view('pages/updateProfile');
+});
+
 
 
 
