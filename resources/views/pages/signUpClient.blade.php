@@ -66,6 +66,7 @@
   
       </body>
 
+
        <!--Javascript-->
        <script src="/frontend/js/signup.js"></script>
        <script type="module">

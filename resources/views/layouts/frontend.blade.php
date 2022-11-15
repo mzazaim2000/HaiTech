@@ -34,10 +34,10 @@
       </form>
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#"><b>Home</b></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#"><b>Services</b></a>
+          <a class="nav-link" href="#">Services</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Project</a>
@@ -59,7 +59,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
           <a class="dropdown-item" href="updateprofileAdmin">Profile</a>
           <a class="dropdown-item" href="#">All services</a>
-          <a class="dropdown-item" href="#">Logout</a>
+          <a class="dropdown-item" href="login">Logout</a>
         </div>
       </li>
       </ul>
