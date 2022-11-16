@@ -14,7 +14,7 @@
           <!-- Boxicons CSS -->
           <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
           <!-- End layout styles -->
-          <link rel="shortcut icon" href="/images/logo.png" />                            
+          <link rel="shortcut icon" href="/images/haibro.png" />                            
       </head>
       <body>
   
