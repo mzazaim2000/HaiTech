@@ -61,7 +61,7 @@
                           <!-- Form Group (organization name)-->
                           <div class="col-md-6">
                               <label class="small mb-1" for="inputOrgName">Organization name</label>
-                              <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="LHDN">
+                              <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="">
                           </div>
                           <!-- Form Group (location)
                           <div class="col-md-6">
