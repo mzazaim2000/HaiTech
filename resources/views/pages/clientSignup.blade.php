@@ -3,7 +3,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title> HaiTech </title>
+        <title> HaiBro </title>
 
         <!-- CSS -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
         <!-- End layout styles -->
-        <link rel="shortcut icon" href="/images/logo.png" />                            
+        <link rel="shortcut icon" href="/images/haibro.png" />                            
     </head>
     <body>
 
