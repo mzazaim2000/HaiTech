@@ -22,7 +22,7 @@
             <div class="form login">
                 <div class="form-content">
                   <br><br>
-                    <img src="images/logo.png" alt="" class="logo-img">
+                    <img src="images/haibro.png" alt="" class="logo-img">
                    
                     <h1>Sign Up</h1>
                     <h5>Create your account now!</h5>
