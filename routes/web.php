@@ -44,7 +44,6 @@ Route::get('/forgotClient', function () {
     return view('pages/forgotclientPassword');
 });
 
-
 Route::get('/admindashboard', function () {
     return view('pages/adminDashboard');
 });
@@ -59,6 +58,10 @@ Route::get('/navbar', function () {
 
 Route::get('/serviceForm', function () {
     return view('pages/requestForm');
+});
+
+Route::get('/home', function () {
+    return view('pages/clientServices');
 });
 
 
