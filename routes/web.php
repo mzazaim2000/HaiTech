@@ -44,9 +44,6 @@ Route::get('/forgotClient', function () {
     return view('pages/forgotclientPassword');
 });
 
-Route::get('/resetClient', function () {
-    return view('pages/resetclientPassword');
-});
 
 Route::get('/admindashboard', function () {
     return view('pages/adminDashboard');
