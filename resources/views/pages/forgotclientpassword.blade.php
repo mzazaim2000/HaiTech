@@ -26,7 +26,8 @@
                   <p>Please enter your email address. <br>
                     You will receive an email with instructions on how to reset your password.</p>
 
-                    <form action="#">
+                    <form action="#" method="POST">
+                      @csrf
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">
                         </div>

@@ -27,9 +27,9 @@
                     <h1>Sign Up</h1>
                     <h5>Create your account now!</h5>
                    
-                    <form action="login">
-                    
-                  
+                    <form action="{{route("signup")}}" method="POST">
+                      @csrf
+            
                         <div class="field input-field">
                             <input type="text" placeholder="Firstname" class="form-control" name=fname>
                         </div>

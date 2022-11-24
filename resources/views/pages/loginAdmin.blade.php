@@ -25,9 +25,10 @@
 
                 <img src="images/logo.png" alt="" class="logo-img">
                 <header>Admin Login</header>
-                 
-                  <form action="admindashboard">
-                      <div class="field input-field">
+          
+                  <form action="{{route("checklogin")}}" method="POST">
+                    @csrf 
+                    <div class="field input-field">
                           <input type="email" placeholder="Email" class="input">
                       </div>
 

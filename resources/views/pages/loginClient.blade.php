@@ -29,19 +29,16 @@
                 <div class="form-content">
                     
                     <img src="images/haibro.png" alt="" class="logo-img">
-                    <form action="index">
+                    <form action="{{route("login")}}"  method="POST">
+                        @csrf
                         <div class="field input-field">
                             <input type="email" placeholder="Email" class="input">
-                            @if ($errors->has('email'))
-                            <span class="text-danger">{{ $errors->first('email') }}</span>
-                            @endif
+                        
                         </div>
 
                         <div class="field input-field">
                             <input type="password" placeholder="Password" class="password">
-                            @if ($errors->has('password'))
-                            <span class="text-danger">{{ $errors->first('password') }}</span>
-                            @endif
+        
                             <i class='bx bx-hide eye-icon'></i>
                         </div>
 
@@ -57,7 +54,7 @@
                     </form>
 
                     <div class="form-link">
-                        <span>Don't have an account? <a href="clientsignup" class="signup-link"><b>Sign up!</b></a></span>
+                        <span>Don't have an account? <a href="register" class="signup-link"><b>Sign up!</b></a></span>
                     </div>
                 </div>
 
