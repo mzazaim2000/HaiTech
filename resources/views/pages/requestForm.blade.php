@@ -107,6 +107,12 @@
                                 <div class="invalid-feedback">Please select a Service Type!</div>
                            </div>
 
+                           <div class="col-md-12">
+                            <input class="form-control" type="text" name="issue" placeholder="Issue" required>
+                             <div class="invalid-feedback">Issue field cannot be blank!</div>
+                        </div>
+
+
   <!-- 
                            <div class="col-md-12 mt-3">
                             <label class="mb-3 mr-1" for="gender">Gender: </label>
