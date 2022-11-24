@@ -75,6 +75,10 @@ Route::get('/navbar', function () {
     return view('pages/frontend2');
 });
 
+Route::get('/services', function () {
+    return view('pages/clientServices');
+});
+
 
 
 
