@@ -9,7 +9,6 @@ class Client extends Model{
 
     use HasFactory;
     protected $table= 'user';
-    public $primaryKey ='id';
     public $incrementing = true;
     public $timestamps = false;
 }

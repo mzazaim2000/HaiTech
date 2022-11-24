@@ -3,22 +3,38 @@
 namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
-use App\Models\Client;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+
  
 class AuthController extends Controller
 {
-    public function login()
+    public function login(Request $request)
     {
-        return view('auth.login');
-    } 
- 
-    public function register()
-    {
-        return view('auth.register');
-    }  
+    
+        $request->validate($request, [
+            'email' => 'required|email',
+            'password' => 'required|alphaNum|min:8'
+        ]);   
+
+        $user = User::where('email', $request->input('email'))->first();
+
+        if(Auth::check($user)){
+            return back()->with('error', 'Wrong Email! The provided credentials do not match our records.');
+        }
+        else{
+              if(Auth::check($request->password , $user->password)){
+                return view('layouts/frontend');
+            // }
+            // else{
+            //     return back()-with('error', 'Wrong Login! The password is incorrect.');
+            // }
+            
+        }
+
+    } }
        
-    public function save(Request $request){
+    public function signup(Request $request){
         
         $user = new User;
         $user->firstname=$request->fname;
@@ -29,35 +45,11 @@ class AuthController extends Controller
         $save = $user->save();
 
         if($save){
-            return back()->with('<h1>Insert Success</h1>');} 
+            return view('pages/loginClient');
+        }
          else{
             return back()->with('<h1>Insert Fail</h1>');} 
         } 
 
-    //     $firstname=$request->input('fname');
-    //     $surname=$request->input('lname');
-    //     $email=$request->input('email');
-    //     $contact=$request->input('contact');
-    //     $password=$request->input('password');
 
-    //     $isInsertSuccess = Client::insert(['firstname'=>$firstname,
-    //                                         'surname'=> $surname,
-    //                                         'email'=> $email,
-    //                                         'contact'=> $contact,
-    //                                         'password'=> $password,
-    // ]);
-    //     if($isInsertSuccess) echo '<h1>Insert Success</h1>';
-    //     else echo '<h1>Insert Failed</h1>';
-    // public function store(Request $request)
-    // {
-    //     // $user = new User();
-    //     // $user->firstname=$request->input('fname');
-    //     // $user->surname=$request->input('lname');
-    //     // $user->email=$request->input('email');
-    //     // $user->contact=$request->input('contact');
-    //     // $user->password=$request->input('password');
-    //     // $user->save();
-        
-    //     // return view('login');
-    // }
 }

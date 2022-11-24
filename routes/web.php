@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 
 
@@ -27,29 +28,17 @@ Route::get('/index', function () {
 Route::get('/login', function () {
     return view('pages/loginClient');
 });
+Route::post('/login', [AuthController::class, 'login'])->name("login");
 
-Route::get('/signup', function () {
-    return view('pages/signUpClient');
+Route::get('/register', function () {
+    return view('pages/clientSignup');
 });
-// Route::view('pages/signupClient');
-// Route::post('/signup',[AuthController::class,'store']);
+Route::post('/register', [AuthController::class, 'signup'])->name("signup");
 
-// Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
-// Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
-// Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
-// Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
-
-Route::get('/loginAdmin', function () {
+Route::get('/loginadmin', function () {
     return view('pages/loginAdmin');
 });
-
-Route::get('/forgotAdmin', function () {
-return view('pages/forgotPassword');
-});
-
-Route::get('/resetAdmin', function () {
-    return view('pages/resetPassword');
-});
+Route::post('/loginAdmin', [AdminController::class, 'checklogin'])->name("checklogin");
 
 Route::get('/forgotClient', function () {
     return view('pages/forgotclientPassword');
@@ -65,10 +54,6 @@ Route::get('/admindashboard', function () {
 
 Route::get('/updateprofileClient', function () {
     return view('pages/updateProfile');
-});
-
-Route::get('/clientsignup', function () {
-    return view('pages/clientSignup');
 });
 
 Route::get('/navbar', function () {
