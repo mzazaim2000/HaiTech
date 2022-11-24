@@ -12,27 +12,27 @@ class AuthController extends Controller
     public function login(Request $request)
     {
     
-        $request->validate($request, [
+        $request->validate([
             'email' => 'required|email',
             'password' => 'required|alphaNum|min:8'
         ]);   
 
-        $user = User::where('email', $request->input('email'))->first();
+        $user = User::where('email','=', $request->input('email'))->get();
 
         if(Auth::check($user)){
-            return back()->with('error', 'Wrong Email! The provided credentials do not match our records.');
+            
+            if(Auth::check($request->password , $user->password)){
+                return view('layouts/frontend');
+            }
+            else{
+                return back()-with('error', 'Wrong Login! The password is incorrect.');
+            }
         }
         else{
-              if(Auth::check($request->password , $user->password)){
-                return view('layouts/frontend');
-            // }
-            // else{
-            //     return back()-with('error', 'Wrong Login! The password is incorrect.');
-            // }
-            
+            return back()->with('error', 'Wrong Email! The provided credentials do not match our records.');
         }
 
-    } }
+    } 
        
     public function signup(Request $request){
         

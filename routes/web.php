@@ -35,7 +35,7 @@ Route::get('/register', function () {
 });
 Route::post('/register', [AuthController::class, 'signup'])->name("signup");
 
-Route::get('/loginadmin', function () {
+Route::get('/loginAdmin', function () {
     return view('pages/loginAdmin');
 });
 Route::post('/loginAdmin', [AdminController::class, 'checklogin'])->name("checklogin");
