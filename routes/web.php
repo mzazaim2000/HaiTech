@@ -57,7 +57,9 @@ Route::get('/navbar', function () {
     return view('pages/frontend2');
 });
 
-
+Route::get('/serviceForm', function () {
+    return view('pages/requestForm');
+});
 
 
 
