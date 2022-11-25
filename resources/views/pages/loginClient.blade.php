@@ -32,12 +32,12 @@
                     <form action="{{route("login")}}"  method="POST">
                         @csrf
                         <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input">
+                            <input type="email" name="email" placeholder="Email" class="input">
                         
                         </div>
 
                         <div class="field input-field">
-                            <input type="password" placeholder="Password" class="password">
+                            <input type="password" name="password" placeholder="Password" class="password">
         
                             <i class='bx bx-hide eye-icon'></i>
                         </div>

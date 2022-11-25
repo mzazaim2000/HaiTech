@@ -18,12 +18,12 @@ use App\Http\Controllers\Auth\ForgotPasswordController;
 */
 
 Route::get('/', function () {
-    return view('layouts/frontend');
+    return view('pages/loginClient');
 });
 
-Route::get('/index', function () {
-    return view('layouts/frontend');
-});
+// Route::get('/index', function () {
+//     return view('layouts/frontend');
+// });
 
 Route::get('/login', function () {
     return view('pages/loginClient');
@@ -43,6 +43,11 @@ Route::post('/loginAdmin', [AdminController::class, 'checklogin'])->name("checkl
 Route::get('/forgotClient', function () {
     return view('pages/forgotclientPassword');
 });
+Route::post('/forgotClient', [AuthController::class, 'forgotPass'])->name("forgotPass");
+Route::get('/resetPass', function () {
+    return view('pages/resetPassword');
+});
+Route::post('/resetPass', [AuthController::class, 'updatePassword'])->name('updatePassword');
 
 Route::get('/admindashboard', function () {
     return view('pages/adminDashboard');

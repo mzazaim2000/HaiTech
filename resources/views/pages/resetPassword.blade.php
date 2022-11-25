@@ -25,7 +25,8 @@
                 <img src="images/haibro.png" alt="" class="logo-img">
                 <h2>Reset your password</h2>
             
-                <form action="#">
+                <form action="{{route("updatePassword")}}" method="POST">
+                  @csrf
                     <div class="field input-field">
                         <input type="password" placeholder="New password" class="password">
                         <i class='bx bx-hide eye-icon'></i>
@@ -41,7 +42,7 @@
                     </div>
 
                     <div class="form-group">
-                        <a href="loginAdmin" class="login-lane">← Log in</a>
+                        <a href="login" class="login-lane">← Log in</a>
                     </div>
                   </form>
             </div>

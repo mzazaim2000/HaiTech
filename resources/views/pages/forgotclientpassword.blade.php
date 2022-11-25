@@ -26,10 +26,10 @@
                   <p>Please enter your email address. <br>
                     You will receive an email with instructions on how to reset your password.</p>
 
-                    <form action="#" method="POST">
+                    <form action="{{route("forgotPass")}}" method="POST">
                       @csrf
                         <div class="field input-field">
-                            <input type="email" placeholder="Email" class="input">
+                            <input type="email" name="email" placeholder="Email" class="input">
                         </div>
   
   
