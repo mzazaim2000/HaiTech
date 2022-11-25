@@ -32,7 +32,7 @@
                     <form action="{{route("login")}}"  method="POST">
                         @csrf
                         <div class="field input-field">
-                            <input type="email" name="email" placeholder="Email" class="input">
+                            <input type="email" name="email" placeholder="Email" class="input" required autofocus>
                         
                         </div>
 

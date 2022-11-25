@@ -14,7 +14,7 @@
         <!-- Boxicons CSS -->
         <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
           <!-- End layout styles -->
-          <link rel="shortcut icon" href="/images/haibro.png" />                          
+          <link rel="shortcut icon" href="/images/haibro.png"/>                          
     </head>
     <body>
     
@@ -22,18 +22,33 @@
             <div class="form login">
                 <div class="form-content">
                   <br><br>
-                    <img src="images/haibro.png" alt="" class="logo-img">
-                    <h2>Reset your password</h2>
+                    
+                    <h2>Reset password</h2>
                 
-                    <form action="#">
+                    <form action="{{ route('reset.password.post') }}" method="POST">
+                      
+                      @if(Session::get('success'))
+                      <div class="alert alert-success">
+                      {{ Session::get('success')}}
+                      </div>
+                      @endif
+
+                      @csrf
+                      <input type="hidden" name="token" value="{{ $token }}">
+                  
                         <div class="field input-field">
-                            <input type="password" placeholder="New password" class="password">
+                            <input type="text" id="email_address" class="email" name="email" placeholder="Email" value="{{$email ?? old('email')}}">
+                        </div>
+                        <div class="field input-field">
+                            <input type="password" name="password" placeholder="New password" class="password" value="{{old('password')}}">
                             <i class='bx bx-hide eye-icon'></i>
+                        
                         </div>
     
                         <div class="field input-field">
-                          <input type="password" placeholder="Re-confirm password" class="password">
+                          <input type="password" name="password-confirm" placeholder="Re-confirm password" class="password" value="{{old('password-confirm')}}">
                           <i class='bx bx-hide eye-icon'></i>
+                          
                         </div>
     
                         <div class="field button-field">
@@ -41,7 +56,7 @@
                         </div>
     
                         <div class="form-group">
-                            <a href="loginAdmin" class="login-lane">← Log in</a>
+                            <a href="{{ route('login') }}" class="login-lane">← Log in</a>
                         </div>
                       </form>
                 </div>
@@ -50,7 +65,7 @@
     
         <!-- JavaScript -->
     
-        <script src="js/script.js">
+        <script>
          const forms = document.querySelector(".forms"),
       pwShowHide = document.querySelectorAll(".eye-icon"),
       links = document.querySelectorAll(".link");

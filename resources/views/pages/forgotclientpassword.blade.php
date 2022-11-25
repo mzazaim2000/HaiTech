@@ -26,12 +26,11 @@
                   <p>Please enter your email address. <br>
                     You will receive an email with instructions on how to reset your password.</p>
 
-                    <form action="{{route("forgotPass")}}" method="POST">
+                    <form action="{{route('forget.password.post')}}" method="POST">
                       @csrf
                         <div class="field input-field">
                             <input type="email" name="email" placeholder="Email" class="input">
                         </div>
-  
   
                         <div class="field button">
                             <button>Get new password</button>

@@ -43,11 +43,14 @@ Route::post('/loginAdmin', [AdminController::class, 'checklogin'])->name("checkl
 Route::get('/forgotClient', function () {
     return view('pages/forgotclientPassword');
 });
-Route::post('/forgotClient', [AuthController::class, 'forgotPass'])->name("forgotPass");
 Route::get('/resetPass', function () {
     return view('pages/resetPassword');
 });
-Route::post('/resetPass', [AuthController::class, 'updatePassword'])->name('updatePassword');
+
+Route::get('forget-password', [ForgotPasswordController::class, 'showForgetPasswordForm'])->name('forget.password.get');
+Route::post('forget-password', [ForgotPasswordController::class, 'submitForgetPasswordForm'])->name('forget.password.post'); 
+Route::get('reset-password/{token}', [ForgotPasswordController::class, 'showResetPasswordForm'])->name('reset.password.get');
+Route::post('reset-password', [ForgotPasswordController::class, 'submitResetPasswordForm'])->name('reset.password.post');
 
 Route::get('/admindashboard', function () {
     return view('pages/adminDashboard');
