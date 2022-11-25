@@ -7,8 +7,8 @@
 ===========================*/
 :root {
   --font-family: "Inter", sans-serif;
-  --primary: #c56aec;
-  --primary-dark: #c56aec;
+  --primary: #2D2D2D;
+  --primary-dark: #2D2D2D;
   --primary-light: #e2f1ff;
   --accent: #00d4d7;
   --accent-dark: #00bac1;
@@ -77,6 +77,21 @@ body {
 img.haibro-img{
   height: 40px;
   width: 75%;
+}
+
+img.phone-img{
+  height: 20px;
+  width: 40%;
+}
+
+img.clock-img{
+  height: 20px;
+  width: 40%;
+}
+
+img.pin-img{
+  height: 20px;
+  width: 40%;
 }
 
 img {
@@ -334,6 +349,14 @@ p {
 /*===========================
   Section Title Five CSS
 ===========================*/
+.section-title-four {
+  text-align: center;
+  max-width: 550px;
+  margin: auto;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 5;
+}
 .section-title-five {
   text-align: center;
   max-width: 550px;
@@ -358,6 +381,15 @@ p {
   margin-bottom: 15px;
   color: var(--primary);
   border: 2px solid var(--primary);
+  border-radius: 30px;
+  padding: 8px 30px;
+}
+.section-title-four h6 {
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--primary-light);
+  border: 2px solid var(--primary-light);
   border-radius: 30px;
   padding: 8px 30px;
 }
@@ -1783,9 +1815,9 @@ p {
 
 /* Footer eleven css */
 .footer-eleven {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  background-color: var(--white);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: var(--light-3);
   position: relative;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), (max-width: 767px) {

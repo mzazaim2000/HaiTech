@@ -18,6 +18,7 @@
   
     <!--====== Line Icons css ======-->
     <link rel="stylesheet" href="assets/css/lineicons.css" />
+    <link href="your-project-dir/icon-font/lineicons.css" rel="stylesheet">
   
     <!--====== Tiny Slider css ======-->
     <link rel="stylesheet" href="assets/css/tiny-slider.css" />
@@ -40,7 +41,7 @@
         <div class="row">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" href="index.html">
+              <a class="navbar-brand" href="#home">
                 <img src="images/haibro.png" class="haibro-img" />
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
@@ -53,7 +54,7 @@
               <div class="collapse navbar-collapse sub-menu-bar" id="navbarNine">
                 <ul class="navbar-nav me-auto">
                   <li class="nav-item">
-                    <a class="page-scroll active" href="#hero-area">Home</a>
+                    <a class="page-scroll active" href="#home">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="page-scroll" href="#services">Services</a>
@@ -63,10 +64,10 @@
                     <a class="page-scroll" href="#clients">Clients</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="#contact">About Us</a>
+                    <a class="page-scroll" href="#about">About Us</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="#contact">Contct Us</a>
+                    <a class="page-scroll" href="#contact">Contact Us</a>
                   </li>
                 </ul>
               </div>
@@ -112,7 +113,7 @@
     <!--====== SIDEBAR PART ENDS ======-->
   
     <!-- Start header Area -->
-    <section id="hero-area" class="header-area header-eight">
+    <section id="home" class="header-area header-eight">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 col-md-12 col-12">
@@ -287,8 +288,8 @@
                 <h6>Services</h6>
                 <h2 class="fw-bold">Our Best Services</h2>
                 <p>
-                  There are many variations of passages of Lorem Ipsum available,
-                  but the majority have suffered alteration in some form.
+                  With 10 years of experience, along with best industry experts 
+                  providing fast & effective solutions, we give you felxible pricing services
                 </p>
               </div>
             </div>
@@ -303,7 +304,7 @@
           <div class="col-md-6"><!-- -->
             <div class="single-services">
               <div class="service-icon">
-                <i class="lni lni-capsule"></i>
+                <!--<i class="lni lni-capsule"></i>-->
               </div>
               <div class="service-content">
                 <h4>UNINTERRUPTIBLE POWER SUPPLY PRECISION COOLING SOLUTION</h4>
@@ -311,6 +312,12 @@
                   We offer products to handle all sizes and types of process cooling applications. 
                   Products can be standard or modified to meet the application requirements
                 </p>
+              </div>
+                <br>
+              <div class="light-rounded-buttons">
+                <a href="serviceForm" class="btn primary-btn-outline">
+                 Book now
+               </a>
               </div>
             </div>
           </div>
@@ -329,6 +336,12 @@
                   technologies and sophisticated IT products.
                 </p>
               </div>
+              <br>
+              <div class="light-rounded-buttons">
+                <a href="serviceForm" class="btn primary-btn-outline">
+                 Book now
+               </a>
+              </div>
             </div>
           </div>
 
@@ -346,6 +359,12 @@
                   competitively priced delivered by people who are focused on quality and consistently.
                 </p>
               </div>
+              <br>
+              <div class="light-rounded-buttons">
+                <a href="serviceForm" class="btn primary-btn-outline">
+                 Book now
+               </a>
+              </div>
             </div>
           </div>
 
@@ -361,6 +380,12 @@
                   decide to restructure or cease business operations. Whenever you require assistance 
                   HAIBRO is equipped to help.
                 </p>
+              </div>
+              <br>
+              <div class="light-rounded-buttons">
+                <a href="serviceForm" class="btn primary-btn-outline">
+                 Book now
+               </a>
               </div>
             </div>
           </div>
@@ -404,7 +429,7 @@
                     <img src="images/JPJ.png" alt="" class="JPJ-img" />
                   </div>
                   <div class="single-image">
-                    <img src="images/prasarana.png" alt="" class="prasarana-img" />
+                    <img src="images/UEM.png" alt="" class="UEM-img" />
                   </div>
                   <div class="single-image">
                     <img src="images/simedarby.png" alt="" class="simedarby-img" />
@@ -421,15 +446,14 @@
   
 
      <!-- ========================= about-section start ========================= -->
-     
-    <div id="about" class="call-action">
-      <div class="section-title-five">
+     <section id="about" class="call-action">
+      <div class="section-title-four">
         <div class="container">
           <div class="row">
             <div class="col-12">
               <div class="content">
                 <h6>About Us</h6>
-                <h2 class="fw-bold">Get in touch with us</h2>
+                <h2 class="fw-bold">Get to know more about us</h2>
                 <p>
                   To know more about our products and services in which we are works. 
                   You are welcome to contact us for further information on the legal.
@@ -441,114 +465,42 @@
         </div>
         <!-- container -->
       </div>
-     
-     <section id="about" class="call-action">
-
-      <div class="section-title-five">
-        <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="content">
-                  <h6>Our Team</h6>
-                  <h2 class="fw-bold">Our Creative Team</h2>
-                  <p>
-                  There are many variations of passages of Lorem Ipsum available,
-                  but the majority have suffered alteration in some form.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-sm-6">
-              <div class="team-style-six text-center">
-                <div class="team-image">
-                  <img src="assets/images/team/team-1.jpg" alt="Team" />
-                </div>
-                <div class="team-content">
-                  <div class="team-social">
-                    <ul class="social">
-                      <li>
-                        <a href="javascript:void(0)"> <i class="lni lni-facebook-filled"></i></a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)"> <i class="lni lni-twitter-original"></i></a>
-                      </li>
-                      <li>
-                        <a href="javascript:void(0)"> <i class="lni lni-linkedin-original"></i></a>
-                      </li >
-                      <li>
-                        <a href="javascript:void(0)"> <i class="lni lni-pinterest"></i></a>
-                      </li>
-                    </ul>
-                  </div>
-                    <h4 class="team-name">Jeffery Riley</h4>
-                    <span class="sub-title">Art Director</span>
-                  </div>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="pricing-style-fourteen">
+              <div class="table-head">
+                <h6 class="title">Vision</h4>
+                  <p>To be the preferred service provider in each and 
+                    every field, sector and industry participated.</p>
               </div>
-                <div class="col-lg-4 col-sm-6">
-                  <div class="team-style-six text-center">
-                    <div class="team-image">
-                      <img src="assets/images/team/team-2.jpg" alt="Team" />
-                    </div>
-                      <div class="team-content">
-                        <div class="team-social">
-                          <ul class="social">
-                            <li>
-                              <a href="javascript:void(0)"> <i class="lni lni-facebook-filled"></i> </a>
-                            </li>
-                            <li>
-                              <a href="javascript:void(0)"> <i class="lni lni-twitter-original"></i> </a>
-                            </li>
-                            <li>
-                              <a href="javascript:void(0)"> <i class="lni lni-linkedin-original"></i> </a>
-                            </li>
-                            <li>
-                              <a href="javascript:void(0)"> <i class="lni lni-pinterest"></i> </a>
-                            </li>
-                          </ul>
-                        </div>
-                          <h4 class="team-name">Riley Beata</h4>
-                          <span class="sub-title">Web Developer</span>
-                      </div>
-                  </div>
-                </div>
-                  <div class="col-lg-4 col-sm-6">
-                    <div class="team-style-six text-center">
-                      <div class="team-image">
-                        <img src="assets/images/team/team-3.jpg" alt="Team" />
-                      </div>
-                        <div class="team-content">
-                          <div class="team-social">
-                            <ul class="social">
-                              <li>
-                                <a href="javascript:void(0)"> <i class="lni lni-facebook-filled"></i> </a>
-                              </li>
-                              <li>
-                                <a href="javascript:void(0)"> <i class="lni lni-twitter-original"></i> </a>
-                              </li>
-                              <li>
-                                <a href="javascript:void(0)"> <i class="lni lni-linkedin-original"></i> </a>
-                              </li>
-                              <li>
-                                <a href="javascript:void(0)"> <i class="lni lni-pinterest"></i> </a>
-                              </li>
-                            </ul>
-                          </div>
-                            <h4 class="team-name">Mark Alone</h4>
-                            <span class="sub-title">UX Designer</span>
-                      </div>
-                    </div>
-                  </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="pricing-style-fourteen middle">
+              <div class="table-head">
+                <h6 class="title">Core Values</h4>
+                  <p>◊  focus, continuous, loyal (istiqamah)</p>
+                  <p>◊  humble, honest, sincere (tawadhuk)</p>
+                  <p>◊  unity, sharing, caring (jamaah)</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 col-12">
+            <div class="pricing-style-fourteen">
+              <div class="table-head">
+                <h6 class="title">Mission</h4>
+                  <p>Continuously inspiring and sharing great values, 
+                    knowledge, experience and expertise with everyone</p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
       
   <!-- ========================= about-section end ========================= -->
   
@@ -584,7 +536,8 @@
                 <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-9">
                   <div class="contact-item">
                     <div class="contact-icon">
-                      <i class="lni lni-phone"></i>
+                      <img src="images/phone.png" class="phone-img" />
+                      <!--<i class="lni lni-phone"></i>-->
                     </div>
                     <div class="contact-content">
                       <h4>Contact</h4>
@@ -598,7 +551,8 @@
                 <div class="col-xxl-6 col-xl-7 col-lg-8 col-md-9">
                   <div class="contact-item">
                     <div class="contact-icon">
-                      <i class="lni lni-map-marker"></i>
+                      <!--<i class="lni lni-map-marker"></i>-->
+                      <img src="images/pin.png" class="pin-img" />
                     </div>
                     <div class="contact-content">
                       <h4>Address</h4>
@@ -611,7 +565,8 @@
                 <div class="col-md-6 offset-md-3-md-6 offset-md-3">
                   <div class="contact-item">
                     <div class="contact-icon">
-                      <i class="lni lni-alarm-clock"></i>
+                      <!--<i class="lni lni-alarm-clock"></i>-->
+                      <img src="images/clock.png" class="clock-img" />
                     </div>
                     <div class="contact-content">
                       <h4>Schedule</h4>
@@ -621,6 +576,7 @@
                     </div>
                   </div>
                 </div>
+                <br>
               </div>
             </div>
           </div>
@@ -644,14 +600,14 @@
                     <a href="index.html">
                       <img src="images/haibro.png" alt="" class="haibro-img" />
                     </a>
+                    <h6>
+                      HAIBRO creates friendship and promotes partnership. HAI means “Hello” and BRO means “Brother”…
+                    <h6>
                   </div>
-                  <p>
-                    HAIBRO creates friendship and promotes partnership. HAI means “Hello” and BRO means “Brother”…
-                  </p>
                   <p class="copyright-text">
-                    <span>
+                    <h6>
                       ©HAIBRO - 2019. All rights reserved.
-                      </span>
+                    </h6>
                   </p>
                 </div>
                 <!-- End Single Widget -->
