@@ -28,7 +28,15 @@ class ClientServicesController extends Controller{
         return back()->with('<h1>Insert Fail</h1>');
             } 
         }
+    
+    public function view(){
+    $data = Services::all();
+    return view('pages/allServices')->with('services', $data);
 
+    // DB::select('select * from services');
+    // return view('pages/allServices',['services'=>$data]);
+    // return view('pages/allServices', $data);
+        }
 
     public function update(){
         
@@ -38,8 +46,6 @@ class ClientServicesController extends Controller{
 
     }
 
-    public function view(){
-        
-    }
+   
     
 }

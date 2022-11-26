@@ -96,4 +96,26 @@
         <div class="overlay-left"></div>
       
         <!--====== SIDEBAR PART ENDS ======-->
+        <table class="table">
+          <thead>
+            <tr><br><br><br><br><br>
+              <th>Name</th>
+              <th>Phone</th>
+              <th>Email</th>
+              <th>Company</th>
+              <th>Services</th>
+              <th>Issue</th>
+            </tr>
+          </thead>
+          <tbody>
+            @foreach($services as $service)
+              <tr>
+                <td>{{$service->name}}</td>
+                <td>{{$service->phone}}</td>
+                <td>{{$service->email}}</td>
+                <td>{{$service->company}}</td>
+                <td>{{$service->services}}</td>
+                <td>{{$service->issue}}</td>
+              </tr>
+              @endforeach 
   </header>
