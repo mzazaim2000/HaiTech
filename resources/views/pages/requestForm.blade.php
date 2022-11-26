@@ -98,10 +98,6 @@
         <!--====== SIDEBAR PART ENDS ======-->
   </header>
 
-  <section class="black">
-    <section class="container">
-      <div class="container">
-            <div class="header-content">
      <div class="form-body">
         <div class="row">
             <div class="form-holder">
@@ -111,73 +107,56 @@
                         <p>Enter your details & we will be ready to provide solution instantly.</p>
                         <form action="" method="POST" class="requires-validation" novalidate>
                           @csrf
-                          
                             <div class="col-md-12">
-                               <input class="form-control" type="text" name="name" placeholder="Full Name" required>
+                               <input class="form-control" type="text" name="name" placeholder="Name" required>
                                <div class="valid-feedback">Username field is valid!</div>
                                <div class="invalid-feedback">Username field cannot be blank!</div>
                             </div>
 
                             <div class="col-md-12">
-                              <input class="form-control" type="text" name="phone" placeholder="Mobile no." required>
+                              <input class="form-control" type="text" name="phone" placeholder="Phone Number" required>
                                <div class="valid-feedback">Phone no. field is valid!</div>
                                <div class="invalid-feedback">Phone no. field cannot be blank!</div>
                           </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="email" name="email" placeholder="E-mail Address" required>
+                                <input class="form-control" type="email" name="email" placeholder="Email" required>
                                  <div class="valid-feedback">Email field is valid!</div>
                                  <div class="invalid-feedback">Email field cannot be blank!</div>
                             </div>
 
                             <div class="col-md-12">
-                              <input class="form-control" type="text" name="company" placeholder="Company Name" required>
+                              <input class="form-control" type="text" name="company" placeholder="Company" required>
                                <div class="invalid-feedback">Company name field cannot be blank!</div>
                           </div>
 
-                        <div class="col-md-12">
-                                <select class="form-select mt-3" required>
-                                      <option selected disabled value="">Service Type</option>
-                                      <option value="jweb">Uninterruptible Power Supply Precision Cooling Solution</option>
-                                      <option value="sweb">Facility Management M&E Maintenance</option>
-                                      <option value="pmanager">Data Center Enhancement ICT Managed Services</option>
-                                      <option value="pmanager">Corporate Support Business Advisory</option>
-                               </select>
-                                <div class="valid-feedback">You selected a Service Type!</div>
-                                <div class="invalid-feedback">Please select a Service Type!</div>
-                           </div>
+                          <br>
+                          Services:
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="ups" id="invalidCheck" required>
+                          <label class="form-check-label">Uninterruptible Power Supply Precision Cooling Solution</label>
+                        </div>
+                        <div class="form-check">
+                          <input class="form-check-input" type="checkbox" value="fm" id="invalidCheck" required>
+                          <label class="form-check-label">Facility Management M&E Maintenance</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="dce" id="invalidCheck" required>
+                        <label class="form-check-label">Data Center Enhancement ICT Managed Services</label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="csba" id="invalidCheck" required>
+                      <label class="form-check-label">Corporate Support Business Advisory</label>
+                  </div>
 
-                           <div class="col-md-12">
-                            <input class="form-control" type="text" name="issue" placeholder="Issue" required>
+                  <br>
+
+                        <div class="col-md-12">
+                            <textarea class="form-control" type="text" name="issue" placeholder="State your issue" required></textarea>
                              <div class="invalid-feedback">Issue field cannot be blank!</div>
                         </div>
-
-
-  <!-- 
-                           <div class="col-md-12 mt-3">
-                            <label class="mb-3 mr-1" for="gender">Gender: </label>
-
-                            <input type="radio" class="btn-check" name="gender" id="male" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
-
-                            <input type="radio" class="btn-check" name="gender" id="female" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
-
-                            <input type="radio" class="btn-check" name="gender" id="secret" autocomplete="off" required>
-                            <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
-                               <div class="valid-feedback mv-up">You selected a gender!</div>
-                                <div class="invalid-feedback mv-up">Please select a gender!</div>
-                            </div>
-
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-                          <label>Services</label>
-                          <label class="form-check-label">Uninterruptible Power Supply Precision Cooling Solution</label>
-                          <label class="form-check-label">Facility Management M&E Maintenance</label>
-                          <label class="form-check-label">Data Center Enhancement ICT Managed Services</label>
-                          <label class="form-check-label">Corporate Support Business Advisory</label>
-                         <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
-                        </div> -->
+                  
+                       <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
                   
 
                             <div class="form-button mt-3">
@@ -189,67 +168,17 @@
             </div>
         </div>
      </div>
-        </div>
-    </div>
-    </section>
-  </section>
-
- 
-  <div>
-    @yield('content')
-  </div>
 
   <script src=" {{ asset('frontend/js/jquery-3.6.1.min.js') }}"></script>
   <script src=" {{ asset('frontend/js/bootstrap5.bundle.js') }}"></script>
   <script src=" {{ asset('frontend/js/form.bundle.js') }}"></script>
+
   <!--====== js ======-->
   <script src="assets/js/bootstrap.bundle.min.js"></script>
   <script src="assets/js/glightbox.min.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/tiny-slider.js"></script>
-
-  <script>
-
-    //===== close navbar-collapse when a  clicked
-    let navbarTogglerNine = document.querySelector(
-      ".navbar-nine .navbar-toggler"
-    );
-    navbarTogglerNine.addEventListener("click", function () {
-      navbarTogglerNine.classList.toggle("active");
-    });
-
-    // ==== left sidebar toggle
-    let sidebarLeft = document.querySelector(".sidebar-left");
-    let overlayLeft = document.querySelector(".overlay-left");
-    let sidebarClose = document.querySelector(".sidebar-close .close");
-
-    overlayLeft.addEventListener("click", function () {
-      sidebarLeft.classList.toggle("open");
-      overlayLeft.classList.toggle("open");
-    });
-    sidebarClose.addEventListener("click", function () {
-      sidebarLeft.classList.remove("open");
-      overlayLeft.classList.remove("open");
-    });
-
-    // ===== navbar nine sideMenu
-    let sideMenuLeftNine = document.querySelector(".navbar-nine .menu-bar");
-
-    sideMenuLeftNine.addEventListener("click", function () {
-      sidebarLeft.classList.add("open");
-      overlayLeft.classList.add("open");
-    });
-
-    //========= glightbox
-    GLightbox({
-      'href': 'https://www.youtube.com/watch?v=r44RKWyfcFw&fbclid=IwAR21beSJORalzmzokxDRcGfkZA1AtRTE__l5N4r09HcGS5Y6vOluyouM9EM',
-      'type': 'video',
-      'source': 'youtube', //vimeo, youtube or local
-      'width': 900,
-      'autoplayVideos': true,
-    });
-
-  </script>
+  <script src="frontend/js/navbar.bundle.js"></script>
 </body>
 </html>
 

@@ -76,7 +76,7 @@ html, body {
 
 
 .form-content label, .was-validated .form-check-input:invalid~.form-check-label, .was-validated .form-check-input:valid~.form-check-label{
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 .form-content input[type=text], .form-content input[type=password], .form-content input[type=email], .form-content select {
