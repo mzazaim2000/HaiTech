@@ -97,6 +97,7 @@
       
         <!--====== SIDEBAR PART ENDS ======-->
   </header>
+  <br><br><br>
 
      <div class="form-body">
         <div class="row">
@@ -109,8 +110,8 @@
                           @csrf
                             <div class="col-md-12">
                                <input class="form-control" type="text" name="name" placeholder="Name" required>
-                               <div class="valid-feedback">Username field is valid!</div>
-                               <div class="invalid-feedback">Username field cannot be blank!</div>
+                               <div class="valid-feedback">Name field is valid!</div>
+                               <div class="invalid-feedback">Name field cannot be blank!</div>
                             </div>
 
                             <div class="col-md-12">
