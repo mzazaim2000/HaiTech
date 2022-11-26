@@ -95,9 +95,17 @@
         <div class="overlay-left"></div>
       
         <!--====== SIDEBAR PART ENDS ======-->
+
+        <br><br><br><br><br>
+        <div class="light-rounded-buttons">
+          <a href="serviceForm" class="btn primary-btn-outline">
+           Book now
+         </a>
+        </div>
+
         <table class="table">
           <thead>
-            <tr><br><br><br><br><br>
+            <tr><br>
               <th>Name</th>
               <th>Phone</th>
               <th>Email</th>
@@ -110,7 +118,7 @@
           </thead>
           
           <tbody>
-            @foreach($services as $service)
+           {{-- @foreach($services as $service)
               <tr>
                 <td>{{$service->name}}</td>
                 <td>{{$service->phone}}</td>
@@ -120,7 +128,7 @@
                 <td>{{$service->date}}</td>
                 <td>{{$service->issue}}</td>
               </tr>
-              @endforeach 
+              @endforeach  --}}
   </header>
 
         <!-- Start header Area -->
