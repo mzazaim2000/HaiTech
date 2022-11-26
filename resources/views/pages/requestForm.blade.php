@@ -134,19 +134,19 @@
                           <br>
                           Services:
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="ups" value="" id="invalidCheck" required>
+                            <input class="form-check-input" type="checkbox" name="services" value="ups" id="invalidCheck" required>
                           <label class="form-check-label">Uninterruptible Power Supply Precision Cooling Solution</label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="fm" value="" id="invalidCheck" required>
+                          <input class="form-check-input" type="checkbox" name="services" value="fm" id="invalidCheck" required>
                           <label class="form-check-label">Facility Management M&E Maintenance</label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="dce" value="" id="invalidCheck" required>
+                        <input class="form-check-input" type="checkbox" name="services" value="dce" id="invalidCheck" required>
                         <label class="form-check-label">Data Center Enhancement ICT Managed Services</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="csba" value="" id="invalidCheck" required>
+                      <input class="form-check-input" type="checkbox" name="services" value="csba" id="invalidCheck" required>
                       <label class="form-check-label">Corporate Support Business Advisory</label>
                   </div>
 
