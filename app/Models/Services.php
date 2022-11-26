@@ -20,9 +20,10 @@ class Services extends Model
 
     protected $fillable = [
         'id',
-        'firstname',
+        'name',
         'phone',
         'email',
+        'company',
         'services',
         'issue',
     ];

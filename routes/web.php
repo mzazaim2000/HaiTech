@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\CLientServicesController;
 
 
 /*
@@ -70,6 +71,8 @@ Route::get('/navbar', function () {
 Route::get('/serviceForm', function () {
     return view('pages/requestForm');
 });
+Route::post('/serviceForm', [ClientServicesController::class, 'insert'])->name("insert");
+
 
 Route::get('/home', function () {
     return view('pages/clientServices');

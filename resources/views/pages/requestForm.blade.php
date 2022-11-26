@@ -106,6 +106,19 @@
                     <div class="form-items">
                         <h3>Request Service</h3>
                         <p>Enter your details & we will be ready to provide solution instantly.</p>
+                        
+                        @if(Session::get('success'))
+                        <div class="alert alert-success">
+                          {{Session:get('success')}}
+                        </div>
+                        @endif
+
+                        @if(Session::get('fail'))
+                        <div class="alert alert-danger">
+                          {{Session:get('fail')}}
+                        </div>
+                        @endif
+
                         <form action="" method="POST" class="requires-validation" novalidate>
                           @csrf
                             <div class="col-md-12">
@@ -134,19 +147,19 @@
                           <br>
                           Services:
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="services" value="ups" id="invalidCheck" required>
+                            <input class="form-check-input" type="checkbox" name="services[]" value="ups" id="invalidCheck">
                           <label class="form-check-label">Uninterruptible Power Supply Precision Cooling Solution</label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="services" value="fm" id="invalidCheck" required>
+                          <input class="form-check-input" type="checkbox" name="services[]" value="fm" id="invalidCheck">
                           <label class="form-check-label">Facility Management M&E Maintenance</label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services" value="dce" id="invalidCheck" required>
+                        <input class="form-check-input" type="checkbox" name="services[]" value="dce" id="invalidCheck">
                         <label class="form-check-label">Data Center Enhancement ICT Managed Services</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="services" value="csba" id="invalidCheck" required>
+                      <input class="form-check-input" type="checkbox" name="services[]" value="csba" id="invalidCheck">
                       <label class="form-check-label">Corporate Support Business Advisory</label>
                   </div>
 

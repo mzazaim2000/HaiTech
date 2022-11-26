@@ -9,25 +9,29 @@ use Illuminate\Support\Facades\DB;
 class ClientServicesController extends Controller{
 
     public function insert(Request $request){
+        
         $service = new Services;
-        $service->firstname=$request->name;
+        $service->name=$request->name;
         $service->phone=$request->phone;
         $service->email=$request->email;
         $service->company=$request->company;
-        $service->services=$request->services;
+        $arrayTostring= implode(',', $request->input('services'));
+        $service['services']=$arrayTostring;
         $service->issue=$request->issue;
+        
         $save = $service->save();
-
+    
         if($save){
-            return view('pages/allServices');
+        //     return view('pages/allServices');
+         return back()->with('<h1>Insert Success</h1>');
+        } else{
+        return back()->with('<h1>Insert Fail</h1>');
+            } 
         }
-         else{
-            return back()->with('<h1>Insert Fail</h1>');} 
-        } 
 
 
     public function update(){
- 
+        
     }
 
     public function delete(){
@@ -35,7 +39,7 @@ class ClientServicesController extends Controller{
     }
 
     public function view(){
-
+        
     }
     
 }
