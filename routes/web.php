@@ -5,7 +5,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\CLientServicesController;
 
 
 /*
@@ -83,7 +82,9 @@ Route::get('/home', function () {
     return view('pages/clientServices');
 });
 
-
+Route::get('/services', function () {
+    return view('pages/allServices');
+});
 
 
  
