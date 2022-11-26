@@ -406,7 +406,7 @@ You can reset password from bellow link:
       .email-wrapper,
       .email-masthead,
       .email-footer {
-        background-color: #333333 !important;
+        background-color: #eae7e7 !important;
         color: #FFF !important;
       }
       p,
@@ -474,7 +474,7 @@ You can reset password from bellow link:
                               <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                 <tr>
                                   <td align="center">
-                                    <a href="{{ route('reset.password.get', $token) }}">Reset Password</a>
+                                    <a href="{{ route('reset.password.get', $token) }}"><button>Reset Password</button></a>
                                   </td>
                                 </tr>
                               </table>
