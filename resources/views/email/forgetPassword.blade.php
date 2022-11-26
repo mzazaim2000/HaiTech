@@ -1,10 +1,4 @@
-<!--<body>
-<h1>Forget Password Email</h1>
-   
-You can reset password from bellow link:
-<a href="{{ route('reset.password.get', $token) }}">Reset Password</a>-->
-
-  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -406,7 +400,7 @@ You can reset password from bellow link:
       .email-wrapper,
       .email-masthead,
       .email-footer {
-        background-color: #eae7e7 !important;
+        background-color: #333333 !important;
         color: #FFF !important;
       }
       p,
@@ -474,7 +468,7 @@ You can reset password from bellow link:
                               <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                 <tr>
                                   <td align="center">
-                                    <a href="{{ route('reset.password.get', $token) }}"><button>Reset Password</button></a>
+                                    <a href="{{ route('reset.password.get', $token) }}" class="f-fallback button button--green" target="_blank">Reset your password</a>
                                   </td>
                                 </tr>
                               </table>
