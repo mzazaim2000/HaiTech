@@ -15,35 +15,41 @@ class ClientServicesController extends Controller{
         $service->phone=$request->phone;
         $service->email=$request->email;
         $service->company=$request->company;
-        $arrayTostring= implode(',', $request->input('services'));
+        $arrayTostring= implode(', ', $request->input('services'));
         $service['services']=$arrayTostring;
+        $service->date=$request->date;
         $service->issue=$request->issue;
         
         $save = $service->save();
-    
+
         if($save){
-        //     return view('pages/allServices');
-         return back()->with('<h1>Insert Success</h1>');
+            $data = Services::all();
+            return view('pages/allServices')->with('services', $data);
+         
         } else{
         return back()->with('<h1>Insert Fail</h1>');
             } 
         }
     
-    public function view(){
+    public function show(Request $request){
     $data = Services::all();
-    return view('pages/allServices')->with('services', $data);
-
-    // DB::select('select * from services');
-    // return view('pages/allServices',['services'=>$data]);
-    // return view('pages/allServices', $data);
+    $user = Services::where('email', $request->email)->first(); //need to display based on user email only
+        return view('pages/allServices')->with('services', $data);
         }
+
+    public function edit(){
+        
+        }    
 
     public function update(){
         
     }
 
-    public function delete(){
-
+    public function delete($email){
+    $data = Services::find($email);
+    $data->delete(); 
+ 
+        // return redirect('/')->with('success', 'Services cancel.');  
     }
 
    

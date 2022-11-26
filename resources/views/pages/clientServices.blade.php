@@ -100,7 +100,7 @@
         <div class="sidebar-menu">
           <ul>
             <li><a href="updateprofileClient">Profile</a></li>
-            <li><a href="javascript:void(0)">All services</a></li>
+            <li><a href="allServices">All services</a></li>
             <li><a href="login">Log out</a></li>
           </ul>
         </div>

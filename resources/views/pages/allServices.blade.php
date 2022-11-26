@@ -84,7 +84,7 @@
             <div class="sidebar-menu">
               <ul>
                 <li><a href="updateprofileClient">Profile</a></li>
-                <li><a href="services">All services</a></li>
+                <li><a href="allServices">All services</a></li>
                 <li><a href="login">Log out</a></li>
               </ul>
             </div>
@@ -103,9 +103,12 @@
               <th>Email</th>
               <th>Company</th>
               <th>Services</th>
+              <th>Date</th>
               <th>Issue</th>
+              <th colspan = 2>Actions</th>
             </tr>
           </thead>
+          
           <tbody>
             @foreach($services as $service)
               <tr>
@@ -114,6 +117,7 @@
                 <td>{{$service->email}}</td>
                 <td>{{$service->company}}</td>
                 <td>{{$service->services}}</td>
+                <td>{{$service->date}}</td>
                 <td>{{$service->issue}}</td>
               </tr>
               @endforeach 

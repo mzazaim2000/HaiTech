@@ -119,7 +119,7 @@
                         </div>
                         @endif
 
-                        <form action="" method="POST" class="requires-validation" novalidate>
+                        <form action="{{route("insert")}}" method="POST">
                           @csrf
                             <div class="col-md-12">
                                <input class="form-control" type="text" name="name" placeholder="Name" required>
@@ -147,19 +147,19 @@
                           <br>
                           Services:
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="ups" id="invalidCheck">
+                            <input class="form-check-input" type="checkbox" name="services[]" value="UPS" id="invalidCheck">
                           <label class="form-check-label">Uninterruptible Power Supply Precision Cooling Solution</label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="services[]" value="fm" id="invalidCheck">
+                          <input class="form-check-input" type="checkbox" name="services[]" value="Facility Management" id="invalidCheck">
                           <label class="form-check-label">Facility Management M&E Maintenance</label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]" value="dce" id="invalidCheck">
+                        <input class="form-check-input" type="checkbox" name="services[]" value="Data Center Enhancement" id="invalidCheck">
                         <label class="form-check-label">Data Center Enhancement ICT Managed Services</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="services[]" value="csba" id="invalidCheck">
+                      <input class="form-check-input" type="checkbox" name="services[]" value="Corporate Support" id="invalidCheck">
                       <label class="form-check-label">Corporate Support Business Advisory</label>
                   </div>
 

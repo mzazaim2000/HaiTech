@@ -16,6 +16,7 @@ class Services extends Model
      */
 
     protected $table = 'services';
+    protected $date = 'date';
     public $timestamps = false;
 
     protected $fillable = [
@@ -25,6 +26,7 @@ class Services extends Model
         'email',
         'company',
         'services',
+        'date',
         'issue',
     ];
 
