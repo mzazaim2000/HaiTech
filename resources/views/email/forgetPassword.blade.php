@@ -1,9 +1,10 @@
+<body>
 <h1>Forget Password Email</h1>
    
 You can reset password from bellow link:
 <a href="{{ route('reset.password.get', $token) }}">Reset Password</a>
 
-<body>
+
     <span class="preheader">Use this link to reset your password. The link is only valid for 24 hours.</span>
     <table class="email-wrapper" width="100%" cellpadding="0" cellspacing="0" role="presentation">
       <tr>
@@ -24,7 +25,7 @@ You can reset password from bellow link:
                   <tr>
                     <td class="content-cell">
                       <div class="f-fallback">
-                        <h1>Hi {{name}},</h1>
+                        <h1>Hi</h1>
                         <p>You recently requested to reset your password for your [Product Name] account. Use the button below to reset it. <strong>This password reset is only valid for the next 24 hours.</strong></p>
                         <!-- Action -->
                         <table class="body-action" align="center" width="100%" cellpadding="0" cellspacing="0" role="presentation">
@@ -35,14 +36,14 @@ You can reset password from bellow link:
                               <table width="100%" border="0" cellspacing="0" cellpadding="0" role="presentation">
                                 <tr>
                                   <td align="center">
-                                    <a href="{{action_url}}" class="f-fallback button button--green" target="_blank">Reset your password</a>
+                                    <a href="#" class="f-fallback button button--green" target="_blank">Reset your password</a>
                                   </td>
                                 </tr>
                               </table>
                             </td>
                           </tr>
                         </table>
-                        <p>For security, this request was received from a {{operating_system}} device using {{browser_name}}. If you did not request a password reset, please ignore this email or <a href="{{support_url}}">contact support</a> if you have questions.</p>
+                        {{-- <p>For security, this request was received from a {{operating_system}} device using {{browser_name}}. If you did not request a password reset, please ignore this email or <a href="{{support_url}}">contact support</a> if you have questions.</p> --}}
                         <p>Thanks,
                           <br>The [Product Name] team</p>
                         <!-- Sub copy -->
@@ -50,7 +51,7 @@ You can reset password from bellow link:
                           <tr>
                             <td>
                               <p class="f-fallback sub">If you’re having trouble with the button above, copy and paste the URL below into your web browser.</p>
-                              <p class="f-fallback sub">{{action_url}}</p>
+                              <p class="f-fallback sub">#</p>
                             </td>
                           </tr>
                         </table>

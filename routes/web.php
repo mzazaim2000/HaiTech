@@ -75,9 +75,7 @@ Route::get('/home', function () {
     return view('pages/clientServices');
 });
 
-Route::get('/email', function () {
-    return view('email/forgetPassword');
-});
+
 
 
  
