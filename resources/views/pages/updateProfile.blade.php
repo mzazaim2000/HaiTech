@@ -46,7 +46,7 @@
                           
                           <div class="col-md-6">
                               <label class="small mb-1" for="inputFirstName">First name</label>
-                              <input class="form-control" id="inputFirstName" type="text" name="fname" placeholder="Enter your first name" value="{{auth()->user()->firstname}}">
+                              <input class="form-control" id="inputFirstName" type="text" name="fname" placeholder="Enter your first name" value=""> 
                           </div>
                           <!-- Form Group (last name)-->
                           <div class="col-md-6">
@@ -86,6 +86,7 @@
   </div>
 </div>
 
+{{-- {{auth()->user()->firstname}} --}}
 {{-- {{auth()->user()->email}} --}}
 {{-- {{auth()->user()->contact}} --}}
         <!--Javascript-->

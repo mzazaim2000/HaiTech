@@ -109,8 +109,9 @@
                     <div class="form-items">
                         <h3>Request Service</h3>
                         <p>Enter your details & we will be ready to provide solution instantly.</p>
-                        <form class="requires-validation" novalidate>
-
+                        <form action="" method="POST" class="requires-validation" novalidate>
+                          @csrf
+                          
                             <div class="col-md-12">
                                <input class="form-control" type="text" name="name" placeholder="Full Name" required>
                                <div class="valid-feedback">Username field is valid!</div>
