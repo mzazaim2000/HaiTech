@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
+use App\Http\Controllers\ProfileController;
 
 
 /*
@@ -59,6 +60,8 @@ Route::get('/admindashboard', function () {
 Route::get('/updateprofileClient', function () {
     return view('pages/updateProfile');
 });
+Route::post('/updateprofileClient', [ProfileController::class, 'showProfile'])->name("showProfile");
+
 
 Route::get('/navbar', function () {
     return view('pages/frontend2');

@@ -1,6 +1,6 @@
 <head> 
     
-  <title> HaiBro</title>
+  <title>HaiBro</title>
   <link rel="shortcut icon" href="/images/logo.png" />    
      <!-- CSS -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -37,23 +37,21 @@
           <div class="card mb-4">
               <div class="card-header">Account Details</div>
               <div class="card-body">
-                  <form>
-                      <!-- Form Group (username)
-                      <div class="mb-3">
-                          <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                          <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username">
-                      </div> -->
+                  <form action ="{{route('showProfile')}}" method="POST">
+                    @csrf
+                    @method('PUT')
                       <!-- Form Row-->
                       <div class="row gx-3 mb-3">
                           <!-- Form Group (first name)-->
+                          
                           <div class="col-md-6">
                               <label class="small mb-1" for="inputFirstName">First name</label>
-                              <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="John">
+                              <input class="form-control" id="inputFirstName" type="text" name="fname" placeholder="Enter your first name" value="{{auth()->user()->firstname}}">
                           </div>
                           <!-- Form Group (last name)-->
                           <div class="col-md-6">
                               <label class="small mb-1" for="inpuSurname">Surname</label>
-                              <input class="form-control" id="inputSurname" type="text" placeholder="Enter your last name" value="Doe">
+                              <input class="form-control" id="inputSurname" type="text" name="lname" placeholder="Enter your last name" value="">
                           </div>
                       </div>
                       <!-- Form Row        -->
@@ -61,41 +59,35 @@
                           <!-- Form Group (organization name)-->
                           <div class="col-md-6">
                               <label class="small mb-1" for="inputOrgName">Organization name</label>
-                              <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your organization name" value="">
+                              <input class="form-control" id="inputOrgName" type="text" name="organization" placeholder="Enter your organization name" value="">
                           </div>
-                          <!-- Form Group (location)
-                          <div class="col-md-6">
-                              <label class="small mb-1" for="inputLocation">Location</label>
-                              <input class="form-control" id="inputLocation" type="text" placeholder="Enter your location" value="San Francisco, CA">
-                          </div>-->
+
                       </div>
                       <!-- Form Group (email address)-->
                       <div class="mb-3">
                           <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                          <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="john@gmail.com">
+                          <input class="form-control" id="inputEmailAddress" type="email" name="email" placeholder="Enter your email address" value="">
                       </div>
                       <!-- Form Row-->
                       <div class="row gx-3 mb-3">
                           <!-- Form Group (phone number)-->
                           <div class="col-md-6">
                               <label class="small mb-1" for="inputPhone">Mobile number</label>
-                              <input class="form-control" id="inputPhone" type="tel" placeholder="Enter your phone number" value="011-2321109">
+                              <input class="form-control" id="inputPhone" type="tel" name="contact" placeholder="Enter your phone number" value="">
                           </div>
-                          <!-- Form Group (birthday)
-                          <div class="col-md-6" class="field input-field">
-                              <label class="small mb-1"  for="inputPassword">Password</label>
-                              <input type="password" class="form-control" id="inputPassword" placeholder="Enter new password" value="1234">
-                              <i class="bx bx-hide eye-icon"></i>
-                          </div>-->
+                         
                       </div>
                       <!-- Save changes button-->
-                      <button class="btn btn-primary" type="button"><a href="/">Save changes</a></button>
+                      <button class="btn btn-primary" type="button"><a href="#">Save changes</a></button>
                   </form>
               </div>
           </div>
       </div>
   </div>
 </div>
+
+{{-- {{auth()->user()->email}} --}}
+{{-- {{auth()->user()->contact}} --}}
         <!--Javascript-->
         <script src="/frontend/js/loginclient.js"></script>
 </body>
