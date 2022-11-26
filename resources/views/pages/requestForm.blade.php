@@ -164,11 +164,11 @@
                   </div>
 
                   <br>
+                  
                   Select Date:
                   <div class="col-md-12">
                     <div class="input-group">
-                    <input class="input--style-2 js-datepicker" type="date" placeholder="Select Date" name="birthday">
-                    <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                    <input class="input--style-2 js-datepicker" type="date" name="date">
                     </div>
                     </div>
 
