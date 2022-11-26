@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
@@ -18,7 +17,7 @@
 </head>
 
 <body>
-<header>
+  <header>
     <!--====== NAVBAR NINE PART START ======-->
   
     <section class="navbar-area navbar-nine">
@@ -26,7 +25,7 @@
         <div class="row">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" href="#home">
+              <a class="navbar-brand" href="home">
                 <img src="images/haibro.png" class="haibro-img" />
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
@@ -84,9 +83,9 @@
             <!-- logo -->
             <div class="sidebar-menu">
               <ul>
-                <li><a href="javascript:void(0)">Profile</a></li>
-                <li><a href="javascript:void(0)">All services</a></li>
-                <li><a href="javascript:void(0)">Log out</a></li>
+                <li><a href="updateprofileClient">Profile</a></li>
+                <li><a href="services">All services</a></li>
+                <li><a href="login">Log out</a></li>
               </ul>
             </div>
             <!-- menu -->
@@ -96,4 +95,20 @@
         <div class="overlay-left"></div>
       
         <!--====== SIDEBAR PART ENDS ======-->
-  </header>
+
+        <!-- Start header Area -->
+
+          <script src=" {{ asset('frontend/js/jquery-3.6.1.min.js') }}"></script>
+          <script src=" {{ asset('frontend/js/bootstrap5.bundle.js') }}"></script>
+          <script src=" {{ asset('frontend/js/form.bundle.js') }}"></script>
+        
+          <!--====== js ======-->
+          <script src="assets/js/bootstrap.bundle.min.js"></script>
+          <script src="assets/js/glightbox.min.js"></script>
+          <script src="assets/js/main.js"></script>
+          <script src="assets/js/tiny-slider.js"></script>
+          <script src="frontend/js/navbar.bundle.js"></script>
+
+        </section>
+      </body>
+      </html>
