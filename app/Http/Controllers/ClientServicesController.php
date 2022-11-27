@@ -18,6 +18,7 @@ class ClientServicesController extends Controller{
         $arrayTostring= implode(', ', $request->input('services'));
         $service['services']=$arrayTostring;
         $service->date=$request->date;
+        $service->time=$request->time;
         $service->issue=$request->issue;
         
         $save = $service->save();

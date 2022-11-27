@@ -27,6 +27,7 @@ class Services extends Model
         'company',
         'services',
         'date',
+        'time',
         'issue',
     ];
 
