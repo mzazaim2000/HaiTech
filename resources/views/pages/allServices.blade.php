@@ -112,6 +112,7 @@
               <th>Company</th>
               <th>Services</th>
               <th>Date</th>
+              <th>Time</th>
               <th>Issue</th>
               <th colspan = 2>Actions</th>
             </tr>
@@ -126,6 +127,7 @@
                 <td>{{$service->company}}</td>
                 <td>{{$service->services}}</td>
                 <td>{{$service->date}}</td>
+                <td>{{$service->time}}</td>
                 <td>{{$service->issue}}</td>
               </tr>
               @endforeach  --}}

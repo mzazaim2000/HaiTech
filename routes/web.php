@@ -73,7 +73,11 @@ Route::get('/serviceForm', function () {
 });
 Route::post('/serviceForm', [ClientServicesController::class, 'insert'])->name("insert");
 
+
 Route::get('/allServices', [ClientServicesController::class, 'show'])->name("show");
+Route::get('/allServices', function () {
+    return view('pages/allServices');
+});
 
 
 Route::get('/home', function () {
