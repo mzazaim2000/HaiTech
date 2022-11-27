@@ -122,7 +122,7 @@
             <tr>
               <th>
                 <span class="custom-checkbox">
-                  <input type="checkbox" id="selectAll">
+                  <input type="checkbox" name="selectAll" id="selectAll">
                   <label for="selectAll"></label>
                 </span>
               </th>
@@ -134,10 +134,30 @@
               <th>Date</th>
               <th>Time</th>
               <th>Issue</th>
-              <th colspan = 2>Actions</th>
             </tr>
           </thead>
+          <tbody>
+            @foreach($services as $service)
+               <tr>
+                <th>
+                  <span class="custom-checkbox">
+                    <input type="checkbox" name="select[]" value="{{$service->id}}" id="select">
+                    <label for="select"></label>
+                  </span>
+                </th>
+                 <td>{{$service->name}}</td>
+                 <td>{{$service->phone}}</td>
+                 <td>{{$service->email}}</td>
+                 <td>{{$service->company}}</td>
+                 <td>{{$service->services}}</td>
+                 <td>{{$service->date}}</td>
+                 <td>{{$service->time}}</td>
+                 <td>{{$service->issue}}</td>
+               </tr>
+               @endforeach 
           </table>
+         
+
           <!-- Edit Modal HTML -->
 <div id="editService" class="modal fade">
 	<div class="modal-dialog">
@@ -253,26 +273,14 @@
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input type="submit" class="btn btn-danger" value="Delete">
+					<input type="submit" class="btn btn-danger" value="Delete" href="{{route("delete" ,$service->select[])}}">
 				</div>
 			</form>
 		</div>
 	</div>
 </div>
           
-          <tbody>
-           {{-- @foreach($services as $service)
-              <tr>
-                <td>{{$service->name}}</td>
-                <td>{{$service->phone}}</td>
-                <td>{{$service->email}}</td>
-                <td>{{$service->company}}</td>
-                <td>{{$service->services}}</td>
-                <td>{{$service->date}}</td>
-                <td>{{$service->time}}</td>
-                <td>{{$service->issue}}</td>
-              </tr>
-              @endforeach  --}}
+          
   </header>
   
         <!-- Start header Area -->

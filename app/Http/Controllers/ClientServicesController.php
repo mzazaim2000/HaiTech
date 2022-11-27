@@ -42,8 +42,8 @@ class ClientServicesController extends Controller{
         
         }    
 
-    public function update($email, Request $request){
-        $data = Services::findOrFail($email);
+    public function update(Request $request){
+        $data = Services::findOrFail();
 
         $this->validate($request, [
             'name' => 'required',
@@ -64,11 +64,14 @@ class ClientServicesController extends Controller{
         }
     }
 
-    public function delete($email){
-    $data = Services::find($email);
-    $data->delete(); 
- 
-        // return redirect('/')->with('success', 'Services cancel.');  
+    public function delete(Request $request){
+    
+    $service=$request->select;
+    $data = Services::whereIn('id',$service)->delete();
+   
+    if($data){
+        return view('pages/allServices')->with('services', $service);
+    }
     }
 
    
