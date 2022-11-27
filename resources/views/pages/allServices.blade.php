@@ -112,7 +112,7 @@
                   <div class="col-sm-6">
                     <a href="serviceForm" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>New Service</span></a>
                     <a href="#deleteService" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
-                    <a href="#editService" class="btn btn-danger" data-toggle="modal"><i class="fas fa-pen"></i> <span>Edit</span></a>
+                    <a href="#editService" class="btn btn-edit" data-toggle="modal"><i class="fas fa-pen"></i> <span>Edit</span></a>
                   </div>
                 </div>
               </div>
