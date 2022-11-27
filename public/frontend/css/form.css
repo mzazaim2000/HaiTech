@@ -146,3 +146,7 @@ html, body {
 .valid-feedback{
    color: #2acc80;
 }
+.time{
+    position: relative;
+    left:10px; 
+}

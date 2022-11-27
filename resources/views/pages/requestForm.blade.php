@@ -165,10 +165,10 @@
 
                   <br>
                   
-                  Select Date:
+                  Select Date & Time:
                   <div class="col-md-12">
                     <div class="input-group">
-                    <input class="input--style-2 js-datepicker" type="date" name="date">
+                    <input class="input--style-2 js-datepicker" type="date" name="date"> <tr><tr> <input class="time" type="time" name="time">
                     </div>
                     </div>
 
