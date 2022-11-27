@@ -33,17 +33,35 @@ class ClientServicesController extends Controller{
         }
     
     public function show(Request $request){
-    $data = Services::all();
-    $user = Services::where('email', $request->email)->first(); //need to display based on user email only
+        $data = Services::all();
+        // $data= Services::findOrFail($request->$email); //need to display based on user email only
         return view('pages/allServices')->with('services', $data);
         }
 
-    public function edit(){
+    public function edit($email){
         
         }    
 
-    public function update(){
-        
+    public function update($email, Request $request){
+        $data = Services::findOrFail($email);
+
+        $this->validate($request, [
+            'name' => 'required',
+            'phone' => 'required',
+            'email' => 'required',
+            'company' => 'required',
+            'services' => 'required',
+            'date' => 'required',
+            'time' => 'required',
+            'issue' => 'required'
+        ]);
+    
+        $input = $request->all();
+        $data->fill($input)->save();
+    
+        if ($data){
+            echo "Data updated Successfully";
+        }
     }
 
     public function delete($email){
