@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> HaiTech</title>
@@ -8,11 +9,15 @@
     <!-- Fonts -->
     <meta name="viewpoint" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/frontend.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/form.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/clientservice.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('frontend/css/allservices.css') }}">
 
 </head>
 
@@ -95,15 +100,22 @@
         <div class="overlay-left"></div>
       
         <!--====== SIDEBAR PART ENDS ======-->
-
         <br><br><br><br><br>
-        <div class="light-rounded-buttons">
-          <a href="serviceForm" class="btn primary-btn-outline">
-           Book now
-         </a>
-        </div>
+        <div class="container-xl">
+          <div class="table-responsive">
+            <div class="table-wrapper">
+              <div class="table-title">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h2>All Services</h2>
+                  </div>
+                  <div class="col-sm-6">
+                    <a href="#serviceForm" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>New Service</span></a>
+                  </div>
+                </div>
+              </div>
 
-        <table class="table">
+          <table class="table table-striped table-hover">
           <thead>
             <tr><br>
               <th>Name</th>
@@ -132,7 +144,7 @@
               </tr>
               @endforeach  --}}
   </header>
-
+  
         <!-- Start header Area -->
 
           <script src=" {{ asset('frontend/js/jquery-3.6.1.min.js') }}"></script>
@@ -145,6 +157,10 @@
           <script src="assets/js/main.js"></script>
           <script src="assets/js/tiny-slider.js"></script>
           <script src="frontend/js/navbar.bundle.js"></script>
+          <script src="frontend/js/allServices.js"></script>
+          <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+          <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 
         </section>
       </body>
