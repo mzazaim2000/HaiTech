@@ -141,7 +141,7 @@
                <tr>
                 <th>
                   <span class="custom-checkbox">
-                    <input type="checkbox" name="select[]" value="{{$service->id}}" id="select">
+                    <input type="checkbox" name="select[]" value="{{$service->email}}" id="select">
                     <label for="select"></label>
                   </span>
                 </th>
@@ -182,7 +182,7 @@
                         </div>
                         @endif
 
-                        <form action="{{route("insert")}}" method="POST">
+                        <form action="{{route("update")}}" method="POST">
                           @csrf
                             <div class="col-md-12">
                                <input class="form-control" type="text" name="name" placeholder="Name" required>
@@ -258,6 +258,7 @@
 		</div>
 	</div>
 </div>
+
 <!-- Delete Modal HTML -->
 <div id="deleteService" class="modal fade">
 	<div class="modal-dialog">
@@ -273,7 +274,7 @@
 				</div>
 				<div class="modal-footer">
 					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input type="submit" class="btn btn-danger" value="Delete" href="{{route("delete" ,$service->select[])}}">
+					<input type="submit" class="btn btn-danger" value="Delete" href="{{route("delete")}}">
 				</div>
 			</form>
 		</div>

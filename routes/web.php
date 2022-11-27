@@ -71,10 +71,9 @@ Route::get('/navbar', function () {
 Route::get('/serviceForm', function () {
     return view('pages/requestForm');
 });
-Route::post('/serviceForm', [ClientServicesController::class, 'insert'])->name("insert");
-
-
 Route::get('/allServices', [ClientServicesController::class, 'show'])->name("show");
+Route::post('/serviceForm', [ClientServicesController::class, 'insert'])->name("insert");
+Route::post('/allServices', [ClientServicesController::class, 'update'])->name("update");
 Route::get('/allServices', [ClientServicesController::class, 'delete'])->name("delete");
 
 // Route::get('/allServices', function () {

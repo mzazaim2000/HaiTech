@@ -38,7 +38,7 @@ class ClientServicesController extends Controller{
         return view('pages/allServices')->with('services', $data);
         }
 
-    public function edit($email){
+    public function edit(){
         
         }    
 
@@ -60,18 +60,17 @@ class ClientServicesController extends Controller{
         $data->fill($input)->save();
     
         if ($data){
-            echo "Data updated Successfully";
+            return view('pages/allServices');
         }
     }
 
     public function delete(Request $request){
     
     $service=$request->select;
-    $data = Services::whereIn('id',$service)->delete();
-   
-    if($data){
-        return view('pages/allServices')->with('services', $service);
-    }
+    Services::find('email',$service)->delete();
+
+    return view('pages/allServices')->with('services', $service);
+
     }
 
    
