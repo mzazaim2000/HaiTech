@@ -31,7 +31,7 @@
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
               <a class="navbar-brand" href="home">
-                <img src="images/haibro.png" class="haibro-img" />
+                <img src="{{url('images/haibro.png')}}" class="haibro-img" />
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
                 aria-controls="navbarNine" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,7 +46,7 @@
                     <a class="page-scroll active" href="home">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="page-scroll" href="home#services">Services</a>
+                    <a class="page-scroll" href="{{url('home#services')}}">Services</a>
                   </li>
   
                   <li class="nav-item">

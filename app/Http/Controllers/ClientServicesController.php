@@ -30,7 +30,8 @@ class ClientServicesController extends Controller{
 
         if($save){
             $data = Services::all();
-            return view('pages/allServices')->with('services', $data);
+            // return view('pages/allServices')->with('services', $data);
+            return redirect()->route('show', ['services' => $data]);
          
         } else{
         return back()->with('<h1>Insert Fail</h1>');
@@ -83,7 +84,10 @@ class ClientServicesController extends Controller{
 
             //echo "Successfuly updated";
             $info = Services::all();
-            return view('pages/allServices')->with('services', $info);
+            // return view('pages/allServices')->with('services', $info);
+            return redirect()->route('show', ['services' => $info]);
+
+
         }
     }
 
@@ -94,7 +98,8 @@ class ClientServicesController extends Controller{
         if($data){
             // echo "Data deleted";
             $info = Services::all();
-            return view('pages/allServices')->with('services', $info);
+            // return view('pages/allServices')->with('services', $info);
+            return redirect()->route('show', ['services' => $info]);
 
         }
 
