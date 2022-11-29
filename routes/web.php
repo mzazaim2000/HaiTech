@@ -57,7 +57,8 @@ Route::get('/admindashboard', function () {
 Route::get('/updateprofileClient', function () {
     return view('pages/updateProfile');
 });
-Route::post('/updateprofileClient', [ProfileController::class, 'showProfile'])->name("showProfile");
+Route::post('/updateprofileClient', [ProfileController::class, 'updateProfile'])->name("updateProfile");
+Route::get('/profile/edit/{id}', [ProfileController::class, 'editServiceData']);
 
 
 Route::get('/navbar', function () {

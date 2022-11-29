@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileController extends Controller
 {
@@ -23,19 +23,29 @@ class ProfileController extends Controller
        
     public function updateProfile(Request $request){
         
-        $user = auth()->user();
-        print_r($user);
-        $user = User::select('email', $request->email)->first();
-        $user->User::update([
-            'firstname'=>$request->fname,
-            'surname'=>$request->lname,
-            'email'=>$request->email,
-            'contact'=>$request->contact,
-        ]);
+        $user = Auth::user();
+        $user = User::find('id', $request->id);
+        return response()->json($user);
+      
+        // $info = $user->User::update([
+            
+        //     'firstname'=>$request->fname,
+        //     'surname'=>$request->lname,
+        //     'email'=>$request->email,
+        //     'contact'=>$request->contact,
+        //     'company' =>$request->company
+
+        // ]);
+        // if($info){
+        //     return view('pages/updateProfile');
+        // }
         
-    
       
         } 
 
-  
+        public function editProfile(Request $request){
+
+            $data=User::find($request->id);
+            return response()->json($data);
+        }
 }
