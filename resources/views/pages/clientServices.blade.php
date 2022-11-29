@@ -172,7 +172,7 @@
           <div class="col-md-6">
             <div class="single-services">
               <div class="service-icon">
-                <!--<i class="lni lni-capsule"></i>-->
+                  <img src="images/ups.jpeg" class="circular--square" />
               </div>
               <div class="service-content">
                 <h4>UNINTERRUPTIBLE POWER SUPPLY PRECISION COOLING SOLUTION</h4>
@@ -193,7 +193,7 @@
           <div class="col-md-6">
             <div class="single-services">
               <div class="service-icon">
-                <i class="lni lni-bootstrap"></i>
+                <img src="images/datacentre.png" class="circular--square" />
               </div>
               <div class="service-content">
                 <h4>DATA CENTER ENHANCEMENT ICT MANAGED SERVICES</h4>
@@ -218,7 +218,7 @@
           <div class="col-md-6">
             <div class="single-services">
               <div class="service-icon">
-                <i class="lni lni-shortcode"></i>
+                <img src="images/m&e.png" class="circular--square" />
               </div>
               <div class="service-content">
                 <h4>FACILITY MANAGEMENT M&E MAINTENANCE</h4>
@@ -239,7 +239,7 @@
           <div class="col-md-6">
             <div class="single-services">
               <div class="service-icon">
-                <i class="lni lni-dashboard"></i>
+                <img src="images/business.jpeg" class="circular--square" />
               </div>
               <div class="service-content">
                 <h4>CORPORATE SUPPORT BUSINESS ADVISORY</h4>
@@ -489,7 +489,7 @@
     <!--/ End Footer Area -->
   
     <a href="#" class="scroll-top btn-hover">
-      <i class="lni lni-chevron-up"></i>
+      <i class="fas fa-angle-up"></i>
     </a>
   
     <!--====== js ======-->
@@ -497,6 +497,7 @@
     <script src="assets/js/glightbox.min.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/tiny-slider.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
   
     <script>
   

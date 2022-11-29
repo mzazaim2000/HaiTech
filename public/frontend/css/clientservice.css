@@ -103,6 +103,14 @@ img {
   max-width: 100%;
 }
 
+.circular--square { 
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+
+
 a {
   display: inline-block;
 }
@@ -1249,7 +1257,7 @@ p {
   -ms-transition: all 0.3s ease-out 0s;
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
-  position: relative;
+  position: center;
 }
 .services-eight .single-services .service-icon::after {
   content: "";
