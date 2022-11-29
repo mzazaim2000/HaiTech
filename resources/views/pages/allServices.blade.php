@@ -278,7 +278,7 @@
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" onclick="closeModalDelete()">cancel</button>
-					<input type="submit" class="btn btn-danger" value="Cancel Services" >
+					<input type="submit" class="btn btn-danger" value="Proceed" >
 				</div>
 			</form>
 		</div>
