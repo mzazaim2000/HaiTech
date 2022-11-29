@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\DB;
 
 class ClientServicesController extends Controller{
 
+    public function index(){
+        $service= Services::all();
+        return view('index', compact('services'));
+    }
+
     public function insert(Request $request){
         
         $service = new Services;
@@ -32,19 +37,15 @@ class ClientServicesController extends Controller{
             } 
         }
     
-    public function show(Request $request){
+    public function show(){
+        
         $data = Services::all();
-        // $data= Services::findOrFail($request->$email); //need to display based on user email only
         return view('pages/allServices')->with('services', $data);
         }
-
-    public function edit(){
-        
-        }    
+   
 
     public function update(Request $request){
-        $data = Services::findOrFail();
-
+        
         $this->validate($request, [
             'name' => 'required',
             'phone' => 'required',
@@ -56,23 +57,55 @@ class ClientServicesController extends Controller{
             'issue' => 'required'
         ]);
     
-        $input = $request->all();
-        $data->fill($input)->save();
+        
+        $id =$request->id;
+        $name =$request->name;
+        $phone =$request->phone;
+        $email =$request->email;
+        $company =$request->company;
+        $services = implode(",", $request->services);
+        $date =$request->date;
+        $time =$request->time;
+        $issue =$request->issue;
+
+        $data = Services::where('id','=',$id)->update([
+            'name'=>$name,
+            'phone'=>$phone,
+            'email'=>$email,
+            'company'=>$company,
+            'services'=>$services,
+            'date'=>$date,
+            'time'=>$time,
+            'issue'=>$issue,
+            ]);
     
         if ($data){
-            return view('pages/allServices');
+
+            //echo "Successfuly updated";
+            $info = Services::all();
+            return view('pages/allServices')->with('services', $info);
         }
     }
 
     public function delete(Request $request){
     
-    $service=$request->select;
-    Services::find('email',$service)->delete();
+        $id =$request->id;
+        $data=Services::where('id','=',$id)->delete();  
+        if($data){
+            // echo "Data deleted";
+            $info = Services::all();
+            return view('pages/allServices')->with('services', $info);
 
-    return view('pages/allServices')->with('services', $service);
+        }
 
     }
 
-   
+    public function editServiceData(Request $request){
+
+        $data=Services::find($request->id);
+        return response()->json($data);
+    }
+
+
     
 }

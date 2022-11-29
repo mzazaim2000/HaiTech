@@ -26,7 +26,7 @@
         <div class="row">
           <div class="col-lg-12">
             <nav class="navbar navbar-expand-lg">
-              <a class="navbar-brand" href="#home">
+              <a class="navbar-brand" href="home">
                 <img src="images/haibro.png" class="haibro-img" />
               </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNine"
@@ -85,7 +85,7 @@
             <div class="sidebar-menu">
               <ul>
                 <li><a href="updateprofileClient">Profile</a></li>
-                <li><a href="javascript:void(0)">All services</a></li>
+                <li><a href="allServices">All services</a></li>
                 <li><a href="login">Log out</a></li>
               </ul>
             </div>

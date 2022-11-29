@@ -23,10 +23,6 @@ Route::get('/', function () {
     return view('pages/loginClient');
 });
 
-// Route::get('/index', function () {
-//     return view('layouts/frontend');
-// });
-
 Route::get('/login', function () {
     return view('pages/loginClient');
 });
@@ -73,18 +69,22 @@ Route::get('/serviceForm', function () {
 });
 Route::get('/allServices', [ClientServicesController::class, 'show'])->name("show");
 Route::post('/serviceForm', [ClientServicesController::class, 'insert'])->name("insert");
-Route::post('/allServices', [ClientServicesController::class, 'update'])->name("update");
-Route::get('/allServices', [ClientServicesController::class, 'delete'])->name("delete");
+Route::post('/allServices/update', [ClientServicesController::class, 'update'])->name("update");
+Route::post('/allServices/delete', [ClientServicesController::class, 'delete'])->name("delete");
+Route::get('/service/edit/{id}', [ClientServicesController::class, 'editServiceData']);
 
-// Route::get('/allServices', function () {
+
+// Route::get('/services', function () {
 //     return view('pages/allServices');
 // });
-
 
 Route::get('/home', function () {
     return view('pages/clientServices');
 });
 
+Route::get('/allServices/home', function () {
+    return view('pages/clientServices');
+});
 
 
 

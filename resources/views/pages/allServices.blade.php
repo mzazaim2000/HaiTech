@@ -111,8 +111,7 @@
                   </div>
                   <div class="col-sm-6">
                     <a href="serviceForm" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>New Service</span></a>
-                    <a href="#deleteService" class="btn btn-danger" data-toggle="modal"><i class="material-icons">&#xE15C;</i> <span>Delete</span></a>
-                    <a href="#editService" class="btn btn-edit" data-toggle="modal"><i class="fas fa-pen"></i> <span>Edit</span></a>
+                
                   </div>
                 </div>
               </div>
@@ -120,12 +119,7 @@
           <table class="table table-striped table-hover">
           <thead>
             <tr>
-              <th>
-                <span class="custom-checkbox">
-                  <input type="checkbox" name="selectAll" id="selectAll">
-                  <label for="selectAll"></label>
-                </span>
-              </th>
+              <th>ID</th>
               <th>Name</th>
               <th>Phone</th>
               <th>Email</th>
@@ -134,17 +128,15 @@
               <th>Date</th>
               <th>Time</th>
               <th>Issue</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
-            @foreach($services as $service)
-               <tr>
-                <th>
-                  <span class="custom-checkbox">
-                    <input type="checkbox" name="select[]" value="{{$service->email}}" id="select">
-                    <label for="select"></label>
-                  </span>
-                </th>
+            @if($services->count())
+            @foreach($services as $key => $service)
+               <tr id="tr_{{$service->id}}">
+         
+                 <td>{{$service->id}}</td>
                  <td>{{$service->name}}</td>
                  <td>{{$service->phone}}</td>
                  <td>{{$service->email}}</td>
@@ -153,8 +145,15 @@
                  <td>{{$service->date}}</td>
                  <td>{{$service->time}}</td>
                  <td>{{$service->issue}}</td>
+                 <td>
+                  <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>
+
+                  <button type= "button" onclick="deleteService({{$service->id}})" class="btn btn-danger"><i class="material-icons">&#xE15C;</i><span>Cancel</span></a>
+              
+                 </td>
                </tr>
                @endforeach 
+               @endif
           </table>
          
 
@@ -184,45 +183,46 @@
 
                         <form action="{{route("update")}}" method="POST">
                           @csrf
+                          <input type="hidden" name="id" id="id" value="">
                             <div class="col-md-12">
-                               <input class="form-control" type="text" name="name" placeholder="Name" required>
+                               <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" required>
                                <div class="valid-feedback">Name field is valid!</div>
                                <div class="invalid-feedback">Name field cannot be blank!</div>
                             </div>
 
                             <div class="col-md-12">
-                              <input class="form-control" type="text" name="phone" placeholder="Phone Number" required>
+                              <input class="form-control" type="text" name="phone" id="phone" value="" placeholder="Phone Number" required>
                                <div class="valid-feedback">Phone no. field is valid!</div>
                                <div class="invalid-feedback">Phone no. field cannot be blank!</div>
                           </div>
 
                             <div class="col-md-12">
-                                <input class="form-control" type="email" name="email" placeholder="Email" required>
+                                <input class="form-control" type="email" name="email" id="email" value=""  placeholder="Email" required>
                                  <div class="valid-feedback">Email field is valid!</div>
                                  <div class="invalid-feedback">Email field cannot be blank!</div>
                             </div>
 
                             <div class="col-md-12">
-                              <input class="form-control" type="text" name="company" placeholder="Company" required>
+                              <input class="form-control" type="text" name="company" id="company" value=""  placeholder="Company" required>
                                <div class="invalid-feedback">Company name field cannot be blank!</div>
                           </div>
 
                           <br>
                           Services:
                           <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="services[]" value="UPS" id="invalidCheck">
+                            <input class="form-check-input" type="checkbox" name="services[]" id="ups" value="UPS"  id="invalidCheck">
                           <label class="form-check-label">Uninterruptible Power Supply Precision Cooling Solution</label>
                         </div>
                         <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="services[]" value="Facility Management" id="invalidCheck">
+                          <input class="form-check-input" type="checkbox" name="services[]" id="fm" value="Facility Management"  id="invalidCheck">
                           <label class="form-check-label">Facility Management M&E Maintenance</label>
                       </div>
                       <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]" value="Data Center Enhancement" id="invalidCheck">
+                        <input class="form-check-input" type="checkbox" name="services[]" id="dce" value="Data Center Enhancement"  id="invalidCheck">
                         <label class="form-check-label">Data Center Enhancement ICT Managed Services</label>
                     </div>
                     <div class="form-check">
-                      <input class="form-check-input" type="checkbox" name="services[]" value="Corporate Support" id="invalidCheck">
+                      <input class="form-check-input" type="checkbox" name="services[]" id="cs" value="Corporate Support"  id="invalidCheck">
                       <label class="form-check-label">Corporate Support Business Advisory</label>
                   </div>
 
@@ -231,14 +231,15 @@
                   Select Date & Time:
                   <div class="col-md-12">
                     <div class="input-group">
-                    <input class="input--style-2 js-datepicker" type="date" name="date"> <tr><tr> <input class="time" type="time" name="time">
+                    <input class="input--style-2 js-datepicker" type="date" name="date" id="date" value="" > <tr><tr> 
+                    <input class="time" type="time" name="time" id="time" value="" >
                     </div>
                     </div>
 
                     <br>
 
                         <div class="col-md-12">
-                            <textarea class="form-control" type="text" name="issue" placeholder="State your issue" required></textarea>
+                            <textarea class="form-control" type="text" name="issue" id="issue" value="" placeholder="State your issue" required></textarea>
                              <div class="invalid-feedback">Issue field cannot be blank!</div>
                         </div>
                   
@@ -246,7 +247,7 @@
                   
 
                             <div class="modal-footer">
-                                  <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
+                                  <button type="button" class="btn btn-default" onclick="closeModal()">cancel</button>
                                   <input type="submit" class="btn btn-info" value="Save">
                             </div>
                         </form>
@@ -263,7 +264,9 @@
 <div id="deleteService" class="modal fade">
 	<div class="modal-dialog">
 		<div class="modal-content">
-			<form>
+			<form action="{{route("delete")}}" method="POST">
+        @csrf
+        <input type="hidden" name="id" id="servId" value="">
 				<div class="modal-header">						
 					<h4 class="modal-title">Delete Service</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -273,8 +276,8 @@
 					<p class="text-warning"><small>This action cannot be undone.</small></p>
 				</div>
 				<div class="modal-footer">
-					<input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
-					<input type="submit" class="btn btn-danger" value="Delete" href="{{route("delete")}}">
+					<button type="button" class="btn btn-default" onclick="closeModalDelete()">cancel</button>
+					<input type="submit" class="btn btn-danger" value="Cancel Services" >
 				</div>
 			</form>
 		</div>
@@ -286,9 +289,9 @@
   
         <!-- Start header Area -->
 
-          <script src=" {{ asset('frontend/js/jquery-3.6.1.min.js') }}"></script>
-          <script src=" {{ asset('frontend/js/bootstrap5.bundle.js') }}"></script>
-          <script src=" {{ asset('frontend/js/form.bundle.js') }}"></script>
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+          <script src="{{ asset('frontend/js/bootstrap5.bundle.js') }}"></script>
+          <script src="{{ asset('frontend/js/form.bundle.js') }}"></script>
         
           <!--====== js ======-->
           <script src="assets/js/bootstrap.bundle.min.js"></script>
@@ -297,10 +300,85 @@
           <script src="assets/js/tiny-slider.js"></script>
           <script src="frontend/js/navbar.bundle.js"></script>
           <script src="frontend/js/allServices.js"></script>
-          <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+          {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> --}}
           <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
           <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
           <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+
+
+          <script>
+          function editForm(id){
+
+            $("#id").val("");
+            $("#name").val("");
+            $("#phone").val("");
+            $("#email").val("");
+            $("#company").val("");
+            $("#date").val("");
+            $("#time").val("");
+            $("#issue").val("");
+            $("#ups").prop( "checked", false );
+            $("#fm").prop( "checked", false );
+            $("#dc").prop( "checked", false );
+            $("#cs").prop( "checked", false );
+
+            $.ajax({
+                type: "GET",
+                url: '{{url("service/edit/")}}'+'/'+id,
+                dataType: "json",
+                success: function (data) {
+                    // console.log(data);
+                    $("#id").val(data["id"]);
+                    $("#name").val(data["name"]);
+                    $("#phone").val(data["phone"]);
+                    $("#email").val(data["email"]);
+                    $("#company").val(data["company"]);
+                    $("#date").val(data["date"]);
+                    $("#time").val(data["time"]);
+                    $("#issue").val(data["issue"]);
+
+                    var services = data["services"].split(',');
+                    for (let i = 0; i < services.length; i++) {
+
+                      var serv = services[i].trim();
+
+                      if(serv == "UPS"){
+                        $( "#ups" ).prop( "checked", true );
+                      }else if(serv == "Facility Management"){
+                        $( "#fm" ).prop( "checked", true );
+                      }else if(serv == "Data Center Enhancement"){
+                        $( "#dce" ).prop( "checked", true );
+                      }else if(serv == "Corporate Support"){
+                        $( "#cs" ).prop( "checked", true );
+                      }
+
+                    }
+
+
+                    $('#editService').modal('show');
+                },
+                error: function (data) {
+                    console.log('Error:', data);
+
+                }
+            });
+
+          }
+
+          function closeModal(){
+            $('#editService').modal('hide');
+          }
+
+          function deleteService(id){
+            $("#servId").val(id);
+            $('#deleteService').modal('show');
+          }
+
+          function closeModalDelete(){
+            $('#deleteService').modal('hide');
+          }
+
+          </script>
 
         </section>
       </body>
