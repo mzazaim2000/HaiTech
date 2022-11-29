@@ -73,7 +73,8 @@
               </div>
   
               <div class="navbar-btn d-none d-lg-inline-block">
-                <a class="menu-bar" href="#side-menu-left"><i class="lni lni-menu"></i></a>
+                <a class="menu-bar" href="#side-menu-left"><i class="lni lni-menu"></i>
+                  <img src="images/user2.png" class="user-img" /></a>
               </div>
             </nav>
             <!-- navbar -->
@@ -90,7 +91,8 @@
   
     <div class="sidebar-left">
       <div class="sidebar-close">
-        <a class="close" href="#close"><i class="lni lni-close"></i></a>
+        <a class="close" href="#close">
+          <i class="lni lni-close"></i></a>
       </div>
       <div class="sidebar-content">
         <div class="sidebar-logo">
