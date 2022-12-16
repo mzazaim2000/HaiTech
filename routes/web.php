@@ -86,3 +86,7 @@ Route::get('/home', function () {
 Route::get('/allServices/home', function () {
     return view('pages/clientServices');
 }); 
+
+Route::get('/services', function () {
+    return view('pages/adminAllServices');
+});
