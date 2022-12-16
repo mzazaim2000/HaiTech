@@ -17,6 +17,7 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="/frontend/css/style.css">
+    <link rel="stylesheet" href="/frontend/css/newstyle.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
   </head>
@@ -86,7 +87,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" href="services" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
@@ -110,3 +111,48 @@
           <div class="content-wrapper">
             <div class="row purchace-popup">
               <div class="col-12 stretch-card grid-margin">
+
+            <!-- page template end -->
+
+
+            <!-- top nav template start -->
+            <header class="site-navbar site-navbar-target" role="banner">
+                <div class="container">
+                    
+                      <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                          <li class="active"><a href="#" class="nav-link">All Services</a></li>
+                          <li><a href="#" class="nav-link">Pending</a></li>
+                          <li><a href="#" class="nav-link">Upcoming</a></li>
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </header>
+               <!-- top nav template end -->
+
+               <!-- table template start -->
+               <div class="table">
+               <table class="table table-striped table-hover">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Company</th>
+                    <th>Services</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Issue</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                </table>
+               </div>
+            <!-- table template end -->
+
+        
+
+    
