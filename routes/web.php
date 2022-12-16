@@ -90,3 +90,7 @@ Route::get('/allServices/home', function () {
 Route::get('/services', function () {
     return view('pages/adminAllServices');
 });
+
+Route::get('/adminClient', function () {
+    return view('pages/adminClient');
+});

@@ -26,7 +26,7 @@
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex align-items-center">
           <a class="navbar-brand brand-logo" href="admindashboard">
-            <img src="/images/logo.png" alt="logo" class="logo-dark" />
+            <img src="/images/logo.png" alt="logo" class="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="admindashboard"><img src="/images/test/logo-mini.svg" alt="logo" /></a>
         </div>
@@ -44,7 +44,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
                 <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 0 unread mails </p>
+                  <p class="mb-0 font-weight-medium float-left">You have 0 unread notification</p>
                   <span class="badge badge-pill badge-primary float-right"></span>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -77,7 +77,6 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
 
-            <!--  <a>We Hassle Free Anything</a> -->
 
             <li class="nav-item">
               <a class="nav-link" href="admindashboard">
@@ -86,13 +85,13 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" href="services">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services">
+              <a class="nav-link" href="adminClient">
                 <span class="menu-title">Client</span>
                 <i class="icon-people menu-icon"></i>
               </a>
