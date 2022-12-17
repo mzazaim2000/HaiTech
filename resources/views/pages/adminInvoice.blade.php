@@ -114,9 +114,9 @@
               </div>
             </div>
 
-    <div class="container">
-      <div class="d-flex bd-highlight mb-3">
-        <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
+            <div class="container">
+                 <div class="d-flex bd-highlight mb-3">
+            <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
       </div>
       
       <div class="table-responsive">
