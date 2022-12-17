@@ -144,6 +144,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Upcoming</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 {{-- <tbody>
@@ -174,6 +175,27 @@
                     
                 </table>
                </div>
+
+            <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="/frontend/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="/frontend/js/Chart.min.js"></script>
+    <script src="/frontend/js/moment.min.js"></script>
+    <script src="/frontend/js/daterangepicker.js"></script>
+    <script src="/frontend/js/chartist.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="/frontend/js/off-canvas.js"></script>
+    <script src="/frontend/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="/frontend/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+              </body>
+</html>
             <!-- table template end -->
 
         
