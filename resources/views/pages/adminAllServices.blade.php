@@ -115,11 +115,13 @@
               </div>
             </div>
             <!-- page template end -->
+
+
             <!-- top nav template start -->
             <header class="site-navbar site-navbar-target" role="banner">
                 <div class="container">  
                   <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation">
-                    <br><br>    
+                    <br><br><br><br>
                     <ul class="site-menu main-menu js-clone-nav ml-auto ">
                           <li class="active"><a href="adminAllservices" class="nav-link">All Services</a></li>
                           <li><a href="inprogress" class="nav-link">In-progress</a></li>
@@ -131,7 +133,7 @@
                <!-- top nav template end -->
 
                <!-- table template start -->
-               <br><br><br><div class="table">
+               <div class="table">
                <table class="table table-striped table-hover">
                 <thead>
                   <tr>
