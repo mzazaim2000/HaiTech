@@ -111,7 +111,7 @@
                     <h2>All Services</h2>
                   </div>
                   <div class="col-sm-6">
-                    <a href="serviceForm" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>New Service</span></a>
+                    <a href="serviceForm" class="btn btn-success"><i class="material-icons">&#xE147;</i><span>New Service</span></a>
                 
                   </div>
                 </div>

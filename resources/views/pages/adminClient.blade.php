@@ -2,38 +2,25 @@
 <html lang="en">
   <head>
     <!-- Required meta tags -->
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HaiTech</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="/frontend/css2/simple-line-icons.css">
     <link rel="stylesheet" href="/frontend/css/vendor.bundle.base.css">
     <!-- endinject -->
-    {{-- <!-- Plugin css for this page -->
+    <!-- Plugin css for this page -->
     <link rel="stylesheet" href="/frontend/css/daterangepicker.css">
     <link rel="stylesheet" href="/frontend/css/chartist.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
-    <!-- Layout styles --> --}}
+    <!-- Layout styles -->
     <link rel="stylesheet" href="/frontend/css/style.css">
-    <link rel="stylesheet" href="/frontend/css/newstyle.css">
-    <meta name="viewpoint" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{{ asset('frontend/css/bootstrap5.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/frontend.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/form.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/clientservice.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend/css/allservices.css') }}">
-
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
+    <link href="index.css" rel="stylesheet">
   </head>
   <body>
     <div class="container-scroller">
@@ -41,7 +28,7 @@
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex align-items-center">
           <a class="navbar-brand brand-logo" href="admindashboard">
-            <img src="/images/logo.png" alt="logo" class="logo-dark" />
+            <img src="/images/logo.png" alt="logo" class="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="admindashboard"><img src="/images/test/logo-mini.svg" alt="logo" /></a>
         </div>
@@ -59,7 +46,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
                 <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 0 unread mails </p>
+                  <p class="mb-0 font-weight-medium float-left">You have 0 unread notification</p>
                   <span class="badge badge-pill badge-primary float-right"></span>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -92,7 +79,6 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
 
-            <!--  <a>We Hassle Free Anything</a> -->
 
             <li class="nav-item">
               <a class="nav-link" href="admindashboard">
@@ -101,19 +87,19 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" href="services">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="adminClient">
                 <span class="menu-title">Client</span>
                 <i class="icon-people menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="services">
                 <span class="menu-title">Invoice</span>
                 <i class="icon-book-open menu-icon"></i>
               </a>
@@ -125,209 +111,77 @@
           <div class="content-wrapper">
             <div class="row purchace-popup">
               <div class="col-12 stretch-card grid-margin">
-
-            <!-- page template end -->
-          
-          <br><br><br><br><br>
-          <div class="container-xl">
-            <div class="table-responsive">
-              <div class="table-wrapper">
-                <div class="table-title">
-                  <div class="row">
-                    <div class="col-sm-6">
-                      <h2>Clients</h2>
-                    </div>
-                    <div class="col-sm-6">
-                      <a href="serviceForm" class="btn btn-success"><i class="material-icons">&#xE147;</i> <span>New Client</span></a>
-                  
-                    </div>
-                  </div>
-                </div>
   
-            <table class="table table-striped table-hover">
-            <thead>
-              <tr>
-                <th>ClientID</th>
-                <th>Name</th>
-                <th>Company</th>
-                <th>Phone No.</th>
-                <th>Email</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{-- @if($services->count())
-              @foreach($services as $key => $service)
-                 <tr id="tr_{{$service->id}}">
-           
-                   <td>{{$service->id}}</td>
-                   <td>{{$service->name}}</td>
-                   <td>{{$service->phone}}</td>
-                   <td>{{$service->email}}</td>
-                   <td>{{$service->company}}</td>
-                   <td>{{$service->services}}</td>
-                   <td>{{$service->date}}</td>
-                   <td>{{$service->time}}</td>
-                   <td>{{$service->issue}}</td>
-                   <td> --}}
-                    <a href="editService" class="edit"  data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                    <a href="deleteService" class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                
-                   {{-- </td>
-                 </tr> --}}
-                 {{-- @endforeach 
-                 @endif --}}
-            </table>
-           
-  
-            <!-- Edit Modal HTML -->
-  <div id="editService" class="modal fade">
-      <div class="modal-dialog">
-          <div class="modal-content">
-        <div class="form-body">
-          <div class="row">
-              <div class="form-holder">
-                  <div class="form-content">
-                      <div class="form-items">
-                          <h3>Request Service</h3>
-                          <p>Enter your details & we will be ready to provide solution instantly.</p>
-{{--                           
-                          @if(Session::get('success'))
-                          <div class="alert alert-success">
-                            {{Session:get('success')}}
-                          </div>
-                          @endif
-  
-                          @if(Session::get('fail'))
-                          <div class="alert alert-danger">
-                            {{Session:get('fail')}}
-                          </div>
-                          @endif --}}
-  
-                          <form action="{{route("update")}}" method="POST">
-                            @csrf
-                            <input type="hidden" name="id" id="id" value="">
-                              <div class="col-md-12">
-                                 <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" required>
-                                 <div class="valid-feedback">Name field is valid!</div>
-                                 <div class="invalid-feedback">Name field cannot be blank!</div>
-                              </div>
-  
-                              <div class="col-md-12">
-                                <input class="form-control" type="text" name="phone" id="phone" value="" placeholder="Phone Number" required>
-                                 <div class="valid-feedback">Phone no. field is valid!</div>
-                                 <div class="invalid-feedback">Phone no. field cannot be blank!</div>
-                            </div>
-  
-                              <div class="col-md-12">
-                                  <input class="form-control" type="email" name="email" id="email" value=""  placeholder="Email" required>
-                                   <div class="valid-feedback">Email field is valid!</div>
-                                   <div class="invalid-feedback">Email field cannot be blank!</div>
-                              </div>
-  
-                              <div class="col-md-12">
-                                <input class="form-control" type="text" name="company" id="company" value=""  placeholder="Company" required>
-                                 <div class="invalid-feedback">Company name field cannot be blank!</div>
-                            </div>
-  
-                            <br>
-                            Services:
-                            <div class="form-check">
-                              <input class="form-check-input" type="checkbox" name="services[]" id="ups" value="UPS"  id="invalidCheck">
-                            <label class="form-check-label">Uninterruptible Power Supply Precision Cooling Solution</label>
-                          </div>
-                          <div class="form-check">
-                            <input class="form-check-input" type="checkbox" name="services[]" id="fm" value="Facility Management"  id="invalidCheck">
-                            <label class="form-check-label">Facility Management M&E Maintenance</label>
-                        </div>
-                        <div class="form-check">
-                          <input class="form-check-input" type="checkbox" name="services[]" id="dce" value="Data Center Enhancement"  id="invalidCheck">
-                          <label class="form-check-label">Data Center Enhancement ICT Managed Services</label>
-                      </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="services[]" id="cs" value="Corporate Support"  id="invalidCheck">
-                        <label class="form-check-label">Corporate Support Business Advisory</label>
-                    </div>
-  
-                    <br>
-                    
-                    Select Date & Time:
-                    <div class="col-md-12">
-                      <div class="input-group">
-                      <input class="input--style-2 js-datepicker" type="date" name="date" id="date" value="" > <tr><tr> 
-                      <input class="time" type="time" name="time" id="time" value="" >
-                      </div>
-                      </div>
-  
-                      <br>
-  
-                          <div class="col-md-12">
-                              <textarea class="form-control" type="text" name="issue" id="issue" value="" placeholder="State your issue" required></textarea>
-                               <div class="invalid-feedback">Issue field cannot be blank!</div>
-                          </div>
-                    
-                         <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
-                    
-  
-                              <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" onclick="closeModal()">cancel</button>
-                                    <input type="submit" class="btn btn-info" value="Save">
-                              </div>
-                          </form>
-                      </div>
-                  </div>
-              </div>
-          </div>
-       </div>
-          </div>
-      </div>
-  </div>
-  
-  <!-- Delete Modal HTML -->
-  <div id="deleteService" class="modal fade">
-      <div class="modal-dialog">
-          <div class="modal-content">
-              <form action="{{route("delete")}}" method="POST">
-          @csrf
-          <input type="hidden" name="id" id="servId" value="">
-                  <div class="modal-header">						
-                      <h4 class="modal-title">Delete Service</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                  </div>
-                  <div class="modal-body">					
-                      <p>Are you sure you want to delete these Records?</p>
-                      <p class="text-warning"><small>This action cannot be undone.</small></p>
-                  </div>
-                  <div class="modal-footer">
-                      <button type="button" class="btn btn-default" onclick="closeModalDelete()">cancel</button>
-                      <input type="submit" class="btn btn-danger" value="Proceed" >
-                  </div>
-              </form>
-          </div>
-      </div>
-  </div>
-
               </div>
             </div>
-          </div>
-              
-    
-          <!-- Start header Area -->
-  
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-            <script src="{{ asset('frontend/js/bootstrap5.bundle.js') }}"></script>
-            <script src="{{ asset('frontend/js/form.bundle.js') }}"></script>
-          
-            <!--====== js ======-->
-            <script src="assets/js/bootstrap.bundle.min.js"></script>
-            <script src="assets/js/glightbox.min.js"></script>
-            <script src="assets/js/main.js"></script>
-            <script src="assets/js/tiny-slider.js"></script>
-            <script src="frontend/js/navbar.bundle.js"></script>
-            <script src="frontend/js/allServices.js"></script>
-            {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> --}}
-            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-            <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-</body>
+
+    <div class="container">
+      <div class="d-flex bd-highlight mb-3">
+        <div class="me-auto p-2 bd-highlight"><h2>Clients</div>
+        <div class="p-2 bd-highlight">
+          <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">New Client</button>
+        </div>
+      </div>
+      
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Client ID</th>
+              <th scope="col">Firstname</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Email</th>
+              <th scope="col">Contact</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="mytable">
+            <tr>
+              <th scope="row" colspan="5">Loading...</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div> 
+  <!-- content-wrapper ends -->
+  <!-- partial:partials/_footer.html -->
+  <footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © HaiTech</span>
+    </div>
+  </footer>
+  <!-- partial -->
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="/frontend/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/frontend/js/Chart.min.js"></script>
+<script src="/frontend/js/moment.min.js"></script>
+<script src="/frontend/js/daterangepicker.js"></script>
+<script src="/frontend/js/chartist.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/frontend/js/off-canvas.js"></script>
+<script src="/frontend/js/misc.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="/frontend/js/dashboard.js"></script>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </body>
 </html>
+            <!-- table template end -->
+
+        
+
+    
