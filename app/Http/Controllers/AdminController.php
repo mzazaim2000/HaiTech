@@ -28,6 +28,11 @@ class AdminController extends Controller
             };
     } 
 
+    public function index(){
+        $service= Services::all();
+        return view('index', compact('services'));
+    }
+
     public function insert(Request $request){
         
         $service = new Services;
@@ -56,7 +61,7 @@ class AdminController extends Controller
     public function show(){
         
         $data = Services::all();
-        return view('pages/allServices')->with('services', $data);
+        return view('pages/adminAllServices')->with('services', $data);
         }
    
 

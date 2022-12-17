@@ -121,7 +121,7 @@
                     
                       <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation">
                         <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                          <li class="active"><a href="services" class="nav-link">All Services</a></li>
+                          <li class="active"><a href="adminAllservices" class="nav-link">All Services</a></li>
                           <li><a href="pending" class="nav-link">Pending</a></li>
                           {{-- <li><a href="#" class="nav-link">Upcoming</a></li> --}}
                         </ul>
@@ -146,36 +146,109 @@
                     <th>Status</th>
                   </tr>
                 </thead>
-                {{-- <tbody>
+                <tbody>
                   @if($services->count())
-                  @foreach($services as $service)
+                  @foreach($services as $key => $service)
                      <tr id="tr_{{$service->id}}">
                
                        <td>{{$service->id}}</td>
                        <td>{{$service->name}}</td>
-                       <td>{{$service->phone}}</td>
-                       <td>{{$service->email}}</td>
                        <td>{{$service->company}}</td>
                        <td>{{$service->services}}</td>
                        <td>{{$service->date}}</td>
                        <td>{{$service->time}}</td>
-                       <td>{{$service->issue}}</td>
+                      
                        <td>
                         {{-- <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>
                         <button type= "button" onclick="deleteService({{$service->id}})" class="btn btn-danger"><i class="material-icons">&#xE15C;</i><span>Cancel</span></a> --}}
-                        {{-- <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                        <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                         <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                     
                        </td>
                      </tr>
                      @endforeach 
-                     @endif --}}
-                </table>
+                     @endif
                     
                 </table>
                </div>
             <!-- table template end -->
 
         
-
+            <script>
+              function editForm(id){
+    
+                $("#id").val("");
+                $("#name").val("");
+                $("#phone").val("");
+                $("#email").val("");
+                $("#company").val("");
+                $("#date").val("");
+                $("#time").val("");
+                $("#issue").val("");
+                $("#ups").prop( "checked", false );
+                $("#fm").prop( "checked", false );
+                $("#dc").prop( "checked", false );
+                $("#cs").prop( "checked", false );
+    
+                $.ajax({
+                    type: "GET",
+                    url: '{{url("service/edit/")}}'+'/'+id,
+                    dataType: "json",
+                    success: function (data) {
+                        // console.log(data);
+                        $("#id").val(data["id"]);
+                        $("#name").val(data["name"]);
+                        $("#phone").val(data["phone"]);
+                        $("#email").val(data["email"]);
+                        $("#company").val(data["company"]);
+                        $("#date").val(data["date"]);
+                        $("#time").val(data["time"]);
+                        $("#issue").val(data["issue"]);
+    
+                        var services = data["services"].split(',');
+                        for (let i = 0; i < services.length; i++) {
+    
+                          var serv = services[i].trim();
+    
+                          if(serv == "UPS"){
+                            $( "#ups" ).prop( "checked", true );
+                          }else if(serv == "Facility Management"){
+                            $( "#fm" ).prop( "checked", true );
+                          }else if(serv == "Data Center Enhancement"){
+                            $( "#dce" ).prop( "checked", true );
+                          }else if(serv == "Corporate Support"){
+                            $( "#cs" ).prop( "checked", true );
+                          }
+    
+                        }
+    
+    
+                        $('#editService').modal('show');
+                    },
+                    error: function (data) {
+                        console.log('Error:', data);
+    
+                    }
+                });
+    
+              }
+    
+              function closeModal(){
+                $('#editService').modal('hide');
+              }
+    
+              function deleteService(id){
+                $("#servId").val(id);
+                $('#deleteService').modal('show');
+              }
+    
+              function closeModalDelete(){
+                $('#deleteService').modal('hide');
+              }
+    
+              </script>
+    
+            </section>
+          </body>
+          </html>
     

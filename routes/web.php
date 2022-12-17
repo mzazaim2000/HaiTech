@@ -74,11 +74,6 @@ Route::post('/allServices/update', [ClientServicesController::class, 'update'])-
 Route::post('/allServices/delete', [ClientServicesController::class, 'delete'])->name("delete");
 Route::get('/service/edit/{id}', [ClientServicesController::class, 'editServiceData']);
 
-
-// Route::get('/services', function () {
-//     return view('pages/allServices');
-// });
-
 Route::get('/home', function () {
     return view('pages/clientServices');
 });
@@ -87,9 +82,15 @@ Route::get('/allServices/home', function () {
     return view('pages/clientServices');
 }); 
 
-Route::get('/services', function () {
-    return view('pages/adminAllServices');
-});
+// Route::get('/services', function () {
+//     return view('pages/adminAllServices');
+// });
+
+Route::get('/adminAllServices', [AdminController::class, 'show'])->name("show");
+Route::post('/serviceForm', [AdminController::class, 'insert'])->name("insert");
+Route::post('/allServices/update', [AdminController::class, 'update'])->name("update");
+Route::post('/allServices/delete', [AdminController::class, 'delete'])->name("delete");
+Route::get('/service/edit/{id}', [AdminController::class, 'editServiceData']);
 
 Route::get('/pending', function () {
     return view('pages/adminPending');
@@ -98,3 +99,4 @@ Route::get('/pending', function () {
 Route::get('/adminClient', function () {
     return view('pages/adminClient');
 });
+
