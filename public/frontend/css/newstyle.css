@@ -54,7 +54,7 @@ body {
     position: absolute; }
     @media (max-width: 991.98px) {
       .site-navbar {
-        padding-top: 0;
+        padding-top: 60;
         padding-bottom: 3rem; } }
     .site-navbar .toggle-button {
       position: absolute;
