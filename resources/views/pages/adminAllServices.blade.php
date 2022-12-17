@@ -115,26 +115,22 @@
               </div>
             </div>
             <!-- page template end -->
-
-
-            <!-- top nav template start -->
-            <div class="container"> 
-            <header class="site-navbar site-navbar-target" role="banner">
-                <div class="container">  
-                  <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation">
-                    <br><br>    
-                    <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                          <li class="active"><a href="adminAllservices" class="nav-link">All Services</a></li>
-                          <li><a href="inprogress" class="nav-link">In-progress</a></li>
-                          <li><a href="upcoming" class="nav-link">Upcoming</a></li>
-                        </ul>
-                      </nav>
-                    </div>
-              </header>
-               <!-- top nav template end -->
+ <!-- top nav template start -->
+ <div class="container"> 
+  <header class="site-navbar site-navbar-target" role="banner">
+        <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation"><br><br><br><br><br>
+          <ul class="site-menu main-menu js-clone-nav ml-auto">
+            <li class="active"><a href="adminAllServices" class="nav-link">All Services</a></li>
+            <li><a href="inprogress" class="nav-link">In-Progress</a></li>
+            <li><a href="upcoming" class="nav-link">Upcoming</a></li>
+              </ul>
+            </nav>
+          </div>
+    </header>
+     <!-- top nav template end -->
 
                <!-- table template start -->
-               <div class="table">
+               <br><br><br><div class="table">
                <table class="table table-striped table-hover">
                 <thead>
                   <tr>
