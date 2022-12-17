@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" href="adminAllServices" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
@@ -99,7 +99,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services">
+              <a class="nav-link" href="invoice">
                 <span class="menu-title">Invoice</span>
                 <i class="icon-book-open menu-icon"></i>
               </a>
@@ -111,7 +111,6 @@
           <div class="content-wrapper">
             <div class="row purchace-popup">
               <div class="col-12 stretch-card grid-margin">
-  
               </div>
             </div>
 

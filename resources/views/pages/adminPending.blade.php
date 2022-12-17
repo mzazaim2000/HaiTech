@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/newstyle.css">
     <!-- End layout styles -->
-    <link rel="shortcut icon" href="/images/logo.png" />
+    <link rel="shortcut icon" href="/images/logo.png"/>
   </head>
   <body>
     <div class="container-scroller">
@@ -126,8 +126,6 @@
                           <li><a href="upcoming" class="nav-link">Upcoming</a></li>
                         </ul>
                       </nav>
-                    </div>
-                  </div>
                 </div>
               </header>
                <!-- top nav template end -->
@@ -194,7 +192,7 @@
     <!-- Custom js for this page -->
     <script src="/frontend/js/dashboard.js"></script>
     <!-- End custom js for this page -->
-              </body>
+</body>
 </html>
             <!-- table template end -->
 

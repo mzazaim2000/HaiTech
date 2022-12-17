@@ -16,9 +16,9 @@
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/newstyle.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
   </head>
@@ -28,7 +28,7 @@
       <nav class="navbar default-layout-navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
         <div class="navbar-brand-wrapper d-flex align-items-center">
           <a class="navbar-brand brand-logo" href="admindashboard">
-            <img src="/images/logo.png" alt="logo" class="logo-dark" />
+            <img src="/images/logo.png" alt="logo" class="logo" />
           </a>
           <a class="navbar-brand brand-logo-mini" href="admindashboard"><img src="/images/test/logo-mini.svg" alt="logo" /></a>
         </div>
@@ -46,7 +46,7 @@
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
                 <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 0 unread mails </p>
+                  <p class="mb-0 font-weight-medium float-left">You have 0 unread notification</p>
                   <span class="badge badge-pill badge-primary float-right"></span>
                 </a>
                 <div class="dropdown-divider"></div>
@@ -79,7 +79,6 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
 
-            <!--  <a>We Hassle Free Anything</a> -->
 
             <li class="nav-item">
               <a class="nav-link" href="admindashboard">
@@ -88,19 +87,19 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="adminAllservices" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" href="adminAllServices">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="adminClient">
                 <span class="menu-title">Client</span>
                 <i class="icon-people menu-icon"></i>
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">
+              <a class="nav-link" href="services">
                 <span class="menu-title">Invoice</span>
                 <i class="icon-book-open menu-icon"></i>
               </a>
@@ -112,24 +111,22 @@
           <div class="content-wrapper">
             <div class="row purchace-popup">
               <div class="col-12 stretch-card grid-margin">
-
+  
+              </div>
+            </div>
             <!-- page template end -->
-
-
             <!-- top nav template start -->
             <header class="site-navbar site-navbar-target" role="banner">
-                <div class="container">
-                    
-                      <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation">
-                        <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                <div class="container">  
+                  <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation">
+                    <br><br>    
+                    <ul class="site-menu main-menu js-clone-nav ml-auto ">
                           <li class="active"><a href="adminAllservices" class="nav-link">All Services</a></li>
                           <li><a href="inprogress" class="nav-link">In-progress</a></li>
                           <li><a href="upcoming" class="nav-link">Upcoming</a></li>
                         </ul>
                       </nav>
                     </div>
-                  </div>
-                </div>
               </header>
                <!-- top nav template end -->
 
@@ -176,8 +173,21 @@
                </div>
             <!-- table template end -->
 
-        <!-- container-scroller -->
-
+          </div> 
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © HaiTech</span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="/frontend/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -194,10 +204,7 @@
     <!-- Custom js for this page -->
     <script src="/frontend/js/dashboard.js"></script>
     <!-- End custom js for this page -->
-              </body>
-</html>
 
-        
             <script>
               function editForm(id){
     
@@ -271,8 +278,6 @@
               }
     
               </script>
-    
-            </section>
           </body>
           </html>
     
