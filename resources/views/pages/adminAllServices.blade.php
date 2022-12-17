@@ -123,7 +123,7 @@
                         <ul class="site-menu main-menu js-clone-nav ml-auto ">
                           <li class="active"><a href="services" class="nav-link">All Services</a></li>
                           <li><a href="pending" class="nav-link">Pending</a></li>
-                          {{-- <li><a href="#" class="nav-link">Upcoming</a></li> --}}
+                          <li><a href="upcoming" class="nav-link">Upcoming</a></li>
                         </ul>
                       </nav>
                     </div>
@@ -175,6 +175,27 @@
                 </table>
                </div>
             <!-- table template end -->
+
+        <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="/frontend/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="/frontend/js/Chart.min.js"></script>
+    <script src="/frontend/js/moment.min.js"></script>
+    <script src="/frontend/js/daterangepicker.js"></script>
+    <script src="/frontend/js/chartist.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="/frontend/js/off-canvas.js"></script>
+    <script src="/frontend/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="/frontend/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+              </body>
+</html>
 
         
 
