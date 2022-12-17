@@ -96,6 +96,10 @@ Route::get('/pending', function () {
     return view('pages/adminPending');
 });
 
+Route::get('/upcoming', function () {
+    return view('pages/adminUpcoming');
+});
+
 Route::get('/adminClient', function () {
     return view('pages/adminClient');
 });
