@@ -1,3 +1,4 @@
+
 .bg-mynav {
     background-color: #2c3e50;
   }
@@ -10,3 +11,50 @@
   td {
       line-height: 3rem;
   }
+
+  .btn-outline {
+    color: #4fbfa8;
+    background-color: #ffffff;
+    border-color: #4fbfa8;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+  }
+  
+  .btn-outline {
+    color: #4fbfa8;
+    background-color: #ffffff;
+    border-color: #4fbfa8;
+    font-weight: bold;
+    border-radius: 0;
+  }
+  
+  .btn-outline:hover,
+  .btn-outline:active,
+  .btn-outline:focus,
+  .btn-outline.active {
+    background: #4fbfa8;
+    color: #ffffff;
+    border-color: #4fbfa8;
+    
+  }
+  
+  
+  .btn-colour-1 {
+    color: #fff;
+    background-color: #f07f23;
+    border-color: #f07f23;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    border-radius: 0;
+  }
+  
+  .btn-colour-1:hover,
+  .btn-colour-1:active,
+  .btn-colour-1:focus,
+  .btn-colour-1.active {
+    /* let's darken #004E64 a bit for hover effect */
+    background: #b26c2a;
+    color: #ffffff;
+    border-color: #b26c2a;
+  }
+

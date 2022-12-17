@@ -18,9 +18,10 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="/frontend/css/style.css">
+    <link href="/frontend/css/index.css" rel="stylesheet">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
-    <link href="index.css" rel="stylesheet">
+
   </head>
   <body>
     <div class="container-scroller">
@@ -118,7 +119,7 @@
       <div class="d-flex bd-highlight mb-3">
         <div class="me-auto p-2 bd-highlight"><h2>Clients</div>
         <div class="p-2 bd-highlight">
-          <button type="button" class="btn btn-secondary" onclick="showUserCreateBox()">New Client</button>
+          <button type="button" class="btn btn-colour-1" onclick="showUserCreateBox()">New Client</button>
         </div>
       </div>
       
@@ -174,7 +175,7 @@
 <!-- Custom js for this page -->
 <script src="/frontend/js/dashboard.js"></script>
 
-    <script src="index.js"></script>
+    <script src="/frontend/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   </body>
