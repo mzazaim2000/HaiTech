@@ -92,7 +92,7 @@ Route::post('/allServices/update', [AdminController::class, 'update'])->name("up
 Route::post('/allServices/delete', [AdminController::class, 'delete'])->name("delete");
 Route::get('/service/edit/{id}', [AdminController::class, 'editServiceData']);
 
-Route::get('/pending', function () {
+Route::get('/inprogress', function () {
     return view('pages/adminPending');
 });
 

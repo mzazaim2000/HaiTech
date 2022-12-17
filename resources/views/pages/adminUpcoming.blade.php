@@ -122,7 +122,7 @@
                       <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation">
                         <ul class="site-menu main-menu js-clone-nav ml-auto ">
                           <li><a href="adminAllServices" class="nav-link">All Services</a></li>
-                          <li><a href="pending" class="nav-link">Pending</a></li>
+                          <li><a href="inprogress" class="nav-link">In-progress</a></li>
                           <li class="active"><a href="upcoming" class="nav-link">Upcoming</a></li>
                         </ul>
                       </nav>
