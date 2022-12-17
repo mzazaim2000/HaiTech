@@ -131,4 +131,16 @@ class AdminController extends Controller
         return response()->json($data);
     }
 
+    public function showInProgress(){
+        
+        $data = Services::all();
+        return view('pages/adminPending')->with('services', $data);
+        }
+
+    public function showRequest(){
+        
+        $data = Services::all();
+        return view('pages/adminUpcoming')->with('services', $data);
+        }
+
 }

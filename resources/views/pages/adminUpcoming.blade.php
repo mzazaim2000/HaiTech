@@ -121,8 +121,8 @@
         <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation"><br><br><br><br><br>
           <ul class="site-menu main-menu js-clone-nav ml-auto">
             <li><a href="adminAllServices" class="nav-link">All Services</a></li>
-            <li><a href="inprogress" class="nav-link">In-Progress</a></li>
-            <li class="active"><a href="upcoming" class="nav-link">Upcoming</a></li>
+            <li><a href="adminPending" class="nav-link">In-Progress</a></li>
+            <li class="active"><a href="adminUpcoming" class="nav-link">Upcoming</a></li>
               </ul>
             </nav>
           </div>
@@ -133,41 +133,39 @@
                <br><br><br><div class="table">
                <table class="table table-striped table-hover">
                 <thead>
-                  <tr>
+                  <tr align="center">
                     <th>Service ID</th>
                     <th>Name</th>
                     <th>Company</th>
                     <th>Service Type</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <th>Upcoming</th>
+                    <th>Status</th>
                     <th>Action</th>
                   </tr>
                 </thead>
-                {{-- <tbody>
+                <tbody>
                   @if($services->count())
                   @foreach($services as $service)
-                     <tr id="tr_{{$service->id}}">
+                     <tr align="center" id="tr_{{$service->id}}">
                
-                       <td>{{$service->id}}</td>
-                       <td>{{$service->name}}</td>
-                       <td>{{$service->phone}}</td>
-                       <td>{{$service->email}}</td>
-                       <td>{{$service->company}}</td>
-                       <td>{{$service->services}}</td>
-                       <td>{{$service->date}}</td>
-                       <td>{{$service->time}}</td>
-                       <td>{{$service->issue}}</td>
+                      <td>{{$service->id}}</td>
+                      <td>{{$service->name}}</td>
+                      <td>{{$service->company}}</td>
+                      <td>{{$service->services}}</td>
+                      <td>{{$service->date}}</td>
+                      <td>{{$service->time}}</td>
+                      <td>{{$service->action}}</td>
                        <td>
                         {{-- <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>
                         <button type= "button" onclick="deleteService({{$service->id}})" class="btn btn-danger"><i class="material-icons">&#xE15C;</i><span>Cancel</span></a> --}}
-                        {{-- <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal">Approve<i class="material-icons" data-toggle="tooltip" title="Approved">&#xE254;</i></a>
+                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal">Decline<i class="material-icons" data-toggle="tooltip" title="Decline">&#xE872;</i></a>
                     
                        </td>
                      </tr>
                      @endforeach 
-                     @endif --}}
+                     @endif
                     </table>
                   </div> 
            <!-- content-wrapper ends -->

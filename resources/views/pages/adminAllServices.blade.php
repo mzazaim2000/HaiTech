@@ -121,8 +121,8 @@
         <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation"><br><br><br><br><br>
           <ul class="site-menu main-menu js-clone-nav ml-auto">
             <li class="active"><a href="adminAllServices" class="nav-link">All Services</a></li>
-            <li><a href="inprogress" class="nav-link">In-Progress</a></li>
-            <li><a href="upcoming" class="nav-link">Upcoming</a></li>
+            <li><a href="adminPending" class="nav-link">In-Progress</a></li>
+            <li><a href="adminUpcoming" class="nav-link">Upcoming</a></li>
               </ul>
             </nav>
           </div>
@@ -187,7 +187,8 @@
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-
+  </body>
+  </html>
     <!-- plugins:js -->
     <script src="/frontend/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -278,6 +279,5 @@
               }
     
               </script>
-     </body>
-</html>
+
     

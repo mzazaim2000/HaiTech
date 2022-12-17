@@ -88,13 +88,13 @@ Route::get('/allServices/home', function () {
 
 Route::get('/adminAllServices', [AdminController::class, 'show'])->name("show");
 Route::post('/serviceForm', [AdminController::class, 'insert'])->name("insert");
-Route::post('/allServices/update', [AdminController::class, 'update'])->name("update");
-Route::post('/allServices/delete', [AdminController::class, 'delete'])->name("delete");
+Route::post('/adminAllServices/update', [AdminController::class, 'update'])->name("update");
+Route::post('/adminAllServices/delete', [AdminController::class, 'delete'])->name("delete");
 Route::get('/service/edit/{id}', [AdminController::class, 'editServiceData']);
 
-Route::get('/inprogress', function () {
-    return view('pages/adminPending');
-});
+Route::get('/adminPending', [AdminController::class, 'showInProgress'])->name("showInProgress");
+Route::get('/adminUpcoming', [AdminController::class, 'showRequest'])->name("showRequest");
+
 
 Route::get('/upcoming', function () {
     return view('pages/adminUpcoming');
