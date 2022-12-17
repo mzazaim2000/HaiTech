@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" href="adminAllservices" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
@@ -121,7 +121,7 @@
                     
                       <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation">
                         <ul class="site-menu main-menu js-clone-nav ml-auto ">
-                          <li><a href="services" class="nav-link">All Services</a></li>
+                          <li><a href="adminAllServices" class="nav-link">All Services</a></li>
                           <li><a href="pending" class="nav-link">Pending</a></li>
                           <li class="active"><a href="upcoming" class="nav-link">Upcoming</a></li>
                         </ul>
@@ -144,6 +144,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Upcoming</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 {{-- <tbody>
@@ -174,6 +175,27 @@
                     
                 </table>
                </div>
+
+            <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="/frontend/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="/frontend/js/Chart.min.js"></script>
+    <script src="/frontend/js/moment.min.js"></script>
+    <script src="/frontend/js/daterangepicker.js"></script>
+    <script src="/frontend/js/chartist.min.js"></script>
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="/frontend/js/off-canvas.js"></script>
+    <script src="/frontend/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page -->
+    <script src="/frontend/js/dashboard.js"></script>
+    <!-- End custom js for this page -->
+              </body>
+</html>
             <!-- table template end -->
 
         

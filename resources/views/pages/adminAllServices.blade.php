@@ -16,6 +16,7 @@
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/frontend/css/style.css">
     <link rel="stylesheet" href="/frontend/css/newstyle.css">
     <!-- End layout styles -->
@@ -87,7 +88,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services" aria-expanded="false" aria-controls="ui-basic">
+              <a class="nav-link" href="adminAllservices" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
@@ -144,6 +145,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Status</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -157,6 +159,7 @@
                        <td>{{$service->services}}</td>
                        <td>{{$service->date}}</td>
                        <td>{{$service->time}}</td>
+                       <td>{{$service->action}}</td>
                       
                        <td>
                         {{-- <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>

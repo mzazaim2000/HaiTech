@@ -85,7 +85,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services">
+              <a class="nav-link" href="adminAllServices">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>

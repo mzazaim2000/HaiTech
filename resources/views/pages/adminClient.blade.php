@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services">
+              <a class="nav-link" href="services" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
