@@ -127,12 +127,12 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Client ID</th>
-              <th scope="col">Firstname</th>
-              <th scope="col">Surname</th>
-              <th scope="col">Email</th>
-              <th scope="col">Contact</th>
-              <th scope="col">Action</th>
+              <th>Client ID</th>
+              <th>Firstname</th>
+              <th>Surname</th>
+              <th>Email</th>
+              <th>Contact</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody id="mytable">
