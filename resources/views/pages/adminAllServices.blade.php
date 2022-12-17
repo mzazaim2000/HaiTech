@@ -133,7 +133,7 @@
                <!-- top nav template end -->
 
                <!-- table template start -->
-               <div class="table">
+               <br><br><br><div class="table">
                <table class="table table-striped table-hover">
                 <thead>
                   <tr>
@@ -149,6 +149,32 @@
                     <th>Action</th>
                   </tr>
                 </thead>
+                {{-- <tbody>
+                  @if($services->count())
+                  @foreach($services as $service)
+                     <tr id="tr_{{$service->id}}">
+               
+                       <td>{{$service->id}}</td>
+                       <td>{{$service->name}}</td>
+                       <td>{{$service->phone}}</td>
+                       <td>{{$service->email}}</td>
+                       <td>{{$service->company}}</td>
+                       <td>{{$service->services}}</td>
+                       <td>{{$service->date}}</td>
+                       <td>{{$service->time}}</td>
+                       <td>{{$service->issue}}</td>
+                       <td>
+                        {{-- <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>
+                        <button type= "button" onclick="deleteService({{$service->id}})" class="btn btn-danger"><i class="material-icons">&#xE15C;</i><span>Cancel</span></a> --}}
+                        {{-- <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                    
+                       </td>
+                     </tr>
+                     @endforeach 
+                     @endif --}}
+                </table>
+                    
                 </table>
                </div>
             <!-- table template end -->
