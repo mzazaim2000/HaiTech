@@ -21,6 +21,7 @@ class CreateServicesTable extends Migration
             $table->string('company');
             $table->string('services');
             $table->string('issue');
+            $table->string('status')->default('NULL');
             $table->timestamps();
         });
     }

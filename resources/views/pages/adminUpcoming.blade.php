@@ -148,7 +148,7 @@
                 <tbody>
                   @if($services->count())
                   @foreach($services as $service)
-                     <tr align="center" id="tr_{{$service->id}}">
+                     <tr id="tr_{{$service->id}}">
                
                       <td>{{$service->id}}</td>
                       <td>{{$service->name}}</td>
@@ -156,12 +156,12 @@
                       <td>{{$service->services}}</td>
                       <td>{{$service->date}}</td>
                       <td>{{$service->time}}</td>
-                      <td>{{$service->action}}</td>
+                      <td>{{$service->status}}</td>
+                
                        <td>
-                        {{-- <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>
-                        <button type= "button" onclick="deleteService({{$service->id}})" class="btn btn-danger"><i class="material-icons">&#xE15C;</i><span>Cancel</span></a> --}}
-                        <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal">Approve<i class="material-icons" data-toggle="tooltip" title="Approved">&#xE254;</i></a>
-                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal">Decline<i class="material-icons" data-toggle="tooltip" title="Decline">&#xE872;</i></a>
+                        <a href={{url('approved', $service->id)}}>Approve<i class="material-icons" data-toggle="tooltip" title="Approved">&#xE254;</i></a>
+                        <a href={{url('canceled', $service->id)}}>Decline<i class="material-icons" data-toggle="tooltip" title="Decline">&#xE872;</i></a>
+              
                     
                        </td>
                      </tr>

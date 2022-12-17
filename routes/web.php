@@ -93,7 +93,11 @@ Route::post('/adminAllServices/delete', [AdminController::class, 'delete'])->nam
 Route::get('/service/edit/{id}', [AdminController::class, 'editServiceData']);
 
 Route::get('/adminPending', [AdminController::class, 'showInProgress'])->name("showInProgress");
+
 Route::get('/adminUpcoming', [AdminController::class, 'showRequest'])->name("showRequest");
+Route::get('/approved/{id}', [AdminController::class, 'approved']);
+Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
+
 
 
 Route::get('/upcoming', function () {

@@ -29,6 +29,7 @@ class Services extends Model
         'date',
         'time',
         'issue',
+        'status'
     ];
 
     /**

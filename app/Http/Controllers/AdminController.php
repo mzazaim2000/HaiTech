@@ -143,4 +143,23 @@ class AdminController extends Controller
         return view('pages/adminUpcoming')->with('services', $data);
         }
 
+    public function approved($id){
+        
+        $data = Services::find($id);
+        $data->status='Approved';
+        $data->update();
+
+        return redirect()->back();
+
+        }    
+
+    public function canceled($id, Request $request){
+        
+        $data = Services::find($id);
+        $data->status='Decline';
+        $data->update();
+
+        return redirect()->back();
+            }            
+        
 }
