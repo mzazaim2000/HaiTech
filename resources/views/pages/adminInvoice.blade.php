@@ -12,15 +12,15 @@
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="/frontend/css/daterangepicker.css">
     <link rel="stylesheet" href="/frontend/css/chartist.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="/frontend/css/style.css">
-    <link rel="stylesheet" href="/frontend/css/newstyle.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
+    <link href="index.css" rel="stylesheet">
   </head>
   <body>
     <div class="container-scroller">
@@ -87,7 +87,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="adminAllServices">
+              <a class="nav-link" href="adminAllServices" aria-expanded="false" aria-controls="ui-basic">
                 <span class="menu-title">Services</span>
                 <i class="icon-wrench menu-icon"></i>
               </a>
@@ -111,97 +111,72 @@
           <div class="content-wrapper">
             <div class="row purchace-popup">
               <div class="col-12 stretch-card grid-margin">
-  
               </div>
             </div>
-            <!-- page template end -->
-            <!-- top nav template start -->
-  <div class="container"> 
-  <header class="site-navbar site-navbar-target" role="banner">
-        <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation"><br><br><br><br><br>
-          <ul class="site-menu main-menu js-clone-nav ml-auto">
-            <li><div class="me-auto p-2 bd-highlight"><h2>Services</div></li>
-            <li><a href="adminAllServices" class="nav-link">All Services</a></li>
-            <li><a href="adminPending" class="nav-link">In-Progress</a></li>
-            <li class="active"><a href="adminUpcoming" class="nav-link">Upcoming</a></li>
-              </ul>
-            </nav>
-          </div>
-    </header>
-     <!-- top nav template end -->
 
-               <!-- table template start -->
-               <br><br><br><div class="table">
-               <table class="table table-striped table-hover">
-                <thead>
-                  <tr align="center">
-                    <th>Service ID</th>
-                    <th>Name</th>
-                    <th>Company</th>
-                    <th>Service Type</th>
-                    <th>Date</th>
-                    <th>Time</th>
-                    <th>Status</th>
-                    <th>Action</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  @if($services->count())
-                  @foreach($services as $service)
-                     <tr align="center" id="tr_{{$service->id}}">
-               
-                      <td>{{$service->id}}</td>
-                      <td>{{$service->name}}</td>
-                      <td>{{$service->company}}</td>
-                      <td>{{$service->services}}</td>
-                      <td>{{$service->date}}</td>
-                      <td>{{$service->time}}</td>
-                      <td>{{$service->action}}</td>
-                       <td>
-                        {{-- <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>
-                        <button type= "button" onclick="deleteService({{$service->id}})" class="btn btn-danger"><i class="material-icons">&#xE15C;</i><span>Cancel</span></a> --}}
-                        <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal">Approve<i class="material-icons" data-toggle="tooltip" title="Approved">&#xE254;</i></a>
-                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal">Decline<i class="material-icons" data-toggle="tooltip" title="Decline">&#xE872;</i></a>
-                    
-                       </td>
-                     </tr>
-                     @endforeach 
-                     @endif
-                    </table>
-                  </div> 
-           <!-- content-wrapper ends -->
-           </div>
-           <!-- partial:partials/_footer.html -->
-           <footer class="footer">
-             <div class="d-sm-flex justify-content-center justify-content-sm-between">
-               <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © HaiTech</span>
-             </div>
-           </footer>
-           <!-- partial -->
-         </div>
-         <!-- main-panel ends -->
-       </div>
-       <!-- page-body-wrapper ends -->
-     </div>
-     <!-- container-scroller -->
-     <!-- plugins:js -->
-     <script src="/frontend/js/vendor.bundle.base.js"></script>
-     <!-- endinject -->
-     <!-- Plugin js for this page -->
-     <script src="/frontend/js/Chart.min.js"></script>
-     <script src="/frontend/js/moment.min.js"></script>
-     <script src="/frontend/js/daterangepicker.js"></script>
-     <script src="/frontend/js/chartist.min.js"></script>
-     <!-- End plugin js for this page -->
-     <!-- inject:js -->
-     <script src="/frontend/js/off-canvas.js"></script>
-     <script src="/frontend/js/misc.js"></script>
-     <!-- endinject -->
-     <!-- Custom js for this page -->
-     <script src="/frontend/js/dashboard.js"></script>
-     <!-- End custom js for this page -->
-   </body>
- </html>
+    <div class="container">
+      <div class="d-flex bd-highlight mb-3">
+        <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
+      </div>
+      
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Date</th>
+              <th scope="col">Time</th>
+              <th scope="col">Company</th>
+              <th scope="col">Action</th>
+            </tr>
+          </thead>
+          <tbody id="mytable">
+            <tr>
+              <th scope="row" colspan="6">Loading...</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div> 
+  <!-- content-wrapper ends -->
+  <!-- partial:partials/_footer.html -->
+  <footer class="footer">
+    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+      <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © HaiTech</span>
+    </div>
+  </footer>
+  <!-- partial -->
+</div>
+<!-- main-panel ends -->
+</div>
+<!-- page-body-wrapper ends -->
+</div>
+<!-- container-scroller -->
+<!-- plugins:js -->
+<script src="/frontend/js/vendor.bundle.base.js"></script>
+<!-- endinject -->
+<!-- Plugin js for this page -->
+<script src="/frontend/js/Chart.min.js"></script>
+<script src="/frontend/js/moment.min.js"></script>
+<script src="/frontend/js/daterangepicker.js"></script>
+<script src="/frontend/js/chartist.min.js"></script>
+<!-- End plugin js for this page -->
+<!-- inject:js -->
+<script src="/frontend/js/off-canvas.js"></script>
+<script src="/frontend/js/misc.js"></script>
+<!-- endinject -->
+<!-- Custom js for this page -->
+<script src="/frontend/js/dashboard.js"></script>
+
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  </body>
+</html>
+            <!-- table template end -->
 
         
 

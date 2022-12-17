@@ -99,7 +99,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="services">
+              <a class="nav-link" href="invoice">
                 <span class="menu-title">Invoice</span>
                 <i class="icon-book-open menu-icon"></i>
               </a>
@@ -120,6 +120,7 @@
   <header class="site-navbar site-navbar-target" role="banner">
         <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation"><br><br><br><br><br>
           <ul class="site-menu main-menu js-clone-nav ml-auto">
+            <li><div class="me-auto p-2 bd-highlight"><h2>Services</div></li>
             <li><a href="adminAllServices" class="nav-link">All Services</a></li>
             <li class="active"><a href="adminPending" class="nav-link">In-Progress</a></li>
             <li><a href="adminUpcoming" class="nav-link">Upcoming</a></li>

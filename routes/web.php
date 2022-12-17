@@ -104,3 +104,7 @@ Route::get('/adminClient', function () {
     return view('pages/adminClient');
 });
 
+Route::get('/invoice', function () {
+    return view('pages/adminInvoice');
+});
+
