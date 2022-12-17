@@ -91,6 +91,10 @@ Route::get('/services', function () {
     return view('pages/adminAllServices');
 });
 
+Route::get('/pending', function () {
+    return view('pages/adminPending');
+});
+
 Route::get('/adminClient', function () {
     return view('pages/adminClient');
 });
