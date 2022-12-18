@@ -156,7 +156,7 @@
                        <td>{{$service->services}}</td>
                        <td>{{$service->date}}</td>
                        <td>{{$service->time}}</td>
-                       <td>{{$service->action}}</td>
+                       <td>{{$service->status}}</td>
                       
                        <td>
                         {{-- <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>

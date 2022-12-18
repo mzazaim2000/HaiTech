@@ -131,12 +131,23 @@ class AdminController extends Controller
         return response()->json($data);
     }
 
-    public function showInProgress(){
-        
-        $data = Services::all();
-        return view('pages/adminPending')->with('services', $data);
-        }
+    //in-progress
+    public function showInProgress(Request $request){
+    
+        // $data = Services::find($request->id);
+        // $status = Services::where($request->status == "Approved")->first();    
 
+        //  if($status){
+            $data = Services::all();
+        //     // return redirect()->route('show', ['services' => $data]);
+        //     return view('pages/adminPending')->with('services', $data);
+        //  }
+
+            return view('pages/adminPending')->with('services', $data);
+    }
+
+
+    //upcoming    
     public function showRequest(){
         
         $data = Services::all();
@@ -153,13 +164,13 @@ class AdminController extends Controller
 
         }    
 
-    public function canceled($id, Request $request){
+    public function canceled($id){
         
         $data = Services::find($id);
         $data->status='Decline';
         $data->update();
 
         return redirect()->back();
-            }            
+        }            
         
 }
