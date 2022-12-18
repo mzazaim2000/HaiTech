@@ -88,8 +88,8 @@ Route::get('/allServices/home', function () {
 
 Route::get('/adminAllServices', [AdminController::class, 'show'])->name("show");
 Route::post('/serviceForm', [AdminController::class, 'insert'])->name("insert");
-Route::post('/adminAllServices/update', [AdminController::class, 'update'])->name("update");
-Route::post('/adminAllServices/delete', [AdminController::class, 'delete'])->name("delete");
+// Route::post('/adminAllServices/update', [AdminController::class, 'update'])->name("update");
+// Route::post('/adminAllServices/delete', [AdminController::class, 'delete'])->name("delete");
 Route::get('/service/edit/{id}', [AdminController::class, 'editServiceData']);
 
 Route::get('/adminPending', [AdminController::class, 'showInProgress'])->name("showInProgress");
@@ -108,6 +108,12 @@ Route::get('/upcoming', function () {
 Route::get('/adminClient', function () {
     return view('pages/adminClient');
 });
+
+Route::get('/adminClient', [AdminController::class, 'showUser'])->name("showUser");
+Route::get('/client/edit/{id}', [AdminController::class, 'editClientData']);
+Route::post('/adminClient/updateClient', [AdminController::class, 'updateClient'])->name("updateClient");
+Route::post('/adminClient/deleteClient', [AdminController::class, 'deleteClient'])->name("deleteClient");
+
 
 Route::get('/invoice', function () {
     return view('pages/adminInvoice');

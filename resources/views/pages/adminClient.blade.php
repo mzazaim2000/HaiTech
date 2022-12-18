@@ -136,16 +136,130 @@
             </tr>
           </thead>
           <tbody id="mytable">
+            @if($user->count())
+            @foreach($user as $key => $client)
+               <tr id="tr_{{$client->id}}">
+         
+                 <td>{{$client->id}}</td>
+                 <td>{{$client->firstname}}</td>
+                 <td>{{$client->surname}}</td>
+                 <td>{{$client->email}}</td>
+                 <td>{{$client->contact}}</td>
+             
+                 <td>
+                  <a href="editClient" class="edit" onclick="editForm({{$client->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
+                  <a href="deleteClient" class="delete" onclick="deleteClient({{$client->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+
             <tr>
-              <th scope="row" colspan="5">Loading...</th>
+              
             </tr>
           </tbody>
+          @endforeach 
+          @endif
         </table>
       </div>
     </div>
 
   </div> 
   <!-- content-wrapper ends -->
+
+  <!-- Edit Modal HTML -->
+  <div id="editClient" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="form-body">
+          <div class="row">
+              <div class="form-holder">
+                  <div class="form-content">
+                      <div class="form-items">
+                          <h3>Client Details</h3>
+                          <p>All clients information. Need to update client details?</p>
+                          
+                          @if(Session::get('success'))
+                          <div class="alert alert-success">
+                            {{Session:get('success')}}
+                          </div>
+                          @endif
+  
+                          @if(Session::get('fail'))
+                          <div class="alert alert-danger">
+                            {{Session:get('fail')}}
+                          </div>
+                          @endif
+  
+                          <form action="{{route("updateClient")}}" method="POST">
+                            @csrf
+                            <input type="hidden" name="id" id="id" value="">
+                              <div class="col-md-12">
+                                 <input class="form-control" type="text" name="fname" id="name" value="" placeholder="First Name" required>
+                                 <div class="valid-feedback">Name field is valid!</div>
+                                 <div class="invalid-feedback">Name field cannot be blank!</div>
+                              </div>
+
+                              <div class="col-md-12">
+                                <input class="form-control" type="text" name="lname" id="name" value="" placeholder="Surname" required>
+                                <div class="valid-feedback">Name field is valid!</div>
+                                <div class="invalid-feedback">Name field cannot be blank!</div>
+                             </div>
+  
+                             <div class="col-md-12">
+                              <input class="form-control" type="email" name="email" id="email" value=""  placeholder="Email" required>
+                               <div class="valid-feedback">Email field is valid!</div>
+                               <div class="invalid-feedback">Email field cannot be blank!</div>
+                          </div>
+
+                              <div class="col-md-12">
+                                <input class="form-control" type="text" name="contact" id="phone" value="" placeholder="Phone Number" required>
+                                 <div class="valid-feedback">Phone no. field is valid!</div>
+                                 <div class="invalid-feedback">Phone no. field cannot be blank!</div>
+                            </div>
+  
+                         <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                    
+  
+                              <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" onclick="closeModal()">Cancel</button>
+                                    <input type="submit" class="btn btn-info" value="Save">
+                              </div>
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+       </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Delete Modal HTML -->
+<div id="deleteClient" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form action="{{route("deleteClient")}}" method="POST">
+        @csrf
+        <input type="hidden" name="id" id="servId" value="">
+				<div class="modal-header">						
+					<h4 class="modal-title">Delete Client</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">					
+					<p>Are you sure you want to delete the Client's Records?</p>
+					<p class="text-warning"><small>This action cannot be undone.</small></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" onclick="closeModalDelete()">Cancel</button>
+					<input type="submit" class="btn btn-danger" value="Proceed" >
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+
+
   <!-- partial:partials/_footer.html -->
   <footer class="footer">
     <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -178,6 +292,54 @@
     <script src="/frontend/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  
+    <script>
+      function editForm(id){
+
+        $("#id").val("");
+        $("#firstname").val("");
+        $("#surname").val("");
+        $("#email").val("");
+        $("#contact").val("");     
+
+        $.ajax({
+            type: "GET",
+            url: '{{url("client/edit/")}}'+'/'+id,
+            dataType: "json",
+            success: function (data) {
+                // console.log(data);
+                $("#id").val(data["id"]);
+                $("#firstname").val(data["firstname"]);
+                $("#surname").val(data["surname"]);
+                $("#email").val(data["email"]);
+                $("#contact").val(data["contact"]);
+
+                $('#editClient').modal('show');
+            },
+            error: function (data) {
+                console.log('Error:', data);
+
+            }
+        });
+
+      }
+
+      function closeModal(){
+        $('#editClient').modal('hide');
+      }
+
+      function deleteClient(id){
+        $("#clientId").val(id);
+        $('#deleteClient').modal('show');
+      }
+
+      function closeModalDelete(){
+        $('#deleteClient').modal('hide');
+      }
+
+      </script>
+
+  
   </body>
 </html>
             <!-- table template end -->
