@@ -166,9 +166,9 @@
                     
                        </td>
                      </tr>
+                </tbody>
                      @endforeach 
                      @endif
-                    
                 </table>
                </div>
             <!-- table template end -->
@@ -188,8 +188,7 @@
       <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
-  </body>
-  </html>
+
     <!-- plugins:js -->
     <script src="/frontend/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -280,5 +279,8 @@
               }
     
               </script>
+
+</body>
+</html>
 
     

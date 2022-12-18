@@ -117,7 +117,6 @@
             <div class="container">
                  <div class="d-flex bd-highlight mb-3">
             <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
-
             </div>
       
       <table class="table table-striped table-hover">
@@ -137,7 +136,7 @@
         </thead>
       </table>
     </div>
-
+  </div>
   <!-- content-wrapper ends -->
   <!-- partial:partials/_footer.html -->
   <footer class="footer">
