@@ -174,7 +174,7 @@
                   </div>
                 </div>
               </div>
-            </div>  --}}
+            </div> --}}
             <!-- Quick Action Toolbar Starts-->
             <div class="row quick-action-toolbar">
               <div class="col-md-12 grid-margin">
@@ -290,7 +290,7 @@
                   </div>
                 </div>
               </div>
-            </div>  --}}
+            </div> --}}
             
             {{-- <div class="row">
               <div class="col-md-12 grid-margin stretch-card">
@@ -380,8 +380,8 @@
                   </div>
                 </div>
               </div>
-            </div> --}}
-          </div> 
+            </div> 
+          </div>  --}}
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
