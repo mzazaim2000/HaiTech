@@ -238,7 +238,7 @@
 		<div class="modal-content">
 			<form action="{{route("deleteClient")}}" method="POST">
         @csrf
-        <input type="hidden" name="id" id="servId" value="">
+        <input type="hidden" name="id" id="clientId" value="">
 				<div class="modal-header">						
 					<h4 class="modal-title">Delete Client</h4>
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -309,8 +309,8 @@
             success: function (data) {
                 // console.log(data);
                 $("#id").val(data["id"]);
-                $("#firstname").val(data["firstname"]);
-                $("#surname").val(data["surname"]);
+                $("#firstname").val(data["fname"]);
+                $("#surname").val(data["lname"]);
                 $("#email").val(data["email"]);
                 $("#contact").val(data["contact"]);
 

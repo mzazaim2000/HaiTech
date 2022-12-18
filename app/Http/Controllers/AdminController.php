@@ -215,10 +215,7 @@ class AdminController extends Controller
 
             //echo "Successfuly updated";
             $info = User::all();
-            // return view('pages/allServices')->with('services', $info);
             return redirect()->route('showUser', ['user' => $info]);
-
-
         }
     }
 
@@ -227,10 +224,9 @@ class AdminController extends Controller
         $id =$request->id;
         $data=User::where('id','=',$id)->delete();  
         if($data){
-            echo "Data deleted";
-            // $info = User::all();
-            // // return view('pages/allServices')->with('services', $info);
-            // return redirect()->route('showUser', ['user' => $info]);
+
+            $info = User::all();
+            return redirect()->route('showUser', ['user' => $info]);
 
         }
 
