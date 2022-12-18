@@ -196,13 +196,13 @@
                             @csrf
                             <input type="hidden" name="id" id="id" value="">
                               <div class="col-md-12">
-                                 <input class="form-control" type="text" name="fname" id="name" value="" placeholder="First Name" required>
+                                 <input class="form-control" type="text" name="fname" id="fname" value="" placeholder="First Name" required>
                                  <div class="valid-feedback">Name field is valid!</div>
                                  <div class="invalid-feedback">Name field cannot be blank!</div>
                               </div>
 
                               <div class="col-md-12">
-                                <input class="form-control" type="text" name="lname" id="name" value="" placeholder="Surname" required>
+                                <input class="form-control" type="text" name="lname" id="lname" value="" placeholder="Surname" required>
                                 <div class="valid-feedback">Name field is valid!</div>
                                 <div class="invalid-feedback">Name field cannot be blank!</div>
                              </div>
@@ -214,7 +214,7 @@
                           </div>
 
                               <div class="col-md-12">
-                                <input class="form-control" type="text" name="contact" id="phone" value="" placeholder="Phone Number" required>
+                                <input class="form-control" type="text" name="contact" id="contact" value="" placeholder="Phone Number" required>
                                  <div class="valid-feedback">Phone no. field is valid!</div>
                                  <div class="invalid-feedback">Phone no. field cannot be blank!</div>
                             </div>
@@ -302,8 +302,8 @@
       function editForm(id){
 
         $("#id").val("");
-        $("#firstname").val("");
-        $("#surname").val("");
+        $("#fname").val("");
+        $("#lname").val("");
         $("#email").val("");
         $("#contact").val("");     
 
@@ -314,8 +314,8 @@
             success: function (data) {
                 // console.log(data);
                 $("#id").val(data["id"]);
-                $("#firstname").val(data["fname"]);
-                $("#surname").val(data["lname"]);
+                $("#fname").val(data["firstname"]);
+                $("#lname").val(data["surname"]);
                 $("#email").val(data["email"]);
                 $("#contact").val(data["contact"]);
 
@@ -347,7 +347,7 @@
   
   </body>
 </html>
-            <!-- table template end -->
+
 
         
 

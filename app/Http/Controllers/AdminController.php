@@ -85,7 +85,7 @@ class AdminController extends Controller
         $phone =$request->phone;
         $email =$request->email;
         $company =$request->company;
-        $services = implode(",", $request->services);
+        $services = implode(", ", $request->services);
         $date =$request->date;
         $time =$request->time;
         $issue =$request->issue;
@@ -183,7 +183,7 @@ class AdminController extends Controller
 
     public function editClientData(Request $request){
 
-        $data=Services::find($request->id);
+        $data=User::find($request->id);
         return response()->json($data);
     }
 
@@ -194,19 +194,17 @@ class AdminController extends Controller
             'surname' => 'required',
             'email' => 'required',
             'contact' => 'required',
-         
         ]);
-    
         
         $id =$request->id;
-        $fname=$request->fname;
-        $lname=$request->lname;
+        $firstname=$request->fname;
+        $surname=$request->lname;
         $email=$request->email;
         $contact=$request->contact;
-
+        
         $data = User::where('id','=',$id)->update([
-            'firstname'=>$fname,
-            'surname'=>$lname,
+            'firstname'=>$firstname,
+            'surname'=>$surname,
             'email'=>$email,
             'contact'=>$contact,
             ]);
@@ -214,8 +212,11 @@ class AdminController extends Controller
         if ($data){
 
             //echo "Successfuly updated";
-            $info = User::all();
-            return redirect()->route('showUser', ['user' => $info]);
+            $info = Services::all();
+            // return view('pages/allServices')->with('services', $info);
+            return redirect()->route('show', ['services' => $info]);
+
+
         }
     }
 

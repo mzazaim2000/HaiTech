@@ -110,9 +110,9 @@ Route::get('/adminClient', function () {
 });
 
 Route::get('/adminClient', [AdminController::class, 'showUser'])->name("showUser");
-Route::get('/client/edit/{id}', [AdminController::class, 'editClientData']);
 Route::post('/adminClient/updateClient', [AdminController::class, 'updateClient'])->name("updateClient");
 Route::post('/adminClient/deleteClient', [AdminController::class, 'deleteClient'])->name("deleteClient");
+Route::get('/client/edit/{id}', [AdminController::class, 'editClientData']);
 
 
 Route::get('/invoice', function () {
