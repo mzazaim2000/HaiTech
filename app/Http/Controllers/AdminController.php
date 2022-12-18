@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
  
 use Illuminate\Http\Request;
 use App\Models\Admin;
+use App\Models\User;
 use App\Models\Services;
 use Illuminate\Support\Facades\DB;
 
@@ -173,4 +174,65 @@ class AdminController extends Controller
         return redirect()->back();
         }            
         
+    //clientTab
+    public function showUser(){
+        
+        $data = User::all();
+        return view('pages/adminClient')->with('user', $data);
+        }
+
+    public function editClientData(Request $request){
+
+        $data=Services::find($request->id);
+        return response()->json($data);
+    }
+
+    public function updateClient(Request $request){
+        
+        $this->validate($request, [
+            'firstname' => 'required',
+            'surname' => 'required',
+            'email' => 'required',
+            'contact' => 'required',
+         
+        ]);
+    
+        
+        $id =$request->id;
+        $fname=$request->fname;
+        $lname=$request->lname;
+        $email=$request->email;
+        $contact=$request->contact;
+
+        $data = User::where('id','=',$id)->update([
+            'firstname'=>$fname,
+            'surname'=>$lname,
+            'email'=>$email,
+            'contact'=>$contact,
+            ]);
+    
+        if ($data){
+
+            //echo "Successfuly updated";
+            $info = User::all();
+            // return view('pages/allServices')->with('services', $info);
+            return redirect()->route('showUser', ['user' => $info]);
+
+
+        }
+    }
+
+    public function deleteClient(Request $request){
+    
+        $id =$request->id;
+        $data=User::where('id','=',$id)->delete();  
+        if($data){
+            echo "Data deleted";
+            // $info = User::all();
+            // // return view('pages/allServices')->with('services', $info);
+            // return redirect()->route('showUser', ['user' => $info]);
+
+        }
+
+    }
 }

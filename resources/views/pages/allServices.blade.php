@@ -249,7 +249,7 @@
                   
 
                             <div class="modal-footer">
-                                  <button type="button" class="btn btn-default" onclick="closeModal()">cancel</button>
+                                  <button type="button" class="btn btn-default" onclick="closeModal()">Cancel</button>
                                   <input type="submit" class="btn btn-info" value="Save">
                             </div>
                         </form>
@@ -278,7 +278,7 @@
 					<p class="text-warning"><small>This action cannot be undone.</small></p>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" onclick="closeModalDelete()">cancel</button>
+					<button type="button" class="btn btn-default" onclick="closeModalDelete()">Cancel</button>
 					<input type="submit" class="btn btn-danger" value="Proceed" >
 				</div>
 			</form>
