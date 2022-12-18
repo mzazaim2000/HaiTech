@@ -119,28 +119,23 @@
             <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
       </div>
       
-      <div class="table-responsive">
-        <table class="table">
-          <thead>
-            <tr>
-              <th scope="col">ID</th>
-              <th scope="col">Name</th>
-              <th scope="col">Date</th>
-              <th scope="col">Time</th>
-              <th scope="col">Company</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody id="mytable">
-            <tr>
-              <th scope="row" colspan="6">Loading...</th>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-  </div> 
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Company</th>
+            <th>Services</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Issue</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+      </table>
+      
   <!-- content-wrapper ends -->
   <!-- partial:partials/_footer.html -->
   <footer class="footer">
