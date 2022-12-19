@@ -161,8 +161,6 @@
                        <td>
                         <a href={{url('approved', $service->id)}} class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Approved">&#xE5ca;</i></a>
                         <a href={{url('canceled', $service->id)}} class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Decline">&#xE5cd;</i></a>
-              
-                    
                        </td>
                      </tr>
                      @endforeach 

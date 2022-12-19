@@ -84,18 +84,17 @@ Route::get('/allServices/home', function () {
 
 
 Route::get('/adminAllServices', [AdminController::class, 'showAll'])->name("showAll");
-Route::post('/adminAllServices/delete', [AdminController::class, 'delete'])->name("delete");
+Route::post('/adminAllServices/delete', [AdminController::class, 'deleteAll'])->name("deleteAll");
 
 Route::get('/adminPending', [AdminController::class, 'showInProgress'])->name("showInProgress");
-Route::post('/adminPending/update', [AdminController::class, 'updateService'])->name("updateService");
-Route::post('/adminPending/delete', [AdminController::class, 'deleteService'])->name("deleteService");
+Route::post('/adminPending/update', [AdminController::class, 'updateServ'])->name("updateServ");
+Route::post('/adminPending/delete', [AdminController::class, 'deleteServ'])->name("deleteServ");
 Route::get('/service/edit/{id}', [AdminController::class, 'editServiceData']);
 
 
 Route::get('/adminUpcoming', [AdminController::class, 'showRequest'])->name("showRequest");
 Route::get('/approved/{id}', [AdminController::class, 'approved']);
 Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
-
 
 
 Route::get('/adminClient', function () {

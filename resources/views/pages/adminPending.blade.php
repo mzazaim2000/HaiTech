@@ -160,7 +160,7 @@
                        <td>
                         
                         <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
-                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        <a href="deleteServ" class="delete" onclick="deleteServ({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                     
                        </td>
                      </tr>
@@ -196,9 +196,9 @@
                                       </div>
                                       @endif
 
-                                      <form action="{{route("updateService")}}" method="POST">
+                                      <form action="{{route("updateServ")}}" method="POST">
                                         @csrf
-                                        <input type="hidden" name="pendingid" id="id" value="">
+                                        <input type="hidden" name="id" id="pendingid" value="">
                                           <div class="col-md-12">
                                             <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" required>
                                             <div class="valid-feedback">Name field is valid!</div>
@@ -276,12 +276,12 @@
               </div>
 
               <!-- Delete Client HTML -->
-            <div id="deleteService" class="modal fade">
+            <div id="deleteServ" class="modal fade">
               <div class="modal-dialog">
                 <div class="modal-content">
-                  <form action="{{route("deleteService")}}" method="POST">
+                  <form action="{{route("deleteServ")}}" method="POST">
                     @csrf
-                    <input type="hidden" name="id" id="ServId" value="">
+                    <input type="hidden" name="id" id="clearId" value="">
                     <div class="modal-header">						
                       <h4 class="modal-title">Delete Service Record</h4>
                       <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -392,13 +392,13 @@
         $('#editService').modal('hide');
       }
 
-      function deleteService(id){
-        $("#servId").val(id);
-        $('#deleteService').modal('show');
+      function deleteServ(id){
+        $("#clearId").val(id);
+        $('#deleteServ').modal('show');
       }
 
       function closeModalDelete(){
-        $('#deleteService').modal('hide');
+        $('#deleteServ').modal('hide');
       }
 
       </script>

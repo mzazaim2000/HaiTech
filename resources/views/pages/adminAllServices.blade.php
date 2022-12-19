@@ -158,7 +158,7 @@
                        <td>{{$service->time}}</td>
                        <td>{{$service->status}}</td>
                        <td>
-                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        <a href="deleteAll" class="delete" onclick="deleteAll({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                        </td>
                      </tr>
                 </tbody>
@@ -171,12 +171,12 @@
           <!-- content-wrapper ends -->
 
             <!-- Delete Client HTML -->
-          <div id="deleteService" class="modal fade">
+          <div id="deleteAll" class="modal fade">
             <div class="modal-dialog">
               <div class="modal-content">
-                <form action="{{route("delete")}}" method="POST">
+                <form action="{{route("deleteAll")}}" method="POST">
                   @csrf
-                  <input type="hidden" name="id" id="ServId" value="">
+                  <input type="hidden" name="id" id="delId" value="">
                   <div class="modal-header">						
                     <h4 class="modal-title">Delete Service Record</h4>
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -232,13 +232,13 @@
                 $('#editService').modal('hide');
               }
     
-              function deleteService(id){
-                $("#servId").val(id);
-                $('#deleteService').modal('show');
+              function deleteAll(id){
+                $("#delId").val(id);
+                $('#deleteAll').modal('show');
               }
     
               function closeModalDelete(){
-                $('#deleteService').modal('hide');
+                $('#deleteAll').modal('hide');
               }
     
               </script>

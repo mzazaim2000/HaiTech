@@ -33,32 +33,8 @@ class AdminController extends Controller
         $service= Services::all();
         return view('index', compact('services'));
     }
-
-    public function insert(Request $request){
-        
-        $service = new Services;
-        $service->name=$request->name;
-        $service->phone=$request->phone;
-        $service->email=$request->email;
-        $service->company=$request->company;
-        $arrayTostring= implode(', ', $request->input('services'));
-        $service['services']=$arrayTostring;
-        $service->date=$request->date;
-        $service->time=$request->time;
-        $service->issue=$request->issue;
-        
-        $save = $service->save();
-
-        if($save){
-            $data = Services::all();
-            // return view('pages/allServices')->with('services', $data);
-            return redirect()->route('show', ['services' => $data]);
-         
-        } else{
-        return back()->with('<h1>Insert Fail</h1>');
-            } 
-        }
     
+    //AllServices Tab
     public function showAll(){
         
         $data = Services::all();
@@ -66,23 +42,17 @@ class AdminController extends Controller
         }
    
 
-    public function delete(Request $request){
+    public function deleteAll(Request $request){
     
         $id =$request->id;
         $data=Services::where('id','=',$id)->delete();  
         if($data){
             $info = Services::all();
-            return redirect()->route('show', ['services' => $info]);  
+            return redirect()->route('showAll', ['services' => $info]);  
         }else {
             echo "Error";
         }
 
-    }
-
-    public function editServiceData(Request $request){
-
-        $data=Services::find($request->id);
-        return response()->json($data);
     }
 
     //Services in-progressTab
@@ -97,7 +67,7 @@ class AdminController extends Controller
       
     }
 
-    public function deleteService(Request $request){
+    public function deleteServ(Request $request){
     
         $id =$request->id;
         $data=Services::where('id','=',$id)->delete();  
@@ -112,7 +82,7 @@ class AdminController extends Controller
 
     }
 
-    public function updateService(Request $request){
+    public function updateServ(Request $request){
         
         $this->validate($request, [
             'name' => 'required',
@@ -148,12 +118,17 @@ class AdminController extends Controller
             ]);
     
         if ($data){
-
-            $info = Services::all();
-            return redirect()->route('showInProgress', ['services' => $info]);
+            return redirect()->back();
+    
         }else {
             echo "Error";
         }
+    }
+
+    public function editServiceData(Request $request){
+
+        $data=Services::find($request->id);
+        return response()->json($data);
     }
 
     //Services upcomingTab    
