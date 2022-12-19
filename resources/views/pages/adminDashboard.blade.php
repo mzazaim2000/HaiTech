@@ -122,16 +122,23 @@
                   </div>
                   <div class="d-md-flex row m-0 quick-action-btns" role="group" aria-label="Quick action buttons">
                     <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
-                      <button type="button" class="btn px-0"> <i class="icon-user mr-2"></i> Add Client</button>
+                      <button href="addClient" type="button" class="btn px-0" onclick="addFormModal()"> <i class="icon-user mr-2"></i> Add Client</button>
+                      </a>
                     </div>
                     <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <a href="adminPending" class="admin-pending">
                       <button type="button" class="btn px-0"><i class="icon-docs mr-2"></i> In-Progress Services</button>
+                      </a>
                     </div>
                     <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <a href="adminUpcoming" class="admin-upcoming">
                       <button type="button" class="btn px-0"><i class="icon-folder mr-2"></i> Upcoming Services</button>
+                      </a>
                     </div>
                     <div class="col-sm-6 col-md-3 p-3 text-center btn-wrapper">
+                      <a href="invoice" class="admin-invoice">
                       <button type="button" class="btn px-0"><i class="icon-book-open mr-2"></i>Create Invoice</button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -195,8 +202,43 @@
                 </div>
               </div>
             </div>
-            
+
+            <!-- Add Client HTML -->
+  <div id="addClient" class="modal fade">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="form-body">
+          <div class="row">
+  <div class="col-12 grid-margin stretch-card">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Client Form</h4>
+        <p class="card-description">Kindly fill in your client's information.</p>
+        <form action="{{route('addClient')}}" method="POST" class="forms-sample">
+          @csrf
+          <div class="form-group">
+            <label for="InputName1">Firstname</label>
+            <input type="text" class="form-control" id="firstname" name="fname" placeholder="Firstname" required>
           </div>
+          <div class="form-group">
+            <label for="InputName2">Surname</label>
+            <input type="text" class="form-control" id="lastname" name="lname" placeholder="Surname" required>
+          </div>
+          <div class="form-group">
+            <label for="InputEmail">Email address</label>
+            <input type="email" class="form-control" id="Email" name="email" placeholder="john@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="InputPhone">Phone Number</label>
+            <input type="tel" class="form-control" id="Contact" name="contact" pattern="^(\+?6?01)[02-46-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$" placeholder="0112366789" required>
+          </div>
+          <button type="button"class="btn btn-light" onclick="closeModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary mr-2">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+            
           <!-- content-wrapper ends -->
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
@@ -227,5 +269,65 @@
     <!-- Custom js for this page -->
     <script src="/frontend/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+
+    <script src="/frontend/js/dashboard.js"></script>
+
+    <script src="/frontend/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  
+    <script>
+
+      function addFormModal(){
+        $('#addClient').modal('show');
+      }
+
+      function editForm(id){
+
+        $("#id").val("");
+        $("#fname").val("");
+        $("#lname").val("");
+        $("#email").val("");
+        $("#contact").val("");     
+
+        $.ajax({
+            type: "GET",
+            url: '{{url("client/edit/")}}'+'/'+id,
+            dataType: "json",
+            success: function (data) {
+                // console.log(data);
+                $("#cid").val(data["id"]);
+                $("#fname").val(data["firstname"]);
+                $("#lname").val(data["surname"]);
+                $("#email").val(data["email"]);
+                $("#contact").val(data["contact"]);
+
+                $('#editClient').modal('show');
+            },
+            error: function (data) {
+                console.log('Error:', data);
+
+            }
+        });
+
+      }
+
+      function closeModal(){
+        $('#editClient').modal('hide');
+      }
+
+      function deleteClient(id){
+        $("#clientId").val(id);
+        $('#deleteClient').modal('show');
+      }
+
+      function closeModalDelete(){
+        $('#deleteClient').modal('hide');
+      }
+
+      </script>
+
+  
+
   </body>
 </html>

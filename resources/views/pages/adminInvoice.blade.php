@@ -13,11 +13,14 @@
     <link rel="stylesheet" href="/frontend/css/daterangepicker.css">
     <link rel="stylesheet" href="/frontend/css/chartist.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="/frontend/css/style.css">
+    <link href="/frontend/css/index.css" rel="stylesheet">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
     <link href="index.css" rel="stylesheet">
