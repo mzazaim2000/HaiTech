@@ -124,7 +124,7 @@
       <div class="d-flex bd-highlight mb-3">
         <div class="me-auto p-2 bd-highlight"><h2>Clients</div>
         <div class="p-2 bd-highlight">
-          <button href="addClient" type="button" class="btn btn-colour-1" onclick="addForm()">New Client</button>
+          <button href="addClient" type="button" class="btn btn-colour-1" onclick="addFormModal()">New Client</button>
         </div>
       </div>
       
@@ -177,23 +177,23 @@
       <div class="card-body">
         <h4 class="card-title">Client Form</h4>
         <p class="card-description">Kindly fill in your client's information.</p>
-        <form action="#" method="POST" class="forms-sample">
-        <input type="hidden" name="id" id="id" value="">
+        <form action="{{route('addClient')}}" method="POST" class="forms-sample">
+          @csrf
           <div class="form-group">
             <label for="InputName1">Firstname</label>
-            <input type="text" class="form-control" id="firstname" placeholder="Firstname" required>
+            <input type="text" class="form-control" id="firstname" name="fname" placeholder="Firstname" required>
           </div>
           <div class="form-group">
             <label for="InputName2">Surname</label>
-            <input type="text" class="form-control" id="lastname" placeholder="Surname" required>
+            <input type="text" class="form-control" id="lastname" name="lname" placeholder="Surname" required>
           </div>
           <div class="form-group">
             <label for="InputEmail">Email address</label>
-            <input type="email" class="form-control" id="Email" placeholder="john@example.com" required>
+            <input type="email" class="form-control" id="Email" name="email" placeholder="john@example.com" required>
           </div>
           <div class="form-group">
             <label for="InputPhone">Phone Number</label>
-            <input type="tel" class="form-control" id="Contact" pattern="^(\+?6?01)[02-46-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$" placeholder="0112366789" required>
+            <input type="tel" class="form-control" id="Contact" name="contact" pattern="^(\+?6?01)[02-46-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$" placeholder="0112366789" required>
           </div>
           <button type="submit" class="btn btn-primary mr-2">Submit</button>
           <button class="btn btn-light">Cancel</button>
@@ -233,7 +233,7 @@
   
                           <form action="{{route("updateClient")}}" method="POST">
                             @csrf
-                            <input type="hidden" name="id" id="id" value="">
+                            <input type="hidden" name="id" id="cid" value="">
                               <div class="col-md-12">
                                  <input class="form-control" type="text" name="fname" id="fname" value="" placeholder="First Name" required>
                                  <div class="valid-feedback">Name field is valid!</div>
@@ -338,6 +338,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   
     <script>
+
+      function addFormModal(){
+        $('#addClient').modal('show');
+      }
+
       function editForm(id){
 
         $("#id").val("");
@@ -352,7 +357,7 @@
             dataType: "json",
             success: function (data) {
                 // console.log(data);
-                $("#id").val(data["id"]);
+                $("#cid").val(data["id"]);
                 $("#fname").val(data["firstname"]);
                 $("#lname").val(data["surname"]);
                 $("#email").val(data["email"]);

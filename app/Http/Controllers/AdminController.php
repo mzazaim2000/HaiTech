@@ -133,22 +133,16 @@ class AdminController extends Controller
     }
 
     //in-progress
-    public function showInProgress(Request $request){
+    public function showInProgress(){
     
-        $data = Services::find($request->id);
-        $status = Services::find($request->status);
-        $data = Services::where($status, "Approved")->get();
+        $data = Services::where("status", "Approved")->get();
 
         if($data){
-            // $data->status='In-Progress';
-            // $data->update();
-            $data = Services::all();
-            // return redirect()->back();
-            // return redirect()->route('show', ['services' => $data]);
+      
             return view('pages/adminPending')->with('services', $data);
         }
 
-        //    return view('pages/adminPending')->with('services', $data);
+      
     }
 
 
@@ -184,6 +178,32 @@ class AdminController extends Controller
         $data = User::all();
         return view('pages/adminClient')->with('user', $data);
         }
+    
+    public function addClient(Request $request){
+        
+            $this->validate($request, [
+                'fname' => 'required',
+                'lname' => 'required',
+                'email' => 'required',
+                'contact' => 'required',
+            ]);
+            
+            $id =$request->id;
+            $firstname=$request->fname;
+            $surname=$request->lname;
+            $email=$request->email;
+            $contact=$request->contact;
+            
+            $data = new User;
+            $data->firstname = $firstname;
+            $data->surname = $surname;
+            $data->email = $email;
+            $data->contact = $contact;
+            $data->password = $surname."123";
+            if ($data->save()){
+                return redirect()->back();
+            }
+    }
 
     public function editClientData(Request $request){
 
@@ -194,8 +214,8 @@ class AdminController extends Controller
     public function updateClient(Request $request){
         
         $this->validate($request, [
-            'firstname' => 'required',
-            'surname' => 'required',
+            'fname' => 'required',
+            'lname' => 'required',
             'email' => 'required',
             'contact' => 'required',
         ]);
@@ -215,11 +235,7 @@ class AdminController extends Controller
     
         if ($data){
 
-            //echo "Successfuly updated";
-            $info = Services::all();
-            // return view('pages/allServices')->with('services', $info);
-            return redirect()->route('show', ['services' => $info]);
-
+            return redirect()->back();
 
         }
     }

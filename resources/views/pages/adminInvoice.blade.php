@@ -117,6 +117,7 @@
             <div class="container">
                  <div class="d-flex bd-highlight mb-3">
             <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
+              <button href="#" type="button" class="btn btn-colour-1">Generate Invoice</button>
             </div>
       
       <table class="table table-striped table-hover">
@@ -138,6 +139,12 @@
     </div>
   </div>
   <!-- content-wrapper ends -->
+
+
+
+
+
+
   <!-- partial:partials/_footer.html -->
   <footer class="footer">
     <div class="d-sm-flex justify-content-center justify-content-sm-between">
