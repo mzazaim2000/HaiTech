@@ -83,7 +83,7 @@ Route::get('/allServices/home', function () {
 }); 
 
 
-Route::get('/adminAllServices', [AdminController::class, 'show'])->name("show");
+Route::get('/adminAllServices', [AdminController::class, 'showAll'])->name("showAll");
 Route::post('/adminAllServices/delete', [AdminController::class, 'delete'])->name("delete");
 
 Route::get('/adminPending', [AdminController::class, 'showInProgress'])->name("showInProgress");

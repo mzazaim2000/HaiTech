@@ -59,7 +59,7 @@ class AdminController extends Controller
             } 
         }
     
-    public function show(){
+    public function showAll(){
         
         $data = Services::all();
         return view('pages/adminAllServices')->with('services', $data);
