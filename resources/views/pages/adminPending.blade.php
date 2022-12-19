@@ -181,7 +181,7 @@
                         <div class="col-12 grid-margin stretch-card">
                           <div class="card">
                             <div class="card-body">
-                              <h4 class="card-title">Update Service Request</h4>
+                              <h4 class="card-title">Service Request Form</h4>
                               <p class="card-description">Update service request details.</p>
                                       @if(Session::get('success'))
                                       <div class="alert alert-success">
@@ -195,18 +195,11 @@
                                       </div>
                                       @endif
 
-<<<<<<< Updated upstream
-                                      <form action="{{route("updateServ")}}" method="POST">
-                                        @csrf
-                                        <input type="hidden" name="id" id="pendingid" value="">
-                                          <div class="col-md-12">
-=======
-                                      <form action="{{route("updateService")}}" method="POST" class="forms-sample">
+                                      <form action="{{route("updateServ")}}" method="POST" class="forms-sample">
                                         @csrf
                                         <input type="hidden" name="pendingid" id="id" value="">
                                           <div class="form-group">
                                             <label for="InputName1">Fullname</label>
->>>>>>> Stashed changes
                                             <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" required>
                                           </div>
 
