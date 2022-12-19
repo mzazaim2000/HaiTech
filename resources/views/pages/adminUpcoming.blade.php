@@ -159,8 +159,8 @@
                       <td>{{$service->status}}</td>
                 
                        <td>
-                        <a href={{url('approved', $service->id)}}><i class="material-icons" data-toggle="tooltip" title="Approved">&#xE5ca;</i></a>
-                        <a href={{url('canceled', $service->id)}}><i class="material-icons" data-toggle="tooltip" title="Decline">&#xE5cd;</i></a>
+                        <a href={{url('approved', $service->id)}} class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Approved">&#xE5ca;</i></a>
+                        <a href={{url('canceled', $service->id)}} class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Decline">&#xE5cd;</i></a>
               
                     
                        </td>
