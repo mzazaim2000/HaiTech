@@ -134,7 +134,7 @@
                <br><br><br><div class="table">
                <table class="table table-striped table-hover">
                 <thead>
-                  <tr>
+                  <tr align="center">
                     <th>Service ID</th>
                     <th>Name</th>
                     <th>Company</th>
@@ -161,8 +161,8 @@
                        <td>
                         {{-- <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>
                         <button type= "button" onclick="deleteService({{$service->id}})" class="btn btn-danger"><i class="material-icons">&#xE15C;</i><span>Cancel</span></a> --}}
-                        <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                        <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
+                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE5cd;</i></a>
                     
                        </td>
                      </tr>
