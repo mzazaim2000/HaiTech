@@ -25,6 +25,7 @@ class ClientServicesController extends Controller{
         $service->date=$request->date;
         $service->time=$request->time;
         $service->issue=$request->issue;
+        $service->status="Pending";
         
         $save = $service->save();
 

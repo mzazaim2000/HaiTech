@@ -157,13 +157,8 @@
                        <td>{{$service->date}}</td>
                        <td>{{$service->time}}</td>
                        <td>{{$service->status}}</td>
-                      
                        <td>
-                        {{-- <button type="button" onclick="editForm({{$service->id}})" class="btn btn-edit"><i class="fas fa-pen"></i><span>Edit</span></a>
-                        <button type= "button" onclick="deleteService({{$service->id}})" class="btn btn-danger"><i class="material-icons">&#xE15C;</i><span>Cancel</span></a> --}}
-                        <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
                         <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE5cd;</i></a>
-                    
                        </td>
                      </tr>
                 </tbody>
@@ -172,9 +167,34 @@
                 </table>
                </div>
             <!-- table template end -->
-
           </div> 
           <!-- content-wrapper ends -->
+
+            <!-- Delete Client HTML -->
+          <div id="deleteService" class="modal fade">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <form action="{{route("delete")}}" method="POST">
+                  @csrf
+                  <input type="hidden" name="id" id="ServId" value="">
+                  <div class="modal-header">						
+                    <h4 class="modal-title">Delete Service Record</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  </div>
+                  <div class="modal-body">					
+                    <p>Are you sure you want to delete the Services Records?</p>
+                    <p class="text-danger"><small>This action cannot be undone.</small></p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" onclick="closeModalDelete()">Cancel</button>
+                    <input type="submit" class="btn btn-danger" value="Proceed" >
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -207,63 +227,6 @@
     <!-- End custom js for this page -->
 
             <script>
-              function editForm(id){
-    
-                $("#id").val("");
-                $("#name").val("");
-                $("#phone").val("");
-                $("#email").val("");
-                $("#company").val("");
-                $("#date").val("");
-                $("#time").val("");
-                $("#issue").val("");
-                $("#ups").prop( "checked", false );
-                $("#fm").prop( "checked", false );
-                $("#dc").prop( "checked", false );
-                $("#cs").prop( "checked", false );
-    
-                $.ajax({
-                    type: "GET",
-                    url: '{{url("service/edit/")}}'+'/'+id,
-                    dataType: "json",
-                    success: function (data) {
-                        // console.log(data);
-                        $("#id").val(data["id"]);
-                        $("#name").val(data["name"]);
-                        $("#phone").val(data["phone"]);
-                        $("#email").val(data["email"]);
-                        $("#company").val(data["company"]);
-                        $("#date").val(data["date"]);
-                        $("#time").val(data["time"]);
-                        $("#issue").val(data["issue"]);
-    
-                        var services = data["services"].split(',');
-                        for (let i = 0; i < services.length; i++) {
-    
-                          var serv = services[i].trim();
-    
-                          if(serv == "UPS"){
-                            $( "#ups" ).prop( "checked", true );
-                          }else if(serv == "Facility Management"){
-                            $( "#fm" ).prop( "checked", true );
-                          }else if(serv == "Data Center Enhancement"){
-                            $( "#dce" ).prop( "checked", true );
-                          }else if(serv == "Corporate Support"){
-                            $( "#cs" ).prop( "checked", true );
-                          }
-    
-                        }
-    
-    
-                        $('#editService').modal('show');
-                    },
-                    error: function (data) {
-                        console.log('Error:', data);
-    
-                    }
-                });
-    
-              }
     
               function closeModal(){
                 $('#editService').modal('hide');

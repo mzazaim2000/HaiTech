@@ -66,7 +66,53 @@ class AdminController extends Controller
         }
    
 
-    public function update(Request $request){
+    public function delete(Request $request){
+    
+        $id =$request->id;
+        $data=Services::where('id','=',$id)->delete();  
+        if($data){
+            $info = Services::all();
+            return redirect()->route('show', ['services' => $info]);  
+        }else {
+            echo "Error";
+        }
+
+    }
+
+    public function editServiceData(Request $request){
+
+        $data=Services::find($request->id);
+        return response()->json($data);
+    }
+
+    //Services in-progressTab
+    public function showInProgress(){
+    
+        $data = Services::where("status", "Approved")->get();
+
+        if($data){
+            
+            return view('pages/adminPending')->with('services', $data);
+        }
+      
+    }
+
+    public function deleteService(Request $request){
+    
+        $id =$request->id;
+        $data=Services::where('id','=',$id)->delete();  
+        if($data){
+            echo "Error";
+            
+
+        }else{
+            $info = Services::all();
+            return redirect()->route('showInProgress', ['services' => $info]);
+        }
+
+    }
+
+    public function updateService(Request $request){
         
         $this->validate($request, [
             'name' => 'required',
@@ -103,50 +149,14 @@ class AdminController extends Controller
     
         if ($data){
 
-            //echo "Successfuly updated";
             $info = Services::all();
-            // return view('pages/allServices')->with('services', $info);
-            return redirect()->route('show', ['services' => $info]);
-
-
+            return redirect()->route('showInProgress', ['services' => $info]);
+        }else {
+            echo "Error";
         }
     }
 
-    public function delete(Request $request){
-    
-        $id =$request->id;
-        $data=Services::where('id','=',$id)->delete();  
-        if($data){
-            // echo "Data deleted";
-            $info = Services::all();
-            // return view('pages/allServices')->with('services', $info);
-            return redirect()->route('show', ['services' => $info]);
-
-        }
-
-    }
-
-    public function editServiceData(Request $request){
-
-        $data=Services::find($request->id);
-        return response()->json($data);
-    }
-
-    //in-progress
-    public function showInProgress(){
-    
-        $data = Services::where("status", "Approved")->get();
-
-        if($data){
-      
-            return view('pages/adminPending')->with('services', $data);
-        }
-
-      
-    }
-
-
-    //upcoming    
+    //Services upcomingTab    
     public function showRequest(){
         
         $data = Services::all();

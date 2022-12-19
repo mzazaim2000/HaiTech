@@ -171,6 +171,134 @@
                  </div> 
           <!-- content-wrapper ends -->
           </div>
+
+              <!-- Edit Modal HTML -->
+              <div id="editService" class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="form-body">
+                      <div class="row">
+                          <div class="">
+                              <div class="form-content">
+                                  <div class="form-items">
+                                      <h3>Update Service Request</h3>
+                                      <p>Update service request details.</p>
+                                      
+                                      @if(Session::get('success'))
+                                      <div class="alert alert-success">
+                                        {{Session:get('success')}}
+                                      </div>
+                                      @endif
+
+                                      @if(Session::get('fail'))
+                                      <div class="alert alert-danger">
+                                        {{Session:get('fail')}}
+                                      </div>
+                                      @endif
+
+                                      <form action="{{route("updateService")}}" method="POST">
+                                        @csrf
+                                        <input type="hidden" name="pendingid" id="id" value="">
+                                          <div class="col-md-12">
+                                            <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" required>
+                                            <div class="valid-feedback">Name field is valid!</div>
+                                            <div class="invalid-feedback">Name field cannot be blank!</div>
+                                          </div>
+
+                                          <div class="col-md-12">
+                                            <input class="form-control" type="text" name="phone" id="phone" value="" placeholder="Phone Number" required>
+                                            <div class="valid-feedback">Phone no. field is valid!</div>
+                                            <div class="invalid-feedback">Phone no. field cannot be blank!</div>
+                                        </div>
+
+                                          <div class="col-md-12">
+                                              <input class="form-control" type="email" name="email" id="email" value=""  placeholder="Email" required>
+                                              <div class="valid-feedback">Email field is valid!</div>
+                                              <div class="invalid-feedback">Email field cannot be blank!</div>
+                                          </div>
+
+                                          <div class="col-md-12">
+                                            <input class="form-control" type="text" name="company" id="company" value=""  placeholder="Company" required>
+                                            <div class="invalid-feedback">Company name field cannot be blank!</div>
+                                        </div>
+
+                                        <br>
+                                        Services:
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="checkbox" name="services[]" id="ups" value="UPS"  id="invalidCheck">
+                                        <label class="form-check-label">Uninterruptible Power Supply Precision Cooling Solution</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="services[]" id="fm" value="Facility Management"  id="invalidCheck">
+                                        <label class="form-check-label">Facility Management M&E Maintenance</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <input class="form-check-input" type="checkbox" name="services[]" id="dce" value="Data Center Enhancement"  id="invalidCheck">
+                                      <label class="form-check-label">Data Center Enhancement ICT Managed Services</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" name="services[]" id="cs" value="Corporate Support"  id="invalidCheck">
+                                    <label class="form-check-label">Corporate Support Business Advisory</label>
+                                </div>
+
+                                <br>
+                                
+                                Select Date & Time:
+                                <div class="col-md-12">
+                                  <div class="input-group">
+                                  <input class="input--style-2 js-datepicker" type="date" name="date" id="date" value="" > <tr><tr> 
+                                  <input class="time" type="time" name="time" id="time" value="" >
+                                  </div>
+                                  </div>
+
+                                  <br>
+
+                                      {{-- <div class="col-md-12">
+                                          <textarea class="form-control" type="text" name="issue" id="issue" value="" placeholder="State your issue" required></textarea>
+                                          <div class="invalid-feedback">Issue field cannot be blank!</div>
+                                      </div> --}}
+                                
+                                    <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
+                                
+
+                                          <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" onclick="closeModal()">Cancel</button>
+                                                <input type="submit" class="btn btn-info" value="Save">
+                                          </div>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Delete Client HTML -->
+            <div id="deleteService" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <form action="{{route("deleteService")}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" id="ServId" value="">
+                    <div class="modal-header">						
+                      <h4 class="modal-title">Delete Service Record</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">					
+                      <p>Are you sure you want to delete the Services Records?</p>
+                      <p class="text-danger"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" onclick="closeModalDelete()">Cancel</button>
+                      <input type="submit" class="btn btn-danger" value="Proceed" >
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
           <!-- partial:partials/_footer.html -->
           <footer class="footer">
             <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -200,6 +328,81 @@
     <!-- Custom js for this page -->
     <script src="/frontend/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+
+    <script>
+      function editForm(id){
+
+        $("#id").val("");
+        $("#name").val("");
+        $("#phone").val("");
+        $("#email").val("");
+        $("#company").val("");
+        $("#date").val("");
+        $("#time").val("");
+        $("#issue").val("");
+        $("#ups").prop( "checked", false );
+        $("#fm").prop( "checked", false );
+        $("#dc").prop( "checked", false );
+        $("#cs").prop( "checked", false );
+
+        $.ajax({
+            type: "GET",
+            url: '{{url("service/edit/")}}'+'/'+id,
+            dataType: "json",
+            success: function (data) {
+                // console.log(data);
+                $("#pendingid").val(data["id"]);
+                $("#name").val(data["name"]);
+                $("#phone").val(data["phone"]);
+                $("#email").val(data["email"]);
+                $("#company").val(data["company"]);
+                $("#date").val(data["date"]);
+                $("#time").val(data["time"]);
+                $("#issue").val(data["issue"]);
+
+                var services = data["services"].split(',');
+                for (let i = 0; i < services.length; i++) {
+
+                  var serv = services[i].trim();
+
+                  if(serv == "UPS"){
+                    $( "#ups" ).prop( "checked", true );
+                  }else if(serv == "Facility Management"){
+                    $( "#fm" ).prop( "checked", true );
+                  }else if(serv == "Data Center Enhancement"){
+                    $( "#dce" ).prop( "checked", true );
+                  }else if(serv == "Corporate Support"){
+                    $( "#cs" ).prop( "checked", true );
+                  }
+
+                }
+
+
+                $('#editService').modal('show');
+            },
+            error: function (data) {
+                console.log('Error:', data);
+
+            }
+        });
+
+      }
+
+      function closeModal(){
+        $('#editService').modal('hide');
+      }
+
+      function deleteService(id){
+        $("#servId").val(id);
+        $('#deleteService').modal('show');
+      }
+
+      function closeModalDelete(){
+        $('#deleteService').modal('hide');
+      }
+
+      </script>
+
   </body>
 </html>
         

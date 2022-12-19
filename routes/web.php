@@ -82,17 +82,14 @@ Route::get('/allServices/home', function () {
     return view('pages/clientServices');
 }); 
 
-// Route::get('/services', function () {
-//     return view('pages/adminAllServices');
-// });
 
 Route::get('/adminAllServices', [AdminController::class, 'show'])->name("show");
-Route::post('/serviceForm', [AdminController::class, 'insert'])->name("insert");
-// Route::post('/adminAllServices/update', [AdminController::class, 'update'])->name("update");
-// Route::post('/adminAllServices/delete', [AdminController::class, 'delete'])->name("delete");
-Route::get('/service/edit/{id}', [AdminController::class, 'editServiceData']);
+Route::post('/adminAllServices/delete', [AdminController::class, 'delete'])->name("delete");
 
 Route::get('/adminPending', [AdminController::class, 'showInProgress'])->name("showInProgress");
+Route::post('/adminPending/update', [AdminController::class, 'updateService'])->name("updateService");
+Route::post('/adminPending/delete', [AdminController::class, 'deleteService'])->name("deleteService");
+Route::get('/service/edit/{id}', [AdminController::class, 'editServiceData']);
 
 
 Route::get('/adminUpcoming', [AdminController::class, 'showRequest'])->name("showRequest");
@@ -100,10 +97,6 @@ Route::get('/approved/{id}', [AdminController::class, 'approved']);
 Route::get('/canceled/{id}', [AdminController::class, 'canceled']);
 
 
-
-Route::get('/upcoming', function () {
-    return view('pages/adminUpcoming');
-});
 
 Route::get('/adminClient', function () {
     return view('pages/adminClient');
