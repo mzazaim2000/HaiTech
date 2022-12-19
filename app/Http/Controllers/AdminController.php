@@ -136,11 +136,12 @@ class AdminController extends Controller
     public function showInProgress(Request $request){
     
         $data = Services::find($request->id);
-        $status = Services::where($request->status == "Approved")->get();    
+        $status = Services::find($request->status);
+        $data = Services::where($status, "Approved")->get();
 
-        if($status){
-            $data->status='In-Progress';
-            $data->update();
+        if($data){
+            // $data->status='In-Progress';
+            // $data->update();
             $data = Services::all();
             // return redirect()->back();
             // return redirect()->route('show', ['services' => $data]);
