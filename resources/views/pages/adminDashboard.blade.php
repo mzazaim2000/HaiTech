@@ -320,6 +320,7 @@
 
       function closeModal(){
         $('#editClient').modal('hide');
+        $('#addClient').modal('hide');
       }
 
       function deleteClient(id){
