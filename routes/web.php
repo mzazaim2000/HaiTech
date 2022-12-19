@@ -89,7 +89,7 @@ Route::post('/adminAllServices/delete', [AdminController::class, 'deleteAll'])->
 Route::get('/adminPending', [AdminController::class, 'showInProgress'])->name("showInProgress");
 Route::post('/adminPending/update', [AdminController::class, 'updateServ'])->name("updateServ");
 Route::post('/adminPending/delete', [AdminController::class, 'deleteServ'])->name("deleteServ");
-Route::get('/service/edit/{id}', [AdminController::class, 'editServiceData']);
+Route::get('/service/edit/{id}', [AdminController::class, 'editServicesData']);
 
 
 Route::get('/adminUpcoming', [AdminController::class, 'showRequest'])->name("showRequest");

@@ -159,7 +159,7 @@
                       <td>{{$service->status}}</td>
                        <td>
                         
-                        <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
+                        <a href="editServ" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
                         <a href="deleteServ" class="delete" onclick="deleteServ({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                     
                        </td>
@@ -173,7 +173,7 @@
           </div>
 
               <!-- Edit Modal HTML -->
-              <div id="editService" class="modal fade">
+              <div id="editServ" class="modal fade">
                 <div class="modal-dialog">
                   <div class="modal-content">
                     <div class="form-body">
@@ -378,7 +378,7 @@
                 }
 
 
-                $('#editService').modal('show');
+                $('#editServ').modal('show');
             },
             error: function (data) {
                 console.log('Error:', data);
@@ -389,7 +389,7 @@
       }
 
       function closeModal(){
-        $('#editService').modal('hide');
+        $('#editServ').modal('hide');
       }
 
       function deleteServ(id){

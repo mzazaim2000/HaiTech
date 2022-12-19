@@ -72,12 +72,10 @@ class AdminController extends Controller
         $id =$request->id;
         $data=Services::where('id','=',$id)->delete();  
         if($data){
-            echo "Error";
-            
-
-        }else{
             $info = Services::all();
             return redirect()->route('showInProgress', ['services' => $info]);
+        }else{
+            echo "Error";
         }
 
     }
@@ -125,7 +123,7 @@ class AdminController extends Controller
         }
     }
 
-    public function editServiceData(Request $request){
+    public function editServicesData(Request $request){
 
         $data=Services::find($request->id);
         return response()->json($data);
