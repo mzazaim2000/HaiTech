@@ -283,7 +283,7 @@
 				</div>
 				<div class="modal-body">					
 					<p>Are you sure you want to delete the Client's Records?</p>
-					<p class="text-warning"><small>This action cannot be undone.</small></p>
+					<p class="text-danger"><small>This action cannot be undone.</small></p>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-default" onclick="closeModalDelete()">Cancel</button>
