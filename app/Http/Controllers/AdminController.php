@@ -158,8 +158,7 @@ class AdminController extends Controller
 
     //Services upcomingTab    
     public function showRequest(){
-        
-        $data = Services::all();
+        $data = Services::where("status", "Pending")->get();
         return view('pages/adminUpcoming')->with('services', $data);
         }
 
