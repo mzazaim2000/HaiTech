@@ -178,12 +178,11 @@
                   <div class="modal-content">
                     <div class="form-body">
                       <div class="row">
-                          <div class="">
-                              <div class="form-content">
-                                  <div class="form-items">
-                                      <h3>Update Service Request</h3>
-                                      <p>Update service request details.</p>
-                                      
+                        <div class="col-12 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">Update Service Request</h4>
+                              <p class="card-description">Update service request details.</p>
                                       @if(Session::get('success'))
                                       <div class="alert alert-success">
                                         {{Session:get('success')}}
@@ -196,75 +195,66 @@
                                       </div>
                                       @endif
 
+<<<<<<< Updated upstream
                                       <form action="{{route("updateServ")}}" method="POST">
                                         @csrf
                                         <input type="hidden" name="id" id="pendingid" value="">
                                           <div class="col-md-12">
+=======
+                                      <form action="{{route("updateService")}}" method="POST" class="forms-sample">
+                                        @csrf
+                                        <input type="hidden" name="pendingid" id="id" value="">
+                                          <div class="form-group">
+                                            <label for="InputName1">Fullname</label>
+>>>>>>> Stashed changes
                                             <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" required>
-                                            <div class="valid-feedback">Name field is valid!</div>
-                                            <div class="invalid-feedback">Name field cannot be blank!</div>
                                           </div>
 
-                                          <div class="col-md-12">
-                                            <input class="form-control" type="text" name="phone" id="phone" value="" placeholder="Phone Number" required>
-                                            <div class="valid-feedback">Phone no. field is valid!</div>
-                                            <div class="invalid-feedback">Phone no. field cannot be blank!</div>
+                                          <div class="form-group">
+                                            <label for="InputPhone">Phone Number</label>
+                                            <input class="form-control" type="text" name="phone" id="phone" value="" pattern="^(\+?6?01)[02-46-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$" placeholder="0112366789" required>
                                         </div>
 
-                                          <div class="col-md-12">
+                                          <div class="form-group">
+                                              <label for="InputEmail">Email address</label>
                                               <input class="form-control" type="email" name="email" id="email" value=""  placeholder="Email" required>
-                                              <div class="valid-feedback">Email field is valid!</div>
-                                              <div class="invalid-feedback">Email field cannot be blank!</div>
                                           </div>
 
-                                          <div class="col-md-12">
-                                            <input class="form-control" type="text" name="company" id="company" value=""  placeholder="Company" required>
-                                            <div class="invalid-feedback">Company name field cannot be blank!</div>
+                                          <div class="form-group">
+                                            <label for="InputCompany">Company</label>
+                                            <input class="form-control" type="text" name="company" id="company" value=""  placeholder="Company name" required>
                                         </div>
 
-                                        <br>
                                         Services:
                                         <div class="form-check">
-                                          <input class="form-check-input" type="checkbox" name="services[]" id="ups" value="UPS"  id="invalidCheck">
-                                        <label class="form-check-label">Uninterruptible Power Supply Precision Cooling Solution</label>
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" name="services[]" id="ups" value="UPS"  id="invalidCheck">Uninterruptible Power Supply Precision Cooling Solution</label>
                                       </div>
                                       <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="services[]" id="fm" value="Facility Management"  id="invalidCheck">
-                                        <label class="form-check-label">Facility Management M&E Maintenance</label>
+                                        <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" name="services[]" id="fm" value="Facility Management"  id="invalidCheck">Facility Management M&E Maintenance</label>
                                     </div>
                                     <div class="form-check">
-                                      <input class="form-check-input" type="checkbox" name="services[]" id="dce" value="Data Center Enhancement"  id="invalidCheck">
-                                      <label class="form-check-label">Data Center Enhancement ICT Managed Services</label>
+                                      <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" name="services[]" id="dce" value="Data Center Enhancement"  id="invalidCheck">Data Center Enhancement ICT Managed Services</label>
                                   </div>
                                   <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="services[]" id="cs" value="Corporate Support"  id="invalidCheck">
-                                    <label class="form-check-label">Corporate Support Business Advisory</label>
-                                </div>
-
-                                <br>
+                                    <label class="form-check-label">
+                                      <input class="form-check-input" type="checkbox" name="services[]" id="cs" value="Corporate Support"  id="invalidCheck">Corporate Support Business Advisory</label>
+                                </div><br>
                                 
                                 Select Date & Time:
-                                <div class="col-md-12">
-                                  <div class="input-group">
-                                  <input class="input--style-2 js-datepicker" type="date" name="date" id="date" value="" > <tr><tr> 
-                                  <input class="time" type="time" name="time" id="time" value="" >
+                                <div class="form-group">
+                                  <input class="" type="date" name="date" id="date" value="" >
+                                  <input class="" type="time" name="time" id="time" value="" >
                                   </div>
-                                  </div>
-
-                                  <br>
 
                                       {{-- <div class="col-md-12">
                                           <textarea class="form-control" type="text" name="issue" id="issue" value="" placeholder="State your issue" required></textarea>
                                           <div class="invalid-feedback">Issue field cannot be blank!</div>
                                       </div> --}}
-                                
-                                    <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
-                                
-
-                                          <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" onclick="closeModal()">Cancel</button>
-                                                <input type="submit" class="btn btn-info" value="Save">
-                                          </div>
+                                                <button type="button" class="btn btn-light" onclick="closeModal()">Cancel</button>
+                                                <input type="submit" class="btn btn-primary mr-2" value="Save">
                                       </form>
                                   </div>
                               </div>
