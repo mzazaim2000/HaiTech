@@ -134,7 +134,7 @@
                <br><br><br><div class="table">
                <table class="table table-striped table-hover">
                 <thead>
-                  <tr align="center">
+                  <tr>
                     <th>Service ID</th>
                     <th>Name</th>
                     <th>Company</th>
