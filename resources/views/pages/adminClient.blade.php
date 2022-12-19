@@ -152,8 +152,8 @@
                  <td>{{$client->contact}}</td>
              
                  <td>
-                  <a href="editClient" class="edit" onclick="editForm({{$client->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
-                  <a href="deleteClient" class="delete" onclick="deleteClient({{$client->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                  <a href="editClient" class="edit" onclick="editForm({{$client->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
+                  <a href="deleteClient" class="delete" onclick="deleteClient({{$client->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE5cd;</i></a>
 
             <tr>
               
