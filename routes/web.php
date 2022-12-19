@@ -119,3 +119,7 @@ Route::get('/invoice', function () {
     return view('pages/adminInvoice');
 });
 
+Route::get('/clientForm', function () {
+    return view('pages/clientForm');
+});
+

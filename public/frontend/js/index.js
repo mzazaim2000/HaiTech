@@ -26,7 +26,7 @@ function loadTable() {
   
   loadTable();
 // CreatePart
-  function showUserCreateBox() {
+  function addForm() {
     Swal.fire({
       title: 'Create user',
       html:
