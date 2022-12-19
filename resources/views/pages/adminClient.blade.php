@@ -15,13 +15,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
     {{-- <link rel="stylesheet" href="{{ asset('frontend/css/form.css') }}"> --}}
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="/frontend/css/style.css">
+    <link rel="stylesheet" href="/frontend/css/newstyle.css">
     <link href="/frontend/css/index.css" rel="stylesheet">
     {{-- <link rel="stylesheet" href="{{ asset('frontend/css/allservices.css') }}"> --}}
     <!-- End layout styles -->
@@ -172,6 +172,8 @@
   <div id="addClient" class="modal fade">
     <div class="modal-dialog">
       <div class="modal-content">
+        <div class="form-body">
+          <div class="row">
   <div class="col-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
@@ -195,8 +197,8 @@
             <label for="InputPhone">Phone Number</label>
             <input type="tel" class="form-control" id="Contact" name="contact" pattern="^(\+?6?01)[02-46-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$" placeholder="0112366789" required>
           </div>
+          <button type="button"class="btn btn-light" onclick="closeModal()">Cancel</button>
           <button type="submit" class="btn btn-primary mr-2">Submit</button>
-          <button class="btn btn-light">Cancel</button>
         </form>
       </div>
     </div>
@@ -204,6 +206,8 @@
           </div>
         </div>
        </div>
+    </div>
+  </div>
 
 
 
@@ -213,12 +217,11 @@
       <div class="modal-content">
         <div class="form-body">
           <div class="row">
-           
-                  <div class="form-content">
-                      <div class="form-items">
-                          <h3>Client Details</h3>
-                          <p>All clients information. Need to update client details?</p>
-                          
+            <div class="col-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Client Form</h4>
+                  <p class="card-description">Kindly fill in your client's information.</p>   
                           @if(Session::get('success'))
                           <div class="alert alert-success">
                             {{Session:get('success')}}
@@ -231,40 +234,30 @@
                           </div>
                           @endif
   
-                          <form action="{{route("updateClient")}}" method="POST">
+                          <form action="{{route("updateClient")}}" method="POST" class="forms-sample">
                             @csrf
                             <input type="hidden" name="id" id="cid" value="">
-                              <div class="col-md-12">
-                                 <input class="form-control" type="text" name="fname" id="fname" value="" placeholder="First Name" required>
-                                 <div class="valid-feedback">Name field is valid!</div>
-                                 <div class="invalid-feedback">Name field cannot be blank!</div>
+                              <div class="form-group">
+                                <label for="InputName1">Firstname</label>
+                                 <input class="form-control" type="text" name="fname" id="fname" value="" placeholder="Firstname" required>
                               </div>
 
-                              <div class="col-md-12">
+                              <div class="form-group">
+                                <label for="InputName2">Surname</label>
                                 <input class="form-control" type="text" name="lname" id="lname" value="" placeholder="Surname" required>
-                                <div class="valid-feedback">Name field is valid!</div>
-                                <div class="invalid-feedback">Name field cannot be blank!</div>
                              </div>
   
-                             <div class="col-md-12">
-                              <input class="form-control" type="email" name="email" id="email" value=""  placeholder="Email" required>
-                               <div class="valid-feedback">Email field is valid!</div>
-                               <div class="invalid-feedback">Email field cannot be blank!</div>
+                             <div class="form-group">
+                              <label for="InputEmail">Email address</label>
+                              <input class="form-control" type="email" name="email" id="email" value=""  placeholder="john@example.com" required>
                           </div>
 
-                              <div class="col-md-12">
-                                <input class="form-control" type="tel" name="contact" id="contact" value="" placeholder="Phone Number" required>
-                                 <div class="valid-feedback">Phone no. field is valid!</div>
-                                 <div class="invalid-feedback">Phone no. field cannot be blank!</div>
+                              <div class="form-group">
+                                <label for="InputPhone">Phone Number</label>
+                                <input class="form-control" type="tel" name="contact" id="contact" value="" pattern="^(\+?6?01)[02-46-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$" placeholder="0112366789" required>
                             </div>
-  
-                         <div class="invalid-feedback">Please confirm that the entered data are all correct!</div>
-                    
-  
-                              <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" onclick="closeModal()">Cancel</button>
-                                    <input type="submit" class="btn btn-info" value="Save">
-                              </div>
+                                    <button type="button" class="btn btn-light" onclick="closeModal()">Cancel</button>
+                                    <input type="submit" class="btn btn-primary mr-2" value="Save">
                           </form>
                       </div>
                   </div>
@@ -273,6 +266,7 @@
        </div>
       </div>
     </div>
+  </div>
   </div>
 
 
@@ -375,6 +369,7 @@
 
       function closeModal(){
         $('#editClient').modal('hide');
+        $('#addClient').modal('hide');
       }
 
       function deleteClient(id){

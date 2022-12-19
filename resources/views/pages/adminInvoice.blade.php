@@ -117,7 +117,6 @@
             <div class="container">
                  <div class="d-flex bd-highlight mb-3">
             <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
-              <button href="#" type="button" class="btn btn-colour-1">Generate Invoice</button>
             </div>
       
       <table class="table table-striped table-hover">
@@ -139,12 +138,6 @@
     </div>
   </div>
   <!-- content-wrapper ends -->
-
-
-
-
-
-
   <!-- partial:partials/_footer.html -->
   <footer class="footer">
     <div class="d-sm-flex justify-content-center justify-content-sm-between">
@@ -179,7 +172,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
   </body>
 </html>
-            <!-- table template end -->
+
 
         
 

@@ -145,8 +145,8 @@
             <label for="InputPhone">Phone Number</label>
             <input type="tel" class="form-control" id="" pattern="^(\+?6?01)[02-46-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$" placeholder="0112366789" required>
           </div>
+          <button type="button"class="btn btn-light" onclick="closeModal()">Cancel</button>
           <button type="submit" class="btn btn-primary mr-2">Submit</button>
-          <button class="btn btn-light">Cancel</button>
         </form>
       </div>
     </div>
