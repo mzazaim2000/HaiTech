@@ -158,7 +158,7 @@
                        <td>{{$service->time}}</td>
                        <td>{{$service->status}}</td>
                        <td>
-                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE5cd;</i></a>
+                        <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
                        </td>
                      </tr>
                 </tbody>
