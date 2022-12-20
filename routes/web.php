@@ -93,11 +93,6 @@ Route::get('/service/edit/{id}', [AdminController::class, 'editServicesData']);
 Route::get('/inprogress/{id}', [AdminController::class, 'inprogress']);
 Route::get('/complete/{id}', [AdminController::class, 'complete']);
 
-Route::post('/adminPending/updateStatus', [AdminController::class, 'updateStatus'])->name("updateStatus");
-
-// Route::get('/inprogress/{id}', [AdminController::class, 'updateStatus']);
-// Route::get('/complete/{id}', [AdminController::class, 'updateStatus']);
-
 
 Route::get('/adminUpcoming', [AdminController::class, 'showRequest'])->name("showRequest");
 Route::get('/approved/{id}', [AdminController::class, 'approved']);

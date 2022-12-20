@@ -160,14 +160,11 @@
                       <td>{{$service->date}}</td>
                       <td>{{$service->time}}</td>
                       <td>{{$service->status}}</td>
-                       <td>
-                        
+                       <td class="text-center">
                         <a href="editServ" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
                         <a href="deleteServ" class="delete" onclick="deleteServ({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-
-                        <a href="{{url('inprogress', $service->id)}}" class="inprogress" onclick="return confirm('Confirm?')"><i class="material-icons" data-toggle="tooltip" title="In-Progress">access_time</i></a>
-                        <a href="{{url('complete', $service->id)}}" class="complete" onclick="return confirm('Confirm to complete?')"><i class="material-icons" data-toggle="tooltip" title="Completed">&#xE86C;</i></a>
-                  
+                        <a href="{{url('inprogress', $service->id)}}" class="inprogress" onclick="return confirm('Services In-Progress?')"><i class="material-icons" data-toggle="tooltip" title="In-Progress">access_time</i></a>
+                        <a href="{{url('complete', $service->id)}}" class="complete" onclick="return confirm('Complete Services?')"><i class="material-icons" data-toggle="tooltip" title="Completed">&#xE86C;</i></a>
                        </td>
                      </tr>
                      @endforeach 
