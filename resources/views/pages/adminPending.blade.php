@@ -131,10 +131,13 @@
      <!-- top nav template end -->
 
                <!-- table template start -->
+               @if(Session::has('order_message'))
+               <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
+               @endif
                <br><br><br><div class="table">
                <table class="table table-striped table-hover">
                 <thead>
-                  <tr align = "center">
+                  <tr>
                     <th>Service ID</th>
                     <th>Name</th>
                     <th>Company</th>
@@ -142,7 +145,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    <th colspan="4" class="text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -161,7 +164,9 @@
                         
                         <a href="editServ" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
                         <a href="deleteServ" class="delete" onclick="deleteServ({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                    
+                        <a href={{url('inprogress', $service->id)}} class="inprogress" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="In-Progress">access_time</i></a>
+                        <a href={{url('complete', $service->id)}} class="complete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Completed">&#xE86C;</i></a>
+                  
                        </td>
                      </tr>
                      @endforeach 

@@ -129,6 +129,52 @@ class AdminController extends Controller
         return response()->json($data);
     }
 
+    
+    // public function updateStatus($status, $id){
+        
+    //     $data = Services::find($id);
+
+    //     if($status == "inprogress"){
+
+    //         $data->status='In-Progress';
+    //         $data->update();
+    //         return redirect()->route('showInProgress', ['services' => $data]);
+           
+    //     }
+    //     else if($status=="compelete"){
+         
+    //         $data->status='Completed';
+    //         $data->update();
+    //         return redirect()->route('showInProgress', ['services' => $data]);
+    
+    //     }else{
+    //         echo "Error";
+    //     }
+        
+    //     // return redirect()->back();
+    //     // session()->flash('order_message','Status has been updated successfully!');
+        
+    // }    
+
+    public function inprogress($id){
+        
+        $data = Services::find($id);
+        $data->status='In-Progress';
+        $data->update();
+
+        return redirect()->back();
+
+        }    
+
+    public function complete($id){
+        
+        $data = Services::find($id);
+        $data->status='Completed';
+        $data->update();
+
+        return redirect()->back();
+        }    
+
     //Services upcomingTab    
     public function showRequest(){
         $data = Services::where("status", "Pending")->get();

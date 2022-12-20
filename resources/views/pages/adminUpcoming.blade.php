@@ -134,7 +134,7 @@
                <br><br><br><div class="table">
                <table class="table table-striped table-hover">
                 <thead>
-                  <tr align="center">
+                  <tr>
                     <th>Service ID</th>
                     <th>Name</th>
                     <th>Company</th>
@@ -142,7 +142,7 @@
                     <th>Date</th>
                     <th>Time</th>
                     <th>Status</th>
-                    <th>Action</th>
+                    <th class="text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -159,9 +159,10 @@
                       <td>{{$service->status}}</td>
                 
                        <td>
-                        <a href={{url('approved', $service->id)}} class="edit" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Approved">&#xE5ca;</i></a>
-                        <a href={{url('canceled', $service->id)}} class="delete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Decline">&#xE5cd;</i></a>
+                        <a href={{url('approved', $service->id)}} class="approved" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Approved">&#xE5ca;</i></a>
+                        <a href={{url('canceled', $service->id)}} class="canceled" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Decline">&#xE5cd;</i></a>
                        </td>
+
                      </tr>
                      @endforeach 
                      @endif
