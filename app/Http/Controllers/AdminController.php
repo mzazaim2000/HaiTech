@@ -58,11 +58,13 @@ class AdminController extends Controller
     //Services in-progressTab
     public function showInProgress(){
     
-        $data = Services::where("status", "Approved")->get();
+        $info = Services::where("status", '!=', "Decline")->get();
 
-        if($data){
-            
-            return view('pages/adminPending')->with('services', $data);
+        if($info){
+            return view('pages/adminPending')->with('services', $info);
+
+        }else {
+            echo "Error";
         }
       
     }
@@ -90,7 +92,7 @@ class AdminController extends Controller
             'services' => 'required',
             'date' => 'required',
             'time' => 'required',
-            'issue' => 'required'
+            // 'issue' => 'required'
         ]);
     
         
@@ -102,7 +104,7 @@ class AdminController extends Controller
         $services = implode(", ", $request->services);
         $date =$request->date;
         $time =$request->time;
-        $issue =$request->issue;
+        // $issue =$request->issue;
 
         $data = Services::where('id','=',$id)->update([
             'name'=>$name,
@@ -112,7 +114,7 @@ class AdminController extends Controller
             'services'=>$services,
             'date'=>$date,
             'time'=>$time,
-            'issue'=>$issue,
+            // 'issue'=>$issue,
             ]);
     
         if ($data){
@@ -129,40 +131,14 @@ class AdminController extends Controller
         return response()->json($data);
     }
 
-    
-    // public function updateStatus($status, $id){
-        
-    //     $data = Services::find($id);
-
-    //     if($status == "inprogress"){
-
-    //         $data->status='In-Progress';
-    //         $data->update();
-    //         return redirect()->route('showInProgress', ['services' => $data]);
-           
-    //     }
-    //     else if($status=="compelete"){
-         
-    //         $data->status='Completed';
-    //         $data->update();
-    //         return redirect()->route('showInProgress', ['services' => $data]);
-    
-    //     }else{
-    //         echo "Error";
-    //     }
-        
-    //     // return redirect()->back();
-    //     // session()->flash('order_message','Status has been updated successfully!');
-        
-    // }    
-
     public function inprogress($id){
         
         $data = Services::find($id);
         $data->status='In-Progress';
-        $data->update();
-
-        return redirect()->back();
+      
+        if ($data->update()){
+            return redirect()->back();
+        }
 
         }    
 
@@ -170,9 +146,12 @@ class AdminController extends Controller
         
         $data = Services::find($id);
         $data->status='Completed';
-        $data->update();
+     
+        if ($data->update()){
+            return redirect()->back();
 
-        return redirect()->back();
+        }
+       
         }    
 
     //Services upcomingTab    
@@ -187,7 +166,7 @@ class AdminController extends Controller
         $data->status='Approved';
         $data->update();
 
-        return redirect()->back();
+        return redirect()->route('showRequest', ['services' => $data]);
 
         }    
 
@@ -197,7 +176,7 @@ class AdminController extends Controller
         $data->status='Decline';
         $data->update();
 
-        return redirect()->back();
+        return redirect()->route('showRequest', ['services' => $data]);
         }            
         
     //clientTab

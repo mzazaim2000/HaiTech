@@ -164,8 +164,9 @@
                         
                         <a href="editServ" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
                         <a href="deleteServ" class="delete" onclick="deleteServ({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                        <a href={{url('inprogress', $service->id)}} class="inprogress" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="In-Progress">access_time</i></a>
-                        <a href={{url('complete', $service->id)}} class="complete" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Completed">&#xE86C;</i></a>
+
+                        <a href="{{url('inprogress', $service->id)}}" class="inprogress" onclick="return confirm('Confirm?')"><i class="material-icons" data-toggle="tooltip" title="In-Progress">access_time</i></a>
+                        <a href="{{url('complete', $service->id)}}" class="complete" onclick="return confirm('Confirm to complete?')"><i class="material-icons" data-toggle="tooltip" title="Completed">&#xE86C;</i></a>
                   
                        </td>
                      </tr>
@@ -202,7 +203,7 @@
 
                                       <form action="{{route("updateServ")}}" method="POST" class="forms-sample">
                                         @csrf
-                                        <input type="hidden" name="pendingid" id="id" value="">
+                                        <input type="hidden" name="id" id="pendingid" value="">
                                           <div class="form-group">
                                             <label for="InputName1">Fullname</label>
                                             <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" required>
