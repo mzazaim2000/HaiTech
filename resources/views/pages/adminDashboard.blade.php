@@ -77,7 +77,6 @@
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
           <ul class="nav">
 
-
             <li class="nav-item">
               <a class="nav-link" href="admindashboard">
                 <span class="menu-title">Dashboard</span>
@@ -113,6 +112,9 @@
               </div>
             </div>
   <!-- END OF TEMPLATE-->
+
+            <div class="me-auto p-2 bd-highlight"><h2>Dashboard</div><br>
+  
             <!-- Quick Action Toolbar Starts-->
             <div class="row quick-action-toolbar">
               <div class="col-md-12 grid-margin">

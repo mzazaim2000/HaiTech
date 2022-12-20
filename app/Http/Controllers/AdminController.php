@@ -208,7 +208,7 @@ class AdminController extends Controller
             $data->contact = $contact;
             $data->password = $surname."123";
             if ($data->save()){
-                return redirect()->back();
+                return redirect()->route('showUser', ['user' => $data]);
             }
     }
 
