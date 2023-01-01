@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClientServicesController;
+use App\Http\Controllers\InvoiceController;
 
 
 /*
@@ -118,3 +119,5 @@ Route::get('/clientForm', function () {
     return view('pages/clientForm');
 });
 
+Route::get('/generate-pdf',[InvoiceController::class,'generate_pdf']);
+Route::get('/download-pdf',[InvoiceController::class,'download_pdf']);
