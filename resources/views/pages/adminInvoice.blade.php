@@ -20,6 +20,7 @@
     <!-- endinject -->
     <!-- Layout styles -->
     <link rel="stylesheet" href="/frontend/css/style.css">
+    <link rel="stylesheet" href="/frontend/css/newstyle.css">
     <link href="/frontend/css/index.css" rel="stylesheet">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
@@ -120,6 +121,9 @@
             <div class="container">
                  <div class="d-flex bd-highlight mb-3">
             <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
+              <div class="p-2 bd-highlight">
+                <button href="#" type="button" class="btn btn-colour-1" onclick="addFormModal()">Generate Invoice</button>
+              </div>
             </div>
       
       <table class="table table-striped table-hover">
