@@ -122,7 +122,7 @@
                  <div class="d-flex bd-highlight mb-3">
             <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
               <div class="p-2 bd-highlight">
-                <button href="#" type="button" class="btn btn-colour-1" onclick="addFormModal()">Generate Invoice</button>
+                <button href="{{route('export_pdf')}}" type="button" class="btn btn-colour-1">Generate Invoice</button>
               </div>
             </div>
       

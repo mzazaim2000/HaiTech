@@ -121,3 +121,4 @@ Route::get('/clientForm', function () {
 
 Route::get('/generate-pdf',[InvoiceController::class,'generate_pdf']);
 Route::get('/download-pdf',[InvoiceController::class,'download_pdf']);
+Route::get('/export_pdf',[InvoiceController::class,'export_pdf'])->name("export_pdf");
