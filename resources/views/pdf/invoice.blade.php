@@ -434,7 +434,7 @@
 
         <footer>
             <h3 style="text-align: center">
-                {{ $data }}
+                {{-- {{ $data }} --}}
             </h3>
         </footer>
 
