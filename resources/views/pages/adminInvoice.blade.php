@@ -103,7 +103,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="invoice">
+              <a class="nav-link" href="adminInvoice">
                 <span class="menu-title">Invoice</span>
                 <i class="icon-book-open menu-icon"></i>
               </a>
@@ -123,25 +123,61 @@
             <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
             </div>
       
+      @if(Session::has('order_message'))
+      <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
+      @endif
+      <div class="table">      
       <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th>ID</th>
+            <th>Invoice ID</th>
             <th>Name</th>
             <th>Phone</th>
             <th>Email</th>
             <th>Company</th>
             <th>Services</th>
             <th>Date</th>
-            <th>Time</th>
-            <th>Issue</th>
-            <th>Action</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th colspan="3" class="text-center">Action</th>
           </tr>
         </thead>
+        <tbody>
+          @if($services->count())
+          @foreach($services as $service)
+             <tr id="tr_{{$service->id}}">
+       
+              <td>{{$service->id}}</td>
+              <td>{{$service->name}}</td>
+              <td>{{$service->phone}}</td>
+              <td>{{$service->email}}</td>
+              <td>{{$service->company}}</td>
+              <td>{{$service->services}}</td>
+              <td>{{$service->date}}</td>
+              <td>{{$service->amount}}</td>
+              <td>{{$service->status}}</td>
+               <td class="text-center">
+                <a href="editServ" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="fa fa-money" data-toggle="tooltip" title="Payment"></i></i></a>
+                <a href="{{url('invoice/generate-pdf')}}" class="export"><i class="material-icons" data-toggle="tooltip" title="View">print</i></a>
+                <a href="deleteServ" class="delete" onclick="deleteServ({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+
+               </td>
+             </tr>
+            @endforeach 
+            @endif
       </table>
     </div>
   </div>
   <!-- content-wrapper ends -->
+</div>
+
+
+
+
+
+
+
+
   <!-- partial:partials/_footer.html -->
   <footer class="footer">
     <div class="d-sm-flex justify-content-center justify-content-sm-between">

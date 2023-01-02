@@ -99,7 +99,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="invoice">
+              <a class="nav-link" href="adminInvoice">
                 <span class="menu-title">Invoice</span>
                 <i class="icon-book-open menu-icon"></i>
               </a>
