@@ -119,6 +119,6 @@ Route::get('/clientForm', function () {
     return view('pages/clientForm');
 });
 
-Route::get('/generate-pdf',[InvoiceController::class,'generate_pdf']);
-Route::get('/download-pdf',[InvoiceController::class,'download_pdf']);
-Route::get('/export_pdf',[InvoiceController::class,'export_pdf'])->name("export_pdf");
+Route::get('generate-pdf',[InvoiceController::class,'generate_pdf']);
+Route::get('invoice/download-pdf',[InvoiceController::class,'download_pdf']);
+Route::get('invoice/export_pdf',[InvoiceController::class,'export_pdf'])->name("export_pdf");
