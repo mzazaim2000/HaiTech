@@ -125,7 +125,7 @@ Route::get('invoice/export_pdf',[InvoiceController::class,'export_pdf'])->name("
 
 Route::get('/phpinfo', function() {
     return phpinfo();
-
+});
 Route::get('/clientError', function () {
     return view('pages/clientErrorPage');
 });
