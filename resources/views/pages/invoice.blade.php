@@ -435,6 +435,7 @@
         <footer>
             <h3 style="text-align: center">
                 
+                {{-- {{ $data }} --}}
             </h3>
         </footer>
 
