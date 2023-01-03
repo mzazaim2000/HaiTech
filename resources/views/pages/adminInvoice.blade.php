@@ -154,8 +154,8 @@
               <td>{{$service->company}}</td>
               <td>{{$service->services}}</td>
               <td>{{$service->date}}</td>
-              <td>{{$service->amount}}</td>php
-              <td>{{$service->status}}</td>
+              <td>{{$service->amount}}</td>
+              <td>{{$service->paymentStatus}}</td>
                <td class="text-center">
                 <a href="editServ" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="fa fa-money" data-toggle="tooltip" title="Payment"></i></i></a>
                 <a href="{{url('invoice/generate-pdf')}}" class="export"><i class="material-icons" data-toggle="tooltip" title="View">print</i></a>
