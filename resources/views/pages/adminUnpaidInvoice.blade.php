@@ -46,14 +46,16 @@
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator message-dropdown" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <i class="icon-speech"></i>
-                <span class="count">0</span>
+                <span class="count">{{ count(App\Models\Services::newService()) }}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 0 unread notification</p>
+                @foreach(App\Models\Services::newService() as $newreq)
+                <a href="{{url('adminAllServices')}}" class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-left">You have new service request from {{$newreq->name}}</p>
                   <span class="badge badge-pill badge-primary float-right"></span>
                 </a>
                 <div class="dropdown-divider"></div>
+                @endforeach
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
             
@@ -148,7 +150,7 @@
             <th>Date</th>
             <th>Amount</th>
             <th>Status</th>
-            <th colspan="3" class="text-center">Action</th>
+            <th colspan="2" class="text-center">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -168,7 +170,6 @@
                <td class="text-center">
                <a href="invoiceForm" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="fa fa-money" data-toggle="tooltip" title="Payment"></i></i></a>
                <a href="{{url('paid', $service->id)}}" class="paid" onclick="return confirm('Invoice Paid?')"><i class="material-icons" data-toggle="tooltip" title="Paid">&#xE86C;</i></a> 
-
                </td>
              </tr>
             @endforeach 
@@ -229,7 +230,7 @@
                                           <div class="input-group-prepend">
                                             <span class="input-group-text bg-primary text-white">RM</span>
                                           </div>
-                                          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                          <input type="text" class="form-control" name="amount" id="amount" aria-label="Amount (to the nearest dollar)">
                                         
                                         </div>
                                       </div>
@@ -239,34 +240,6 @@
                                       </div>
                                     </div>
 
-                                        {{-- Services:
-                                        <div class="form-check">
-                                          <label class="form-check-label">
-                                            <input class="form-check-input" type="checkbox" name="services[]" id="ups" value="UPS"  id="invalidCheck">Uninterruptible Power Supply Precision Cooling Solution</label>
-                                      </div>
-                                      <div class="form-check">
-                                        <label class="form-check-label">
-                                          <input class="form-check-input" type="checkbox" name="services[]" id="fm" value="Facility Management"  id="invalidCheck">Facility Management M&E Maintenance</label>
-                                    </div>
-                                    <div class="form-check">
-                                      <label class="form-check-label">
-                                        <input class="form-check-input" type="checkbox" name="services[]" id="dce" value="Data Center Enhancement"  id="invalidCheck">Data Center Enhancement ICT Managed Services</label>
-                                  </div>
-                                  <div class="form-check">
-                                    <label class="form-check-label">
-                                      <input class="form-check-input" type="checkbox" name="services[]" id="cs" value="Corporate Support"  id="invalidCheck">Corporate Support Business Advisory</label>
-                                </div><br> --}}
-                                
-                                {{-- Select Date & Time:
-                                <div class="form-group">
-                                  <input class="" type="date" name="date" id="date" value="" >
-                                  <input class="" type="time" name="time" id="time" value="" >
-                                  </div> --}}
-
-                                      {{-- <div class="col-md-12">
-                                          <textarea class="form-control" type="text" name="issue" id="issue" value="" placeholder="State your issue" required></textarea>
-                                          <div class="invalid-feedback">Issue field cannot be blank!</div>
-                                      </div> --}}
                                                 <button type="button" class="btn btn-light" onclick="closeModal()">Cancel</button>
                                                 <input type="submit" class="btn btn-primary mr-2" value="Save">
                                       </form>
@@ -319,14 +292,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
  
     <script>
-      function editForm(id){
+    
+    $(document).ready( function () {
+          $('#table1').DataTable();
+      } );
+
+     function editForm(id){
 
         $("#id").val("");
         $("#name").val("");
         $("#phone").val("");
         $("#email").val("");
         $("#company").val("");
-
+        $("#amount").val("");
 
 
         $.ajax({
@@ -335,7 +313,7 @@
             dataType: "json",
             success: function (data) {
                 // console.log(data);
-                $("#pendingid").val(data["id"]);
+                $("#invoiceid").val(data["id"]);
                 $("#name").val(data["name"]);
                 $("#phone").val(data["phone"]);
                 $("#email").val(data["email"]);

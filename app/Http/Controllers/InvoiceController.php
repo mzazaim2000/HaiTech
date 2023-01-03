@@ -24,10 +24,23 @@ class InvoiceController extends Controller
     public function showInvoice(){
 
        if($data = Services::where("status", "Completed")->get()){
+       
+        $data = Services::where("paymentstatus", "Paid")->get();
         return view('pages/adminInvoice')->with('services', $data);
+
        }
+    }
+
+    public function showUnpaidInvoice(){
+      
+        if($data = Services::where("status", "Completed")->get()){
+
+         $data = Services::where("paymentstatus", "Unpaid")->get();
+         return view('pages/adminUnpaidInvoice')->with('services', $data);
 
         }
+ 
+         }
 
     public function editInvoiceData(Request $request){
 
@@ -36,42 +49,20 @@ class InvoiceController extends Controller
     }
     
     public function updateInvoice(Request $request){
-            
+        
         $this->validate($request, [
-                // 'name' => 'required',
-                // 'phone' => 'required',
-                // 'email' => 'required',
-                // 'company' => 'required',
-                // 'services' => 'required',
-                // 'date' => 'required',
+               
                 'amount' => 'required',
-                // 'paymentStatus'=> 'required',
+                
             ]);
             
         $id =$request->id;
-        // $name =$request->name;
-        // $phone =$request->phone;
-        // $email =$request->email;
-        // $company =$request->company;
-        // $services =$request->services;
-        // $date =$request->date;
         $amount =$request->amount;
-        // $paymentStatus =$request->paymentStatus;
-
-            
-            $data = Services::where('id','=',$id)->update([
-                // 'name'=>$name,
-                // 'phone'=>$phone,
-                // 'email'=>$email,
-                // 'company'=>$company,
-                // 'services'=>$services,
-                // 'date'=>$date,
+        $data = Services::where('id','=',$id)->update([
                 'amount'=>$amount,
-                // 'paymentStatus'=>$paymentStatus,
                 ]);
         
             if ($data){
-                // return dd($data);
                 return redirect()->back();
             }
             else {
@@ -99,8 +90,8 @@ class InvoiceController extends Controller
      
         if ($data->update()){
             return redirect()->back();
-
         }
        
-        }    
+    }    
+
 }

@@ -120,10 +120,11 @@ Route::get('/clientForm', function () {
 });
 
 Route::get('/adminInvoice', [InvoiceController::class, 'showInvoice'])->name("showInvoice");
+Route::get('/adminUnpaidInvoice', [InvoiceController::class, 'showUnpaidInvoice'])->name("showUnpaidInvoice");
 Route::get('invoice/generate-pdf',[InvoiceController::class,'generate_pdf']);
 Route::get('invoice/download-pdf',[InvoiceController::class,'download_pdf']);
 Route::get('invoice/export_pdf',[InvoiceController::class,'export_pdf'])->name("export_pdf");
-Route::post('/adminInvoice/updateInvoice', [InvoiceController::class, 'updateInvoice'])->name("updateInvoice");
+Route::post('/adminUnpaidInvoice/updateInvoice', [InvoiceController::class, 'updateInvoice'])->name("updateInvoice");
 Route::post('/adminInvoice/deleteInvoice', [InvoiceController::class, 'deleteInvoice'])->name("deleteInvoice");
 Route::get('/invoice/edit/{id}', [InvoiceController::class, 'editInvoiceData']);
 Route::get('/paid/{id}', [InvoiceController::class, 'paid']);
@@ -140,6 +141,3 @@ Route::get('/serverError', function () {
     return view('pages/serverError');
 });
 
-Route::get('/adminUnpaidInvoice', function () {
-    return view('pages/adminUnpaidInvoice');
-});
