@@ -139,3 +139,7 @@ Route::get('/clientError', function () {
 Route::get('/serverError', function () {
     return view('pages/serverError');
 });
+
+Route::get('/adminUnpaidInvoice', function () {
+    return view('pages/adminUnpaidInvoice');
+});

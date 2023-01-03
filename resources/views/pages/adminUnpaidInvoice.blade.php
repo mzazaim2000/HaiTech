@@ -8,7 +8,6 @@
     <!-- plugins:css -->
     <link rel="stylesheet" href="/frontend/css2/simple-line-icons.css">
     <link rel="stylesheet" href="/frontend/css/vendor.bundle.base.css">
-    
     <!-- endinject -->
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="/frontend/css/daterangepicker.css">
@@ -16,7 +15,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -27,12 +25,6 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
     <link href="index.css" rel="stylesheet">
-
-    <style>
-      .dataTables_wrapper {
-        font-size : 14px;
-      } 
-    </style>
   </head>
   <body>
     <div class="container-scroller">
@@ -54,16 +46,14 @@
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator message-dropdown" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <i class="icon-speech"></i>
-                <span class="count">{{ count(App\Models\Services::newService()) }}</span>
+                <span class="count">0</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                @foreach(App\Models\Services::newService() as $newreq)
-                <a href="{{url('adminAllServices')}}" class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have new service request from {{$newreq->name}}</p>
+                <a class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-left">You have 0 unread notification</p>
                   <span class="badge badge-pill badge-primary float-right"></span>
                 </a>
                 <div class="dropdown-divider"></div>
-                @endforeach
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
             
@@ -133,18 +123,20 @@
               <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation"><br><br><br><br><br>
                 <ul class="site-menu main-menu js-clone-nav ml-auto">
                   <li><div class="me-auto p-2 bd-highlight"><h2>Invoices</div></li>
-                  <li class="active"><a href="adminInvoice" class="nav-link">Paid</a></li>
-                  <li><a href="adminUnpaidInvoice" class="nav-link">Unpaid</a></li>
+                  <li><a href="adminInvoice" class="nav-link">Paid</a></li>
+                  <li class="active"><a href="adminUnpaidInvoice" class="nav-link">Unpaid</a></li>
                 </ul>
               </nav>
             </header><br><br><br>
+
+
 
       
       @if(Session::has('order_message'))
       <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
       @endif
       <div class="table">      
-      <table  id="table1" class="table table-striped table-hover">
+      <table class="table table-striped table-hover">
         <thead>
           <tr>
             <th>Invoice ID</th>
@@ -156,7 +148,7 @@
             <th>Date</th>
             <th>Amount</th>
             <th>Status</th>
-            <th class="text-center">Action</th>
+            <th colspan="3" class="text-center">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -174,8 +166,8 @@
               <td>{{$service->amount}}</td>
               <td>{{$service->paymentStatus}}</td>
                <td class="text-center">
-               <a href="{{url('invoice/generate-pdf')}}" class="export"><i class="material-icons" data-toggle="tooltip" title="View">print</i></a>
-                <a href="deleteInvoice" class="delete" onclick="deleteInvoice({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+               <a href="invoiceForm" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="fa fa-money" data-toggle="tooltip" title="Payment"></i></i></a>
+               <a href="{{url('paid', $service->id)}}" class="paid" onclick="return confirm('Invoice Paid?')"><i class="material-icons" data-toggle="tooltip" title="Paid">&#xE86C;</i></a> 
 
                </td>
              </tr>
@@ -215,7 +207,7 @@
                                         <input type="hidden" name="id" id="invoiceid" value="">
                                           <div class="form-group">
                                             <label for="InputName1">Fullname</label>
-                                            <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" readonly>
+                                            <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" disabled>
                                           </div>
 
                                           <div class="form-group">
@@ -225,19 +217,19 @@
 
                                           <div class="form-group">
                                               <label for="InputEmail">Email address</label>
-                                              <input class="form-control" type="email" name="email" id="email" value=""  placeholder="Email" readonly>
+                                              <input class="form-control" type="email" name="email" id="email" value=""  placeholder="Email" disabled>
                                           </div>
 
                                           <div class="form-group">
                                             <label for="InputCompany">Company</label>
-                                            <input class="form-control" type="text" name="company" id="company" value=""  placeholder="Company name" readonly>
+                                            <input class="form-control" type="text" name="company" id="company" value=""  placeholder="Company name" disabled>
                                         </div>
                                         <div class="form-group">
                                         <div class="input-group">
                                           <div class="input-group-prepend">
                                             <span class="input-group-text bg-primary text-white">RM</span>
                                           </div>
-                                          <input type="text" class="form-control" name="amount" id="amount" aria-label="Amount (to the nearest dollar)">
+                                          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                                         
                                         </div>
                                       </div>
@@ -287,29 +279,9 @@
                 </div>
               </div>
 
-  <!-- Delete Client HTML -->
-  <div id="deleteInvoice" class="modal fade">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <form action="{{route("deleteInvoice")}}" method="POST">
-                    @csrf
-                    <input type="hidden" name="id" id="delId" value="">
-                    <div class="modal-header">						
-                      <h4 class="modal-title">Delete Service Record</h4>
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    </div>
-                    <div class="modal-body">					
-                      <p>Are you sure you want to delete the Services Records?</p>
-                      <p class="text-danger"><small>This action cannot be undone.</small></p>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-default" onclick="closeModalDelete()">Cancel</button>
-                      <input type="submit" class="btn btn-danger" value="Proceed" >
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
+
+
+
 
 
 
@@ -345,13 +317,8 @@
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
-
+ 
     <script>
-      $(document).ready( function () {
-          $('#table1').DataTable();
-      } );
-
       function editForm(id){
 
         $("#id").val("");
@@ -359,7 +326,6 @@
         $("#phone").val("");
         $("#email").val("");
         $("#company").val("");
-        $("#amount").val("");
 
 
 
@@ -369,7 +335,7 @@
             dataType: "json",
             success: function (data) {
                 // console.log(data);
-                $("#invoiceid").val(data["id"]);
+                $("#pendingid").val(data["id"]);
                 $("#name").val(data["name"]);
                 $("#phone").val(data["phone"]);
                 $("#email").val(data["email"]);

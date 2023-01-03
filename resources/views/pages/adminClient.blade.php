@@ -130,11 +130,18 @@
     <div class="container">
       <div class="d-flex bd-highlight mb-3">
         <div class="me-auto p-2 bd-highlight"><h2>Clients</div>
-       
+          <button href="addClient" type="button" class="btn btn-dark btn-icon-text" onclick="addFormModal()"><i class="icon-user-follow"></i>
+          </button>
+
         <div class="search-form d-none d-md-block">
-          <button href="addClient" type="button" class="btn btn-colour-1" onclick="addFormModal()">New Client</button>
+
+          
         </div>
       </div>
+      {{-- <button href="addClient" type="button" class="btn btn-colour-1" onclick="addFormModal()">New Client</button> --}}
+                {{-- <button href="addClient" type="button" class="btn btn-primary btn-rounded btn-icon" onclick="addFormModal()">
+            <i class="icon-user-follow"></i>
+          </button> --}}
       
       <div class="table">
         <table id="table1" class="table table-hover">
