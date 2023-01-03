@@ -144,7 +144,7 @@
       <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
       @endif
       <div class="table">      
-      <table  id="table1" class="table table-striped table-hover">
+      <table id="table1" class="table table-striped table-hover">
         <thead>
           <tr>
             <th>Invoice ID</th>

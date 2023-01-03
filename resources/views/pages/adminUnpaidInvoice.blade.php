@@ -15,6 +15,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -25,6 +27,13 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
     <link href="index.css" rel="stylesheet">
+
+    <style>
+      .dataTables_wrapper {
+        font-size : 14px;
+      } 
+    </style>
+    
   </head>
   <body>
     <div class="container-scroller">
@@ -138,7 +147,7 @@
       <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
       @endif
       <div class="table">      
-      <table class="table table-striped table-hover">
+      <table id="table1" class="table table-striped table-hover">
         <thead>
           <tr>
             <th>Invoice ID</th>
@@ -150,7 +159,7 @@
             <th>Date</th>
             <th>Amount</th>
             <th>Status</th>
-            <th colspan="2" class="text-center">Action</th>
+            <th class="text-center">Action</th>
           </tr>
         </thead>
         <tbody>
@@ -290,7 +299,9 @@
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
- 
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+
     <script>
     
     $(document).ready( function () {
