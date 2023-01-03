@@ -215,6 +215,29 @@
                                             <label for="InputCompany">Company</label>
                                             <input class="form-control" type="text" name="company" id="company" value=""  placeholder="Company name" disabled>
                                         </div>
+                                        <div class="form-group">
+                                        <div class="input-group">
+                                          <div class="input-group-prepend">
+                                            <span class="input-group-text bg-primary text-white">RM</span>
+                                          </div>
+                                          <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                          {{-- <div class="input-group-append">
+                                            <span class="input-group-text">.00</span>
+                                          </div> --}}
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                      <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Payment Status</button>
+                                          <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 46px, 0px);">
+                                            <a class="dropdown-item" href="#">Paid</a>
+                                            <a class="dropdown-item" href="#">Unpaid</a>
+                                          </div>
+                                        </div>
+                                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
+                                      </div>
+                                    </div>
 
                                         {{-- Services:
                                         <div class="form-check">
