@@ -157,7 +157,7 @@
               <td>{{$service->amount}}</td>
               <td>{{$service->status}}</td>
                <td class="text-center">
-                <a href="editServ" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="fa fa-money" data-toggle="tooltip" title="Payment"></i></i></a>
+                <a href="invoiceForm" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="fa fa-money" data-toggle="tooltip" title="Payment"></i></i></a>
                 <a href="{{url('invoice/generate-pdf')}}" class="export"><i class="material-icons" data-toggle="tooltip" title="View">print</i></a>
                 <a href="deleteServ" class="delete" onclick="deleteServ({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 
@@ -170,6 +170,91 @@
   </div>
   <!-- content-wrapper ends -->
 </div>
+
+ <div id="invoiceForm" class="modal fade">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="form-body">
+                      <div class="row">
+                        <div class="col-12 grid-margin stretch-card">
+                          <div class="card">
+                            <div class="card-body">
+                              <h4 class="card-title">Invoice Form</h4>
+                              <p class="card-description">Please fill in your client's invoice details.</p>
+                                      @if(Session::get('success'))
+                                      <div class="alert alert-success">
+                                        {{Session:get('success')}}
+                                      </div>
+                                      @endif
+
+                                      @if(Session::get('fail'))
+                                      <div class="alert alert-danger">
+                                        {{Session:get('fail')}}
+                                      </div>
+                                      @endif
+
+                                      <form action="{{route("#")}}" method="POST" class="forms-sample">
+                                        @csrf
+                                        <input type="hidden" name="id" id="pendingid" value="">
+                                          <div class="form-group">
+                                            <label for="InputName1">Fullname</label>
+                                            <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" disabled>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label for="InputPhone">Phone Number</label>
+                                            <input class="form-control" type="text" name="phone" id="phone" value="" pattern="^(\+?6?01)[02-46-9]-*[0-9]{7}$|^(\+?6?01)[1]-*[0-9]{8}$" placeholder="0112366789" disabled>
+                                        </div>
+
+                                          <div class="form-group">
+                                              <label for="InputEmail">Email address</label>
+                                              <input class="form-control" type="email" name="email" id="email" value=""  placeholder="Email" disabled>
+                                          </div>
+
+                                          <div class="form-group">
+                                            <label for="InputCompany">Company</label>
+                                            <input class="form-control" type="text" name="company" id="company" value=""  placeholder="Company name" disabled>
+                                        </div>
+
+                                        {{-- Services:
+                                        <div class="form-check">
+                                          <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" name="services[]" id="ups" value="UPS"  id="invalidCheck">Uninterruptible Power Supply Precision Cooling Solution</label>
+                                      </div>
+                                      <div class="form-check">
+                                        <label class="form-check-label">
+                                          <input class="form-check-input" type="checkbox" name="services[]" id="fm" value="Facility Management"  id="invalidCheck">Facility Management M&E Maintenance</label>
+                                    </div>
+                                    <div class="form-check">
+                                      <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox" name="services[]" id="dce" value="Data Center Enhancement"  id="invalidCheck">Data Center Enhancement ICT Managed Services</label>
+                                  </div>
+                                  <div class="form-check">
+                                    <label class="form-check-label">
+                                      <input class="form-check-input" type="checkbox" name="services[]" id="cs" value="Corporate Support"  id="invalidCheck">Corporate Support Business Advisory</label>
+                                </div><br> --}}
+                                
+                                {{-- Select Date & Time:
+                                <div class="form-group">
+                                  <input class="" type="date" name="date" id="date" value="" >
+                                  <input class="" type="time" name="time" id="time" value="" >
+                                  </div> --}}
+
+                                      {{-- <div class="col-md-12">
+                                          <textarea class="form-control" type="text" name="issue" id="issue" value="" placeholder="State your issue" required></textarea>
+                                          <div class="invalid-feedback">Issue field cannot be blank!</div>
+                                      </div> --}}
+                                                <button type="button" class="btn btn-light" onclick="closeModal()">Cancel</button>
+                                                <input type="submit" class="btn btn-primary mr-2" value="Save">
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
 
 
 
