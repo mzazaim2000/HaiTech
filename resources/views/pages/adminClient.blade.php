@@ -224,7 +224,7 @@
                   <p class="card-description">Kindly fill in your client's information.</p>   
                           @if(Session::get('success'))
                           <div class="alert alert-success">
-                            {{Session:get('success')}}
+                            {{Session:get('success')}} 
                           </div>
                           @endif
   
