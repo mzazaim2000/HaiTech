@@ -51,6 +51,7 @@ class InvoiceController extends Controller
         $phone =$request->phone;
         $email =$request->email;
         $company =$request->company;
+        $services =$request->services;
         $date =$request->date;
         $amount =$request->amount;
         $paymentStatus =$request->paymentStatus;
