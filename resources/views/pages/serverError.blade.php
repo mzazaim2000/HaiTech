@@ -87,7 +87,7 @@
         <div class="fof">
                 <h1>Error 500</h1>
                 <h2>The server encountered an internal error or misconfiguration and was unable to complete your request.</h2>
-                <a href="admindashboard" class="button-30" role="button" >Back To Home</button></a>
+                <a href="{{ URL::previous() }}" class="button-30" role="button" >Back To Home</button></a>
     
         </div>
     </div>

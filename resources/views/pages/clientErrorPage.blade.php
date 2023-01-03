@@ -87,7 +87,7 @@ body{
     <div class="fof">
             <h1>Error 404</h1>
             <h2>The page you are currently looking for does not exist or an error occured.</h2>
-            <a href="admindashboard" class="button-30" role="button" >Back To Home</button></a>
+            <a href="{{ URL::previous() }}" class="button-30" role="button" >Back To Home</button></a>
 
     </div>
 </div>
