@@ -22,10 +22,72 @@ class InvoiceController extends Controller
     }
 
     public function showInvoice(){
-        $data = Services::where("status", "Completed")->get();
+
+       if($data = Services::where("status", "Completed")->get()){
         return view('pages/adminInvoice')->with('services', $data);
+       }
+
         }
 
+    public function editInvoiceData(Request $request){
+
+        $data=Services::find($request->id);
+        return response()->json($data);
+    }
+    
+    public function updateInvoice(Request $request){
+            
+            $this->validate($request, [
+                'name' => 'required',
+                'phone' => 'required',
+                'email' => 'required',
+                'company' => 'required',
+                'services' => 'required',
+                'date' => 'required',
+            ]);
+            
+        $id =$request->id;
+        $name =$request->name;
+        $phone =$request->phone;
+        $email =$request->email;
+        $company =$request->company;
+        $date =$request->date;
+        $amount =$request->amount;
+        $paymentStatus =$request->paymentStatus;
+
+            
+            $data = Services::where('id','=',$id)->update([
+                'name'=>$name,
+                'phone'=>$phone,
+                'email'=>$email,
+                'company'=>$company,
+                'services'=>$services,
+                'date'=>$date,
+                'amount'=>$amount,
+                'paymentStatus'=>$paymentStatus,
+                ]);
         
+            if ($data){
+    
+                return redirect()->back();
+    
+            }
+            else {
+                echo "Error";
+            }
+    }    
+
+    public function deleteInvoice(Request $request){
+    
+        $id =$request->id;
+        $data=Services::where('id','=',$id)->delete();  
+        if($data){
+
+            $info = Services::all();
+            return redirect()->route('showInvoice', ['services' => $info]);
+
+        }
+
+    }
 
 }

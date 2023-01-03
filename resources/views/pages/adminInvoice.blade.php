@@ -159,7 +159,7 @@
                <td class="text-center">
                 <a href="invoiceForm" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="fa fa-money" data-toggle="tooltip" title="Payment"></i></i></a>
                 <a href="{{url('invoice/generate-pdf')}}" class="export"><i class="material-icons" data-toggle="tooltip" title="View">print</i></a>
-                <a href="deleteServ" class="delete" onclick="deleteServ({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
+                <a href="deleteInvoice" class="delete" onclick="deleteInvoice({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
 
                </td>
              </tr>
@@ -171,6 +171,7 @@
   <!-- content-wrapper ends -->
 </div>
 
+<!-- Edit Modal HTML -->
  <div id="invoiceForm" class="modal fade">
                 <div class="modal-dialog">
                   <div class="modal-content">
@@ -193,9 +194,9 @@
                                       </div>
                                       @endif
 
-                                      <form action="" method="POST" class="forms-sample">
+                                      <form action="{{route("updateInvoice")}}" method="POST" class="forms-sample">
                                         @csrf
-                                        <input type="hidden" name="id" id="pendingid" value="">
+                                        <input type="hidden" name="id" id="invoiceid" value="">
                                           <div class="form-group">
                                             <label for="InputName1">Fullname</label>
                                             <input class="form-control" type="text" name="name" id="name" value="" placeholder="Name" disabled>
@@ -221,9 +222,7 @@
                                             <span class="input-group-text bg-primary text-white">RM</span>
                                           </div>
                                           <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-                                          {{-- <div class="input-group-append">
-                                            <span class="input-group-text">.00</span>
-                                          </div> --}}
+                                        
                                         </div>
                                       </div>
                                       <div class="form-group">
@@ -231,8 +230,8 @@
                                         <div class="input-group-prepend">
                                           <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Payment Status</button>
                                           <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 46px, 0px);">
-                                            <a class="dropdown-item" href="#">Paid</a>
-                                            <a class="dropdown-item" href="#">Unpaid</a>
+                                            <a class="dropdown-item" href="#" name="paid" id="paid" value="Paid">Paid</a>
+                                            <a class="dropdown-item" href="#" name="unpaid" id="unpaid" value="Unpdaid">Unpaid</a>
                                           </div>
                                         </div>
                                         <input type="text" class="form-control" aria-label="Text input with dropdown button">
@@ -279,7 +278,29 @@
                 </div>
               </div>
 
-
+  <!-- Delete Client HTML -->
+  <div id="deleteInvoice" class="modal fade">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <form action="{{route("deleteInvoice")}}" method="POST">
+                    @csrf
+                    <input type="hidden" name="id" id="delId" value="">
+                    <div class="modal-header">						
+                      <h4 class="modal-title">Delete Service Record</h4>
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    </div>
+                    <div class="modal-body">					
+                      <p>Are you sure you want to delete the Services Records?</p>
+                      <p class="text-danger"><small>This action cannot be undone.</small></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-default" onclick="closeModalDelete()">Cancel</button>
+                      <input type="submit" class="btn btn-danger" value="Proceed" >
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
 
 
 
@@ -332,7 +353,7 @@
 
         $.ajax({
             type: "GET",
-            url: '{{url("service/edit/")}}'+'/'+id,
+            url: '{{url("invoice/edit/")}}'+'/'+id,
             dataType: "json",
             success: function (data) {
                 // console.log(data);
@@ -341,6 +362,8 @@
                 $("#phone").val(data["phone"]);
                 $("#email").val(data["email"]);
                 $("#company").val(data["company"]);
+                $("#amount").val(data["amount"]);
+                $("#paymentStatus").val(data["paymentStatus"]);
 
                 var services = data["services"].split(',');
                 for (let i = 0; i < services.length; i++) {
@@ -374,13 +397,13 @@
         $('#invoiceForm').modal('hide');
       }
 
-        function deleteServ(id){
-        $("#clearId").val(id);
-        $('#deleteServ').modal('show');
+        function deleteInvoice(id){
+        $("#delId").val(id);
+        $('#deleteInvoice').modal('show');
       }
 
       function closeModalDelete(){
-        $('#deleteServ').modal('hide');
+        $('#deleteInvoice').modal('hide');
       }
 
       </script>

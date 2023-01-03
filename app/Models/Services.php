@@ -29,7 +29,9 @@ class Services extends Model
         'date',
         'time',
         'issue',
-        'status'
+        'status',
+        'amount',
+        'paymentStatus'
     ];
 
     /**
