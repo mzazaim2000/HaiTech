@@ -112,9 +112,17 @@
             <div class="row purchace-popup">
               <div class="col-12 stretch-card grid-margin">
   
+                
+                  <form class="search-form d-none d-md-block" action="#">
+                    {{-- <i class="icon-magnifier"></i> --}}
+                    <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+                  </form>
+                
               </div>
+              
             </div>
             <!-- page template end -->
+
  <!-- top nav template start -->
  <div class="container"> 
   <header class="site-navbar site-navbar-target" role="banner">
@@ -126,15 +134,10 @@
             <li><a href="adminPending" class="nav-link">In-Progress</a></li>
           </ul>
         </nav>
+  </header>
         </div>
-    </header><br><br><br><br><br>
 
-    <div class="container-scroller">
-      <form class="search-form d-none d-md-block" action="#">
-        {{-- <i class="icon-magnifier"></i> --}}
-        <input type="search" class="form-control" placeholder="Search Here" title="Search here">
-      </form>
-    </div>
+
      <!-- top nav template end -->
 
                <!-- table template start -->

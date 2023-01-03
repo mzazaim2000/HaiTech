@@ -120,19 +120,8 @@
 
             <div class="container">
                  <div class="d-flex bd-highlight mb-3">
-                 <div class="me-auto p-2 bd-highlight"><h2>Invoice</h2></div>
-                  <div class="container-scroller">
-                    <form class="search-form d-none d-md-block" action="#">
-                      {{-- <i class="icon-magnifier"></i> --}}
-                      <input type="search" class="form-control" placeholder="Search Here" title="Search here">
-                    </form>
-                  </div>
-                  {{-- <div class="search__container">
-                    <p class="search__title"></p>
-                    <input class="search__input" type="text" placeholder="Search">
-                    <i class="icon-magnifier"></i>
-                </div> --}}
-                 </div>
+            <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
+            </div>
       
       @if(Session::has('order_message'))
       <div class="alert alert-success" role="alert">{{Session::get('order_message')}}</div>
