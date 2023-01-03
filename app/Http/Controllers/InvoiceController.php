@@ -26,6 +26,6 @@ class InvoiceController extends Controller
         return view('pages/adminInvoice')->with('services', $data);
         }
 
-
+        
 
 }
