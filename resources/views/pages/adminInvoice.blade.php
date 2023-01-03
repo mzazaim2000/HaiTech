@@ -193,7 +193,7 @@
                                       </div>
                                       @endif
 
-                                      <form action="{{route("#")}}" method="POST" class="forms-sample">
+                                      <form action="" method="POST" class="forms-sample">
                                         @csrf
                                         <input type="hidden" name="id" id="pendingid" value="">
                                           <div class="form-group">
@@ -295,6 +295,73 @@
     <script src="index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  
+        <script>
+      function editForm(id){
+
+        $("#id").val("");
+        $("#name").val("");
+        $("#phone").val("");
+        $("#email").val("");
+        $("#company").val("");
+
+
+
+        $.ajax({
+            type: "GET",
+            url: '{{url("service/edit/")}}'+'/'+id,
+            dataType: "json",
+            success: function (data) {
+                // console.log(data);
+                $("#pendingid").val(data["id"]);
+                $("#name").val(data["name"]);
+                $("#phone").val(data["phone"]);
+                $("#email").val(data["email"]);
+                $("#company").val(data["company"]);
+
+                var services = data["services"].split(',');
+                for (let i = 0; i < services.length; i++) {
+
+                  var serv = services[i].trim();
+
+                  if(serv == "UPS"){
+                    $( "#ups" ).prop( "checked", true );
+                  }else if(serv == "Facility Management"){
+                    $( "#fm" ).prop( "checked", true );
+                  }else if(serv == "Data Center Enhancement"){
+                    $( "#dce" ).prop( "checked", true );
+                  }else if(serv == "Corporate Support"){
+                    $( "#cs" ).prop( "checked", true );
+                  }
+
+                }
+
+
+                $('#invoiceForm').modal('show');
+            },
+            error: function (data) {
+                console.log('Error:', data);
+
+            }
+        });
+
+      }
+
+      function closeModal(){
+        $('#invoiceForm').modal('hide');
+      }
+
+        function deleteServ(id){
+        $("#clearId").val(id);
+        $('#deleteServ').modal('show');
+      }
+
+      function closeModalDelete(){
+        $('#deleteServ').modal('hide');
+      }
+
+      </script>
+
   </body>
 </html>
 
