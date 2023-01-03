@@ -37,41 +37,42 @@ class InvoiceController extends Controller
     
     public function updateInvoice(Request $request){
             
-            $this->validate($request, [
-                'name' => 'required',
-                'phone' => 'required',
-                'email' => 'required',
-                'company' => 'required',
-                'services' => 'required',
-                'date' => 'required',
+        $this->validate($request, [
+                // 'name' => 'required',
+                // 'phone' => 'required',
+                // 'email' => 'required',
+                // 'company' => 'required',
+                // 'services' => 'required',
+                // 'date' => 'required',
+                'amount' => 'required',
+                // 'paymentStatus'=> 'required',
             ]);
             
         $id =$request->id;
-        $name =$request->name;
-        $phone =$request->phone;
-        $email =$request->email;
-        $company =$request->company;
-        $services =$request->services;
-        $date =$request->date;
+        // $name =$request->name;
+        // $phone =$request->phone;
+        // $email =$request->email;
+        // $company =$request->company;
+        // $services =$request->services;
+        // $date =$request->date;
         $amount =$request->amount;
-        $paymentStatus =$request->paymentStatus;
+        // $paymentStatus =$request->paymentStatus;
 
             
             $data = Services::where('id','=',$id)->update([
-                'name'=>$name,
-                'phone'=>$phone,
-                'email'=>$email,
-                'company'=>$company,
-                'services'=>$services,
-                'date'=>$date,
+                // 'name'=>$name,
+                // 'phone'=>$phone,
+                // 'email'=>$email,
+                // 'company'=>$company,
+                // 'services'=>$services,
+                // 'date'=>$date,
                 'amount'=>$amount,
-                'paymentStatus'=>$paymentStatus,
+                // 'paymentStatus'=>$paymentStatus,
                 ]);
         
             if ($data){
-    
+                // return dd($data);
                 return redirect()->back();
-    
             }
             else {
                 return view('pages/serverError');

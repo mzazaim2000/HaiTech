@@ -15,7 +15,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    {{-- <link rel="stylesheet" href="{{ asset('frontend/css/form.css') }}"> --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -26,7 +27,11 @@
     {{-- <link rel="stylesheet" href="{{ asset('frontend/css/allservices.css') }}"> --}}
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
-
+    <style>
+      .dataTables_wrapper {
+        font-size : 14px;
+      } 
+    </style>
   </head>
   <body>
     <div class="container-scroller">
@@ -48,14 +53,16 @@
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator message-dropdown" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <i class="icon-speech"></i>
-                <span class="count">0</span>
+                <span class="count">{{ count(App\Models\Services::newService()) }}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 0 unread notification</p>
+                @foreach(App\Models\Services::newService() as $newreq)
+                <a href="{{url('adminAllServices')}}" class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-left">You have new service request from {{$newreq->name}}</p>
                   <span class="badge badge-pill badge-primary float-right"></span>
                 </a>
                 <div class="dropdown-divider"></div>
+                @endforeach
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
             
@@ -123,19 +130,14 @@
     <div class="container">
       <div class="d-flex bd-highlight mb-3">
         <div class="me-auto p-2 bd-highlight"><h2>Clients</div>
-     
-            <form class="search-form d-none d-md-block" action="#">
-              {{-- <i class="icon-magnifier"></i> --}}
-              <input type="search" class="form-control" placeholder="Search Here" title="Search here">
-            </form>
        
         <div class="search-form d-none d-md-block">
           <button href="addClient" type="button" class="btn btn-colour-1" onclick="addFormModal()">New Client</button>
         </div>
       </div>
       
-      <div class="table-responsive">
-        <table class="table">
+      <div class="table">
+        <table id="table1" class="table table-hover">
           <thead>
             <tr>
               <th>Client ID</th>
@@ -156,13 +158,10 @@
                  <td>{{$client->surname}}</td>
                  <td>{{$client->email}}</td>
                  <td>{{$client->contact}}</td>
-             
                  <td>
                   <a href="editClient" class="edit" onclick="editForm({{$client->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE9a2;</i></a>
                   <a href="deleteClient" class="delete" onclick="deleteClient({{$client->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-
-            <tr>
-              
+                 </td>
             </tr>
           </tbody>
           @endforeach 
@@ -336,9 +335,15 @@
     <script src="/frontend/js/index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.16/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-  
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
+
     <script>
 
+      $(document).ready( function () {
+          $('#table1').DataTable();
+      } );
+      
       function addFormModal(){
         $('#addClient').modal('show');
       }

@@ -52,5 +52,9 @@ class Services extends Model
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function newService() {
+        return self::where('status', 'Pending')->get();
+    }
 }
 

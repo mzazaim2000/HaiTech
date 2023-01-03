@@ -12,6 +12,8 @@
     <!-- Plugin css for this page -->
     <link rel="stylesheet" href="/frontend/css/daterangepicker.css">
     <link rel="stylesheet" href="/frontend/css/chartist.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+
     <!-- End plugin css for this page -->
     <!-- inject:css -->
     <!-- endinject -->
@@ -21,6 +23,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="/images/logo.png" />
+
+    <style>
+      .dataTables_wrapper {
+        font-size : 14px;
+      } 
+    </style>
+
   </head>
   <body>
     <div class="container-scroller">
@@ -42,14 +51,16 @@
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator message-dropdown" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <i class="icon-speech"></i>
-                <span class="count">0</span>
+                <span class="count">{{ count(App\Models\Services::newService()) }}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 0 unread notification</p>
+                @foreach(App\Models\Services::newService() as $newreq)
+                <a href="{{url('adminAllServices')}}" class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-left">You have new service request from {{$newreq->name}}</p>
                   <span class="badge badge-pill badge-primary float-right"></span>
                 </a>
                 <div class="dropdown-divider"></div>
+                @endforeach
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
             
@@ -113,10 +124,7 @@
               <div class="col-12 stretch-card grid-margin">
   
                 
-                  <form class="search-form d-none d-md-block" action="#">
-                    {{-- <i class="icon-magnifier"></i> --}}
-                    <input type="search" class="form-control" placeholder="Search Here" title="Search here">
-                  </form>
+  
                 
               </div>
               
@@ -142,7 +150,7 @@
 
                <!-- table template start -->
                <br><br><br><div class="table">
-               <table class="table table-striped table-hover">
+               <table id="table1" class="table table-striped table-hover">
                 <thead>
                   <tr>
                     <th>Service ID</th>
@@ -234,10 +242,15 @@
     <!-- endinject -->
     <!-- Custom js for this page -->
     <script src="/frontend/js/dashboard.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+
     <!-- End custom js for this page -->
 
             <script>
-    
+            $(document).ready( function () {
+            $('#table1').DataTable();
+            } );
+
               function closeModal(){
                 $('#editService').modal('hide');
               }

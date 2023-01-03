@@ -114,7 +114,6 @@ class AdminController extends Controller
             'services'=>$services,
             'date'=>$date,
             'time'=>$time,
-            // 'issue'=>$issue,
             ]);
     
         if ($data){

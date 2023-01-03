@@ -129,7 +129,8 @@
               <th>Date</th>
               <th>Time</th>
               <th>Issue</th>
-              <th>Action</th>
+              <th>Amount</th>              
+              <th colspan="3" class="text-center">Action</th>
             </tr>
           </thead>
           <tbody>
@@ -146,10 +147,11 @@
                  <td>{{$service->date}}</td>
                  <td>{{$service->time}}</td>
                  <td>{{$service->issue}}</td>
+                 <td>{{$service->amount}}</td>
                  <td>
                   <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                   <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-              
+                  <a href="viewService" class="view" onclick="viewService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE872;</i></a>
                  </td>
                </tr>
                @endforeach 
@@ -283,6 +285,30 @@
 		</div>
 	</div>
 </div>
+
+<!-- View Modal HTML -->
+<div id="viewService" class="modal fade">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<form action="#" method="POST">
+        @csrf
+        <input type="hidden" name="id" id="servId" value="">
+				<div class="modal-header">						
+					<h4 class="modal-title">Service Payment</h4>
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				</div>
+				<div class="modal-body">					
+					<p>Payment can be done by transferring to the account number below.</p>
+					<p class="text-warning"><small>Maybank</small></p>
+          <p class="text-info"><small>Account Number: 1892725328938</small></p>
+				</div>
+				<div class="modal-footer">
+					<input type="button" class="btn btn-danger" onclick="closeModal()" value="Close" >
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
           
           
   </header>
@@ -367,6 +393,7 @@
 
           function closeModal(){
             $('#editService').modal('hide');
+            $('#viewService').modal('hide');
           }
 
           function deleteService(id){
@@ -376,6 +403,11 @@
 
           function closeModalDelete(){
             $('#deleteService').modal('hide');
+          }
+
+          function viewService(id){
+            $("#servId").val(id);
+            $('#viewService').modal('show');
           }
 
           </script>

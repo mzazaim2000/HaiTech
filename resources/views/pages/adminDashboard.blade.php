@@ -40,14 +40,16 @@
             <li class="nav-item dropdown">
               <a class="nav-link count-indicator message-dropdown" id="messageDropdown" href="#" data-toggle="dropdown" aria-expanded="false">
                 <i class="icon-speech"></i>
-                <span class="count">0</span>
+                <span class="count">{{ count(App\Models\Services::newService()) }}</span>
               </a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list pb-0" aria-labelledby="messageDropdown">
-                <a class="dropdown-item py-3">
-                  <p class="mb-0 font-weight-medium float-left">You have 0 unread notification</p>
+                @foreach(App\Models\Services::newService() as $newreq)
+                <a href="{{url('adminAllServices')}}" class="dropdown-item py-3">
+                  <p class="mb-0 font-weight-medium float-left">You have new service request from {{$newreq->name}}</p>
                   <span class="badge badge-pill badge-primary float-right"></span>
                 </a>
                 <div class="dropdown-divider"></div>
+                @endforeach
                 <a class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
             
