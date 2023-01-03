@@ -239,13 +239,12 @@
                                       <div class="form-group">
                                       <div class="input-group">
                                         <div class="input-group-prepend">
-                                          <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Payment Status</button>
+                                          <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" data-toggle="dropdown">Payment Status</button>
                                           <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; will-change: transform; top: 0px; left: 0px; transform: translate3d(0px, 46px, 0px);">
                                             <a class="dropdown-item" href="#" name="paid" id="paid" value="Paid">Paid</a>
                                             <a class="dropdown-item" href="#" name="unpaid" id="unpaid" value="Unpdaid">Unpaid</a>
                                           </div>
                                         </div>
-                                        <input type="text" class="form-control" aria-label="Text input with dropdown button">
                                       </div>
                                     </div>
 
