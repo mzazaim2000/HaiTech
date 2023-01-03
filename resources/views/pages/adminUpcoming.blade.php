@@ -116,18 +116,18 @@
             </div>
             <!-- page template end -->
             <!-- top nav template start -->
-  <div class="container"> 
+
   <header class="site-navbar site-navbar-target" role="banner">
         <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation"><br><br><br><br><br>
           <ul class="site-menu main-menu js-clone-nav ml-auto">
             <li><div class="me-auto p-2 bd-highlight"><h2>Services</div></li>
             <li><a href="adminAllServices" class="nav-link">All Services</a></li>
-            <li><a href="adminPending" class="nav-link">In-Progress</a></li>
             <li class="active"><a href="adminUpcoming" class="nav-link">Upcoming</a></li>
+            <li><a href="adminPending" class="nav-link">In-Progress</a></li>
               </ul>
             </nav>
-          </div>
-    </header>
+          </header>
+   
      <!-- top nav template end -->
 
                <!-- table template start -->
