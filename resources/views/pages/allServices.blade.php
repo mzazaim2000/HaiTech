@@ -4,7 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HaiTech</title>
+  <title>HaiBro</title>
+  <link rel="shortcut icon" href="images/logo2.png" />  
 
     <!-- Fonts -->
     <meta name="viewpoint" content="width=device-width, initial-scale=1">
@@ -151,7 +152,7 @@
                  <td>
                   <a href="editService" class="edit" onclick="editForm({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Edit">&#xE254;</i></a>
                   <a href="deleteService" class="delete" onclick="deleteService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="Delete">&#xE872;</i></a>
-                  <a href="viewService" class="view" onclick="viewService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xE872;</i></a>
+                  <a href="viewService" class="view" onclick="viewService({{$service->id}})" data-toggle="modal"><i class="material-icons" data-toggle="tooltip" title="View">&#xe417;</i></a>
                  </td>
                </tr>
                @endforeach 
