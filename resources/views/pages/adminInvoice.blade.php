@@ -138,7 +138,7 @@
             <th>Services</th>
             <th>Date</th>
             <th>Amount</th>
-            <th>Status</th>
+            <th>Payment Status</th>
             <th colspan="3" class="text-center">Action</th>
           </tr>
         </thead>
