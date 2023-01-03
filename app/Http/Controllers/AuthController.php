@@ -41,7 +41,7 @@ class AuthController extends Controller
             return view('pages/loginClient');
         }
          else{
-            return back()->with('<h1>Insert Fail</h1>');} 
+            return view('pages/serverError');} 
         } 
 
   

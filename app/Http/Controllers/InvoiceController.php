@@ -73,7 +73,7 @@ class InvoiceController extends Controller
     
             }
             else {
-                echo "Error";
+                return view('pages/serverError');
             }
     }    
 

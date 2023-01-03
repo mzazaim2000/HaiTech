@@ -35,7 +35,7 @@ class ClientServicesController extends Controller{
             return redirect()->route('show', ['services' => $data]);
          
         } else{
-        return back()->with('<h1>Insert Fail</h1>');
+            return view('pages/clientErrorPage');
             } 
         }
     

@@ -23,7 +23,7 @@ class AdminController extends Controller
                 echo "Wrong Password!";
                 
             }else{
-                return view('pages/adminDashboard');
+                return view('pages/serverError');
             }
             
             };
@@ -50,7 +50,7 @@ class AdminController extends Controller
             $info = Services::all();
             return redirect()->route('showAll', ['services' => $info]);  
         }else {
-            echo "Error";
+            return view('pages/clientErrorPage');
         }
 
     }
@@ -64,7 +64,7 @@ class AdminController extends Controller
             return view('pages/adminPending')->with('services', $info);
 
         }else {
-            echo "Error";
+            return view('pages/clientErrorPage');;
         }
       
     }
@@ -77,7 +77,7 @@ class AdminController extends Controller
             $info = Services::all();
             return redirect()->route('showInProgress', ['services' => $info]);
         }else{
-            echo "Error";
+            return view('pages/serverError');;
         }
 
     }
@@ -121,7 +121,7 @@ class AdminController extends Controller
             return redirect()->back();
     
         }else {
-            echo "Error";
+            return view('pages/serverError');
         }
     }
 

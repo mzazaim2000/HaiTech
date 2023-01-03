@@ -124,12 +124,17 @@
             <li class="active"><a href="adminAllServices" class="nav-link">All Services</a></li>
             <li><a href="adminUpcoming" class="nav-link">Upcoming</a></li>
             <li><a href="adminPending" class="nav-link">In-Progress</a></li>
-              </ul>
-            </nav>
-       </header>
- </div>
+          </ul>
+        </nav>
+        </div>
+    </header><br><br><br><br><br>
 
-    
+    <div class="container-scroller">
+      <form class="search-form d-none d-md-block" action="#">
+        {{-- <i class="icon-magnifier"></i> --}}
+        <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+      </form>
+    </div>
      <!-- top nav template end -->
 
                <!-- table template start -->

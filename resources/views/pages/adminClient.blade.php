@@ -123,7 +123,13 @@
     <div class="container">
       <div class="d-flex bd-highlight mb-3">
         <div class="me-auto p-2 bd-highlight"><h2>Clients</div>
-        <div class="p-2 bd-highlight">
+          <div class="container-scroller">
+            <form class="search-form d-none d-md-block" action="#">
+              {{-- <i class="icon-magnifier"></i> --}}
+              <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+            </form>
+          </div>
+        <div class="search-form d-none d-md-block">
           <button href="addClient" type="button" class="btn btn-colour-1" onclick="addFormModal()">New Client</button>
         </div>
       </div>
