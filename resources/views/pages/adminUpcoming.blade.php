@@ -116,7 +116,7 @@
             </div>
             <!-- page template end -->
             <!-- top nav template start -->
-
+            <div class="container"> 
   <header class="site-navbar site-navbar-target" role="banner">
         <nav class="site-navigation ml-auto d-none d-lg-block" role="navigation"><br><br><br><br><br>
           <ul class="site-menu main-menu js-clone-nav ml-auto">
@@ -127,6 +127,7 @@
               </ul>
             </nav>
           </header>
+            </div>
    
      <!-- top nav template end -->
 
