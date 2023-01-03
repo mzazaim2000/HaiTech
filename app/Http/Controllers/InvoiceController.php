@@ -91,4 +91,15 @@ class InvoiceController extends Controller
 
     }
 
+    public function paid($id){
+        
+        $data = Services::find($id);
+        $data->paymentStatus='Paid';
+     
+        if ($data->update()){
+            return redirect()->back();
+
+        }
+       
+        }    
 }

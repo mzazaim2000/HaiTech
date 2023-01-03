@@ -146,7 +146,8 @@ class AdminController extends Controller
         
         $data = Services::find($id);
         $data->status='Completed';
-     
+        $data->paymentStatus='Unpaid';
+
         if ($data->update()){
             return redirect()->back();
 

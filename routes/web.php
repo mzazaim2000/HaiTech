@@ -126,6 +126,8 @@ Route::get('invoice/export_pdf',[InvoiceController::class,'export_pdf'])->name("
 Route::post('/adminInvoice/updateInvoice', [InvoiceController::class, 'updateInvoice'])->name("updateInvoice");
 Route::post('/adminInvoice/deleteInvoice', [InvoiceController::class, 'deleteInvoice'])->name("deleteInvoice");
 Route::get('/invoice/edit/{id}', [InvoiceController::class, 'editInvoiceData']);
+Route::get('/paid/{id}', [InvoiceController::class, 'paid']);
+
 
 Route::get('/phpinfo', function() {
     return phpinfo();
