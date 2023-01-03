@@ -121,6 +121,10 @@
             <div class="container">
                  <div class="d-flex bd-highlight mb-3">
             <div class="me-auto p-2 bd-highlight"><h2>Invoice</div>
+              <form class="search-form d-none d-md-block" action="#">
+                {{-- <i class="icon-magnifier"></i> --}}
+                <input type="search" class="form-control" placeholder="Search Here" title="Search here">
+              </form>
             </div>
       
       @if(Session::has('order_message'))
